@@ -32,6 +32,7 @@ if ($count>0) {
         $ca->surveylistsquestions_id = $value;
         //$ca->user_id= Session::getUID();
         $ca->pn_anho = $_POST['pn_anho'];
+        $ca->nameTEP = $_POST['nameTEP'];
         $ca->surveylists_id = $_POST['surveylists_id'];
         $ca->a_code_approval = $codeApproval;
         $ca->add();
@@ -68,48 +69,7 @@ $_SESSION['body']=$body;
               //echo 'There was a problem sending the email.';
               Core::redir("./?view=thanks&msg=Email no enviado");
             }
-            
-           
-    
-    
-    
-    
    
 } else {
     Core::redir("./?view=thanks&msg=Error");
 }
-
-
-// function sendEmailStatus($to, $subject, $radicado, $ci, $message, $email, $created_at)
-// {
-//     //$newpassmd5 = md5($pass);
-//     $bool=false;
-//     $path = 'template/update-procedure.html';
-//     //echo file_get_contents($path);
-//     if (file_exists($path)) {
-//         $tpl = file_get_contents($path);
-//     }
-//     $body = str_replace('{{radicado}}', strtoupper($radicado), $tpl);
-//     $body = str_replace('{{ci}}', $ci, $body);
-//     $body = str_replace('{{email}}', $email, $body);
-//     $body = str_replace('{{created_at}}', $created_at, $body);
-//     $body = str_replace('{{content}}', $message, $body);
-//     //$to = $to;
-//     $header = "From: Info <info@notaria62bogota.com> \r\n";
-//     $header .= "Bcc: app@notaria62bogota.com \r\n";
-//     //$header .= "X-Mailer: PHP/" . phpversion() . " \r\n";
-//     $header .= "Mime-Version: 1.0 \r\n";
-//     $header .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-//     $bool = mail($to, $subject, $body, $header);
-//     // echo $bool;
-//     if ($bool) {
-//         Core::alert("Actualizado exitosamente!, email enviado: ".$bool);
-//         print "<script>window.location='index.php?view=notarialprocedure';</script>";
-//     } else {
-//         Core::alert("Actualizado exitosamente!, pero email no enviado, por favor notificar.");
-//         print "<script>window.location='index.php?view=notarialprocedure';</script>";
-//     }
-//     //if (mail($email, "Alguien solicit� una nueva contrase�a para tu cuenta de Dolphy", $body, $header)) {
-//     //    mysql_query("UPDATE pw_user SET password ='$newpassmd5' WHERE user = '$email'");
-//     //}
-// }

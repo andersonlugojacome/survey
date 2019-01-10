@@ -1,8 +1,4 @@
-<div class="container">
-
-    <div class="row">
-        <div class="col-md-12">
-            <?php
+<?php
 /**
 *
 * @version 1.0
@@ -11,11 +7,20 @@
 //$pn = $_GET['pn'];
 //$pn = "1";
 $surveylists_id = "1";
-$anho = "2018";
+$anho = date('Y');
 $questions = SurveylistsquestionData::getAllQuestionsOn("open", $surveylists_id);
 //$surveyanswers = SurveylistsanswerData::getByPN($pn, $anho);
 //if (count($surveyanswers) <= 0) {
+    $allnameTEP =  SurveylistsanswerData::getAllnameTEP();
+$text = "";
+foreach ($allnameTEP as $key => $value) {
+    $text .= "'".$value->nameTEP."',";
+}
     ?>
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-12">
             <form class="" method="post" id="addsurvey" action="./?action=addsurveyanswer" role="form">
                 <div class="row">
                     <div class="col-md-12">
@@ -169,3 +174,9 @@ $questions = SurveylistsquestionData::getAllQuestionsOn("open", $surveylists_id)
         color: orange;
     }
 </style>
+<script>
+    $(document).ready(function() {
+        var availableTags = [<?php echo $text;?>];
+        autocomplete(document.getElementById("nameTEP"), availableTags);
+    });
+</script>
