@@ -29,9 +29,13 @@ foreach ($allnameTEP as $key => $value) {
                             <input type="text" class="form-control" id="pn" name="pn" required>
                         </div>
                         <div class="form-group">
-                            <label for="nameTEP">Name TEP</label>
+                            <label for="nameTEP">Editor name</label>
                             <input type="text" class="form-control" id="nameTEP" name="nameTEP" required>
                         </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
                         <table class="table table-bordered table-hover">
                             <thead>
                                 <tr>

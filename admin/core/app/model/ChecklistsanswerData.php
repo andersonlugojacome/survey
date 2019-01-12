@@ -21,19 +21,19 @@ class ChecklistsanswerData
         $this->checklists_id ="";
         $this->ep_anho ="";
         $this->user_id ="";
-        $this->nameTEP ="";
+        $this->client_id ="";
         $this->a_code_approval = "";
         $this->created_at = (new \DateTime())->format('Y-m-d H:i:s');
     }
     public function add()
     {
-        $sql= "INSERT INTO ".self::$tablename." (numeroescriturapublica,ep_anho, answer,checklistsquestions_id, user_id, nameTEP, created_at, checklists_id, a_code_approval)";
-        $sql .= " VALUES (\"$this->numeroescriturapublica\",\"$this->ep_anho\",\"$this->answer\",\"$this->checklistsquestions_id\",\"$this->user_id\",\"$this->nameTEP\",\"$this->created_at\",\"$this->checklists_id\" ,\"$this->a_code_approval\" )";
+        $sql= "INSERT INTO ".self::$tablename." (numeroescriturapublica,ep_anho, answer,checklistsquestions_id, user_id, client_id, created_at, checklists_id, a_code_approval)";
+        $sql .= " VALUES (\"$this->numeroescriturapublica\",\"$this->ep_anho\",\"$this->answer\",\"$this->checklistsquestions_id\",\"$this->user_id\",\"$this->client_id\",\"$this->created_at\",\"$this->checklists_id\" ,\"$this->a_code_approval\" )";
         Executor::doit($sql);
     }
     public function update()
     {
-        $sql= "UPDATE ".self::$tablename." SET answer=\"$this->answer\", user_id=\"$this->user_id\", nameTEP=\"$this->nameTEP\", a_code_approval=\"$this->a_code_approval\"   WHERE id=$this->id ";
+        $sql= "UPDATE ".self::$tablename." SET answer=\"$this->answer\", user_id=\"$this->user_id\", client_id=\"$this->client_id\", a_code_approval=\"$this->a_code_approval\"   WHERE id=$this->id ";
         Executor::doit($sql);
     }
 

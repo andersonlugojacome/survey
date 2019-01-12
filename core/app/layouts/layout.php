@@ -8,7 +8,10 @@ Este es el layout principal, a partir de este layout o plantilla se muestran el 
     <?=Html::title('LINGUISTIC SURVEY');?>
     <?=Html::link('res/bootstrap/css/bootstrap.css'); ?>
     <?=Html::link('res/font-awesome/css/fontawesome-all.min.css'); ?>
+    <?=Html::link('themes/survey/css/survey.css'); ?>
     <?=Html::script('res/js/jquery.min.js'); ?>
+    <?=Html::script('themes/survey/js/util.js'); ?>
+    
   </head>
 
   <body>
@@ -21,7 +24,7 @@ Este es el layout principal, a partir de este layout o plantilla se muestran el 
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="./"><img width="250" class="" src="http://spanishasap.com/wp-content/uploads/2017/03/Logo-spanish-ASAP-01-3.png" alt="LINGUISTIC SURVEY" ></a>
+      <a class="navbar-brand" href="./"><img width="250" class="" src="themes/survey/img/logo-tep.jpg" alt="LINGUISTIC SURVEY" ></a>
     </div>
   </div>
 </nav>

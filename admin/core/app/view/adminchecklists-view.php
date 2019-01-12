@@ -40,7 +40,7 @@
 
                 <?php
                 $record_per_page = 5;
-                $result = SurveylistsData::getAllNumRow();
+                $result = ChecklistsData::getAllNumRow();
                 //echo " sdsdfsdfs ". $result."---";
                 $total_records = count($result);
                 $total_pages = ceil($total_records / $record_per_page);
@@ -54,7 +54,7 @@
                 }
 
                 $this_page_first_result = ($page - 1) * $record_per_page;
-                $checklists = SurveylistsData::getAllLimitRow($this_page_first_result, $record_per_page);
+                $checklists = ChecklistsData::getAllLimitRow($this_page_first_result, $record_per_page);
                 if (count($checklists) > 0) {
                     ?>
 

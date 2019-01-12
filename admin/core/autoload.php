@@ -1,4 +1,8 @@
 <?php
+/**
+* @author DigitalesWeb
+* @brief Llama todos los archivos del framework LegoBox
+**/
 
 include "controller/Core.php";
 include "controller/View.php";
@@ -28,9 +32,6 @@ include "controller/Cookie.php";
 include "controller/Session.php";
 include "controller/Lb.php";
 
-// 26 diciembre 2014
-include "controller/Form.php";
-include "controller/class.upload.php";
 
 
 ?>

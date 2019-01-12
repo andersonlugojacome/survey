@@ -66,7 +66,7 @@ var seq2 = 0,
   durations2 = 500;
 
 $(document).ready(function() {
-  $("body").bootstrapMaterialDesign();
+  //$("body").bootstrapMaterialDesign();
 
   $sidebar = $(".sidebar");
 
@@ -88,9 +88,9 @@ $(document).ready(function() {
     $(".selectpicker").selectpicker();
   }
   // Activate tooltip
-  $("body").tooltip({
-    selector: '[data-toggle="tooltip"]'
-  });
+  // $("body").tooltip({
+  //   selector: '[data-toggle="tooltip"]'
+  // });
   //Activate tags
   // we style the badges with our colors
   var tagClass = $(".tagsinput").data("color");

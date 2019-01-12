@@ -7,7 +7,7 @@
  * @version 1.0
  * @author DigitalesWeb
  */
- $checklist = SurveylistsData::getById($_GET["id"]);
+ $checklist = ChecklistsData::getById($_GET["id"]);
 ?>
 
 

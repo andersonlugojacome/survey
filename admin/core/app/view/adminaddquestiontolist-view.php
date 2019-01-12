@@ -29,7 +29,7 @@
                     <div class="form-group bmd-form-group is-filled">
                         <label for="ddllists" class="bmd-label-floating">Elija lista de control proceso</label>
                         <select id="ddllists" name="ddllists" class="custom-select" required>
-                            <?php foreach (SurveylistsData::getAll() as $list):?>
+                            <?php foreach (ChecklistsData::getAll() as $list):?>
                             <option value="<?=$list->id; ?>">
                                 <?=$list->name.": ".$list->description; ?>
                             </option>

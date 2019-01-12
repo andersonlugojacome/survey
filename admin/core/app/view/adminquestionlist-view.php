@@ -44,10 +44,10 @@
                     <label for="ddllists" class="bmd-label-floating">Elija lista de control proceso</label>
                     <select id="ddllists" name="ddllists" class="custom-select" onchange="location = this.options[this.selectedIndex].value;"
                         required>
-                        <option value="./?view=adminquestionlist&checklist=0">--- SELECCIONE ---</option>
-                        <?php foreach (SurveylistsData::getAll() as $list):?>
-                        <option value="./?view=adminquestionlist&checklist=<?=$list->id; ?>"
-                            <?=($list->id == $surveylists_id) ? "selected":"";?>><?=$list->name.": ".$list->description; ?>
+                        <option value="/?view=adminquestionlist&checklist=0">--- SELECCIONE ---</option>
+                        <?php foreach (ChecklistsData::getAll() as $list):?>
+                        <option value="/?view=adminquestionlist&checklist=<?=$list->id; ?>"
+                            <?=($list->id == $checklists_id) ? "selected":"";?>><?=$list->name.": ".$list->description; ?>
                         </option>
                         <?php endforeach; ?>
                     </select>
@@ -60,7 +60,7 @@
 
                 <?php
                 $record_per_page = 10;
-                $result = SurveylistsquestionData::getAllNumRowQuestionToList($surveylists_id);
+                $result = ChecklistsquestionData::getAllNumRowQuestionToList($checklists_id);
 
                 //echo " sdsdfsdfs ". $result."---";
                 $total_records = count($result);
@@ -75,7 +75,7 @@
                 }
 
                 $this_page_first_result = ($page - 1) * $record_per_page;
-                $checklistsquestion = SurveylistsquestionData::getAllLimitRowQuestionToList($surveylists_id, $this_page_first_result, $record_per_page);
+                $checklistsquestion = ChecklistsquestionData::getAllLimitRowQuestionToList($checklists_id, $this_page_first_result, $record_per_page);
                 if (count($checklistsquestion) > 0) {
                     ?>
 
@@ -109,7 +109,7 @@
                         echo ($cq->description !="")?"...":""; ?>
                         </td>
                         <td>
-                            <?=$cq->surveylists_id; ?>
+                            <?=$cq->checklists_id; ?>
                         </td>
                         <td>
                             <?=$cq->created_at; ?>
@@ -118,7 +118,7 @@
                             <?= $user->name ?>
                         </td>
                         <td style="width:150px;" class="td-actions">
-                            <a href="./?view=admineditquestiontolist&id=<?=$cq->id; ?>&checklist=<?=$cq->surveylists_id; ?>"
+                            <a href="./?view=admineditquestiontolist&id=<?=$cq->id; ?>&checklist=<?=$cq->checklists_id; ?>"
                                 data-toggle="tooltip" title="Editar" class="btn btn-success btn-round">
                                 <i class="material-icons">edit</i>
                             </a> |

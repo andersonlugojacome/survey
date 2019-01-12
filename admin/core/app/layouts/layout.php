@@ -1,259 +1,520 @@
-<!DOCTYPE html>
-<html>
+<?php $user = Util::current_user();
+    if (isset($_GET['view'])) {
+        if (($_GET['view']!="fechafirmapublico")&&($_GET['view']!="consultatramite")&&($_GET['view']!="processlogin")&&($_GET['view']!="consultatramiteresultado")&&($_GET['view']!="emailsuccess")&&($_GET['view']!="emailto")) {
+            Session::getLogin();
+        }
+    }
+?>
+
+<!doctype html>
+<html lang="es-co">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="Content-type" content="text/html;charset=utf-8" />  
-    <title>TEP | Panel de Administracion</title>
-    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
-    <!-- Bootstrap 3.3.4 -->
-    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <!-- Font Awesome Icons -->
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-    <!-- Theme style -->
-    <link href="dist/css/AdminLTE.min.css" rel="stylesheet" type="text/css" />
-    <link href="dist/css/skins/skin-blue-light.min.css" rel="stylesheet" type="text/css" />
-    <script src="plugins/jquery/jquery-2.1.4.min.js"></script>
-    <script src="plugins/morris/raphael-min.js"></script>
-    <script src="plugins/morris/morris.js"></script>
-    <link rel="stylesheet" href="plugins/morris/morris.css">
-    <link rel="stylesheet" href="plugins/morris/example.css">
+    <meta charset="utf-8" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title><?php if (!empty($page_title)) {
+    echo Util::remove_junk($page_title);
+} elseif (!empty($user)) {
+    echo ucfirst($user->name);
+} else {
+    echo "Sistema de administrador de contenido TEP del circulo de Bogotá";
+}?>
+    </title>
+    <link rel="apple-touch-icon" sizes="57x57" href="themes/notaria62web/img/apple-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="60x60" href="themes/notaria62web/img/apple-icon-60x60.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="themes/notaria62web/img/apple-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="themes/notaria62web/img/apple-icon-76x76.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="themes/notaria62web/img/apple-icon-114x114.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="themes/notaria62web/img/apple-icon-120x120.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="themes/notaria62web/img/apple-icon-144x144.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="themes/notaria62web/img/apple-icon-152x152.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="themes/notaria62web/img/apple-icon-180x180.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="themes/notaria62web/img/android-icon-192x192.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="themes/notaria62web/img/favicon-96x96.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="themes/notaria62web/img/favicon-16x16.png" />
+    <link rel="manifest" href="themes/notaria62web/img/manifest.json" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="msapplication-TileImage" content="themes/notaria62web/img/ms-icon-144x144.png" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+    <meta name="viewport" content="width=device-width" />
 
-    <link rel="stylesheet" href="plugins/datatables/dataTables.bootstrap.css">
-    <link href='plugins/fullcalendar/fullcalendar.min.css' rel='stylesheet' />
-    <link href='plugins/fullcalendar/fullcalendar.print.css' rel='stylesheet' media='print' />
-    <script src='plugins/fullcalendar/moment.min.js'></script>
-    <script src='plugins/fullcalendar/fullcalendar.min.js'></script>
-    <!--  pickadate -->
-    <link rel="stylesheet" type="text/css" href="plugins/pickadate/themes/classic.css">
-    <link rel="stylesheet" type="text/css" href="plugins/pickadate/themes/classic.date.css">
-    <link rel="stylesheet" type="text/css" href="plugins/pickadate/themes/classic.time.css">
-    <script src='plugins/pickadate/picker.js'></script>
-    <script src='plugins/pickadate/picker.date.js'></script>
-    <script src='plugins/pickadate/picker.time.js'></script>
+    <!--     Fonts and icons     -->
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700%7CRoboto+Slab:400,700%7CMaterial+Icons" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="themes/notaria62web/css/material-dashboard-v=2.0.1.css">
+    <link rel="stylesheet" href="themes/notaria62web/css/material-dashboard-print.css" media="print" />
 
-    <link rel="stylesheet" type="text/css" href="plugins/select2/select2.min.css" />
-    <script src='plugins/select2/select2.min.js'></script>
-    <script src='themes/survey/js/util.js'></script>
+    <!--   Core JS Files   -->
+    <script src="themes/notaria62web/js/core/jquery.min.js"></script>
+    <script src="themes/notaria62web/js/core/popper.min.js"></script>
+    <script src="themes/notaria62web/js/bootstrap-material-design.js"></script>
+    <script src="themes/notaria62web/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+    <!--  Plugin for Date Time Picker and Full Calendar Plugin  -->
+    <script src="themes/notaria62web/js/plugins/moment.min.js"></script>
+    <!--	Plugin for the Datepicker, full documentation here: https://github.com/Eonasdan/bootstrap-datetimepicker 
+    <script src="themes/notaria62web/js/plugins/bootstrap-datetimepicker.min.js"></script>-->
+    <!--	Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ 
+    <script src="themes/notaria62web/js/plugins/nouislider.min.js"></script>-->
+    <!--	Plugin for Select, full documentation here: http://silviomoreto.github.io/bootstrap-select -->
+    <script src="themes/notaria62web/js/plugins/bootstrap-selectpicker.js"></script>
+    <!--	Plugin for Tags, full documentation here: http://xoxco.com/projects/code/tagsinput/  -->
+    <script src="themes/notaria62web/js/plugins/bootstrap-tagsinput.js"></script>
+    <!--	Plugin for Fileupload, full documentation here: http://www.jasny.net/bootstrap/javascript/#fileinput -->
+    <script src="themes/notaria62web/js/plugins/jasny-bootstrap.min.js"></script>
+    <!-- Plugins for presentation and navigation  -->
+    <script src="themes/notaria62web/assets-for-demo/js/modernizr.js"></script>
+    <script src="themes/notaria62web/assets-for-demo/js/vertical-nav.js"></script>
+    <!-- Material Dashboard Core initialisations of plugins and Bootstrap Material Design Library -->
+    <script src="themes/notaria62web/js/material-dashboard-v=2.0.1.js"></script>
+    <!-- Dashboard scripts -->
+    <!-- Include a polyfill for ES6 Promises (optional) for IE11, UC Browser and Android browser support SweetAlert -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js"></script>
+    <!-- Library for adding dinamically elements -->
+    <script src="themes/notaria62web/js/plugins/arrive.min.js" type="text/javascript"></script>
+    <!-- Forms Validations Plugin -->
+    <script src="themes/notaria62web/js/plugins/jquery.validate.min.js"></script>
+    <!--  Plugin for the Wizard, full documentation here: https://github.com/VinceG/twitter-bootstrap-wizard -->
+    <script src="themes/notaria62web/js/plugins/jquery.bootstrap-wizard.js"></script>
+    <!--  Notifications Plugin, full documentation here: http://bootstrap-notify.remabledesigns.com/    -->
+    <script src="themes/notaria62web/js/plugins/bootstrap-notify.js"></script>
+    <!--    Sliders Plugin, full documentation here: https://refreshless.com/nouislider/ -->
+    <script src="themes/notaria62web/js/plugins/nouislider.min.js"></script>
+    <!--  Plugin for Select, full documentation here: http://silviomoreto.github.io/bootstrap-select -->
+    <script src="themes/notaria62web/js/plugins/jquery.select-bootstrap.js"></script>
+    <!--  DataTables.net Plugin, full documentation here: https://datatables.net/   -->
+    <script src="themes/notaria62web/js/plugins/datatables.min.js"></script>
+    <!-- Sweet Alert 2 plugin, full documentation here: https://limonte.github.io/sweetalert2/ -->
+    <script src="themes/notaria62web/js/plugins/sweetalert2.js"></script>
+    <!-- Plugin for Fileupload, full documentation here: http://www.jasny.net/bootstrap/javascript/#fileinput -->
+    <script src="themes/notaria62web/js/plugins/jasny-bootstrap.min.js"></script>
+    <!--  Full Calendar Plugin, full documentation here: https://github.com/fullcalendar/fullcalendar    -->
+    <script src="themes/notaria62web/js/plugins/fullcalendar.min.js"></script>
+
+    <link rel="stylesheet" href="themes/notaria62web/css/datepicker.min.css">
+    <script src="themes/notaria62web/js/plugins/datepicker.min.js"></script>
+    <script src="themes/notaria62web/js/plugins/datepicker.es.js"></script>
     <script type="text/javascript">
         $(document).ready(function() {
-            //$("select").select2();
+
         });
     </script>
 </head>
 
-<body class="<?php if(isset($_SESSION[" user_id"]) ):?> skin-blue-light sidebar-mini
-    <?php else:?>login-page
-    <?php endif; ?>" >
+<body class="">
+    <?php if (count($user)>0):
+        $fullname = $user->name." ".$user->lastname;
+        $name = $user->name;
+        $gender = $user->gender;
+        ?>
     <div class="wrapper">
-        <!-- Main Header -->
-        <?php if(isset($_SESSION["user_id"])):?>
-        <header class="main-header">
-            <!-- Logo -->
-            <a href="./" class="logo">
-                <!-- mini logo for sidebar mini 50x50 pixels -->
-                <span class="logo-mini"><b>T</b>L</span>
-                <!-- logo for regular state and mobile devices -->
-                <span class="logo-lg"><b>TEP</b></span>
-            </a>
-
-            <!-- Header Navbar -->
-            <nav class="navbar navbar-static-top" role="navigation">
-                <!-- Sidebar toggle button-->
-                <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
-                    <span class="sr-only">Toggle navigation</span>
+        <div class="sidebar" data-color="rose" data-background-color="white" data-image="themes/notaria62web/img/sidebar-1.jpg">
+            <div class="logo">
+                <a href="./" class="simple-text logo-mini">
+                    62
                 </a>
-                <!-- Navbar Right Menu -->
-                <div class="navbar-custom-menu">
-                    <ul class="nav navbar-nav">
-
-
-                        <!-- User Account Menu -->
-                        <li class="dropdown user user-menu">
-                            <!-- Menu Toggle Button -->
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <!-- The user image in the navbar-->
-                                <!-- hidden-xs hides the username on small devices so only the image appears. -->
-                                <span class="">
-                                    <?php 
-                  if(isset($_SESSION["user_id"])){ echo UserData::getById($_SESSION["user_id"])->name; }
-
-                  ?></span>
-                                <span class="caret"></span>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <!-- The user image in the menu -->
-
-                                <!-- Menu Footer-->
-                                <li class="user-footer">
-                                    <div class="pull-right">
-                                        <?php if(isset($_SESSION["medic_id"])):?>
-                                        <?php endif; ?>
-                                        <a href="./logout.php" class="btn btn-default btn-flat">Salir</a>
-                                    </div>
-                                </li>
-                            </ul>
-                        </li>
-                        <!-- Control Sidebar Toggle Button -->
-                    </ul>
-                </div>
-            </nav>
-        </header>
-        <!-- Left side column. contains the logo and sidebar -->
-        <aside class="main-sidebar">
-
-            <!-- sidebar: style can be found in sidebar.less -->
-            <section class="sidebar">
-                <!--
-<div class="user-panel">
-            <div class="pull-left image">
-              <img src="1.jpg" class="img-circle" alt="User Image" />
+                <a href="/" class="simple-text logo-normal">
+                    <img src="themes/notaria62web/img/logo.png" alt="TEP" height="40" width="40" />
+                </a>
             </div>
-            <div class="pull-left info">
-              <p>Alexander Pierce</p>
-
-              <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
-            </div>
-          </div>
-          -->
-                <!-- Sidebar Menu -->
-                <ul class="sidebar-menu">
-                    <li class="header">ADMINISTRACION</li>
-                    <?php if(isset($_SESSION["user_id"])):?>
-
-                    <?php $u = UserData::getById($_SESSION["user_id"]); ?>
-                    <li><a href="./?view=home"><i class='fa fa-dashboard'></i> <span>Inicio</span></a></li>
-                    <li><a href="./?view=adminchecklists"><i class='fa fa-file-text'></i> <span>Surveys</span></a></li>
-
-                    <li><a href="./?view=posts&opt=all"><i class='fa fa-file-text'></i> <span>Articulos</span></a></li>
-                    <li><a href="./?view=comments"><i class='fa fa-comment'></i> <span>Comentarios</span></a></li>
-
-                    <li class="treeview">
-                        <a href="#">
-                            <i class="fa fa-th-list"></i>
-                            <span>Catalogos</span>
-                            <span class="pull-right-container">
-                                <i class="fa fa-angle-left pull-right"></i>
+            <div class="sidebar-wrapper">
+                <div class="user">
+                    <div class="photo">
+                        <?= ($gender=='1')?'<img src="themes/notaria62web/img/male.png" />':'<img src="themes/notaria62web/img/female.png" />'?>
+                    </div>
+                    <div class="user-info">
+                        <a data-toggle="collapse" href="#collapseuser" class="username">
+                            <span>
+                                <?=$name ?>
+                                <b class="caret"></b>
                             </span>
                         </a>
-                        <ul class="treeview-menu">
-                            <li><a href="./?view=categories&opt=all"><i class="fa fa-circle-o"></i> Categorias</a></li>
-                        </ul>
+                        <div class="collapse" id="collapseuser">
+                            <ul class="nav">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">
+                                        <span class="sidebar-mini">MP</span>
+                                        <span class="sidebar-normal">Mi perfil </span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">
+                                        <span class="sidebar-mini">EP</span>
+                                        <span class="sidebar-normal">Editar perfil </span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="./?view=configuration">
+                                        <span class="sidebar-mini"><i class="material-icons">security</i></span>
+                                        <span class="sidebar-normal">Cambiar contrase&ntilde;a</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="logout.php">
+                                        <span class="sidebar-mini"><i class="material-icons">power_settings_new</i></span>
+                                        <span class="sidebar-normal">Salir</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <ul class="nav">
+                    <?php if ($user->user_level== 1 || $user->user_level== 4):?>
+                    <li class="nav-item ">
+                        <a class="nav-link" data-toggle="collapse" href="#products-nav">
+                            <i class="material-icons">tablet_android</i>
+                            <p>Productos
+                                <b class="caret"></b>
+                            </p>
+                        </a>
+                        <div class="collapse" id="products-nav">
+                            <ul class="nav">
+                                <li class="nav-item ">
+                                    <a class="nav-link" href="./?view=calendarrents">
+                                        <span class="sidebar-mini"><i class="material-icons">home</i></span>
+                                        Inicio
+                                    </a>
+                                </li>
+                                <li class="nav-item ">
+                                    <a class="nav-link" href="./?view=rent">
+                                        <span class="sidebar-mini"><i class="material-icons">device_hub</i></span>
+                                        <span class="sidebar-normal">Prestamo</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item ">
+                                    <a class="nav-link" href="./?view=rents">
+                                        <span class="sidebar-mini"> <i class="material-icons">trending_up</i>
+                                        </span>
+                                        <span class="sidebar-normal"> Prestamos </span>
+                                    </a>
+                                </li>
+                                <li class="nav-item ">
+                                    <a class="nav-link" href="./?view=books">
+                                        <span class="sidebar-mini"> <i class="material-icons">timeline</i> </span>
+                                        <span class="sidebar-normal"> Productos </span>
+                                    </a>
+                                </li>
+                                <?php if ($user->user_level== 1 || $user->user_level== 4):?>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="./?view=categories">
+                                        <span class="sidebar-mini"> <i class="material-icons">category</i></span>
+                                        <span class="sidebar-normal"> Categorias</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="./?view=editorials">
+                                        <span class="sidebar-mini"> <i class="material-icons">compare</i></span>
+                                        <span class="sidebar-normal"> Empresa</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="./?view=authors">
+                                        <span class="sidebar-mini"> <i class="material-icons">home</i></span>
+                                        <span class="sidebar-normal"> Creadores</span>
+                                    </a>
+                                </li>
+                                <?php endif;?>
+                            </ul>
+                        </div>
+                    </li>
+                    <?php endif;?>
+                    <?php if ($user->user_level== 1 || $user->user_level== 4):?>
+                    <li class="nav-item ">
+                        <a class="nav-link" data-toggle="collapse" href="#controlofprocess-nav">
+                            <i class="material-icons">control_point</i>
+                            <p>Control maestro
+                                <b class="caret"></b>
+                            </p>
+                        </a>
+                        <div class="collapse" id="controlofprocess-nav">
+                            <ul class="nav">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="./?view=newcontrolofprocess">
+                                        <span class="sidebar-mini"> <i class="material-icons">add</i>
+                                        </span>
+                                        <span class="sidebar-normal"> Crear control maestro </span>
+                                    </a>
+                                </li>
+                                <li class="nav-item ">
+                                    <a class="nav-link" href="./?view=controlofprocess">
+                                        <span class="sidebar-mini"> <i class="material-icons">search</i> </span>
+                                        <span class="sidebar-normal"> Busqueda control maestro </span>
+                                    </a>
+                                </li>
+                                <?php if ($user->user_level ==1):?>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="./?view=adminchecklists">
+                                        <span class="sidebar-mini"> <i class="material-icons">settings</i></span>
+                                        <span class="sidebar-normal"> Admin control maestro</span>
+                                    </a>
+                                </li>
+                                <?php endif;?>
+                            </ul>
+                        </div>
+                    </li>
+                    <?php endif;?>
+                    <li class="nav-item ">
+                        <a class="nav-link" data-toggle="collapse" href="#certificados-nav">
+                            <i class="material-icons">control_camera</i>
+                            <p>Control de certificados
+                                <b class="caret"></b>
+                            </p>
+                        </a>
+                        <div class="collapse" id="certificados-nav">
+                            <ul class="nav">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="./?view=consecutivosderemisiones">
+                                        <span class="sidebar-mini"> <i class="material-icons">local_offer</i>
+                                        </span>
+                                        <span class="sidebar-normal">Consecutivo remisiones </span>
+                                    </a>
+                                </li>
+                                <li class="nav-item ">
+                                    <a class="nav-link" href="./?view=consecutivosdecertificados">
+                                        <span class="sidebar-mini"> <i class="material-icons">search</i> </span>
+                                        <span class="sidebar-normal">Consecutivo certificados. </span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
                     </li>
 
-                    <li><a href="./?view=users"><i class='fa fa-user'></i> <span>Usuarios</span></a></li>
-                    <?php endif; ?>
+                    <li class="nav-item ">
+                        <a class="nav-link" data-toggle="collapse" href="#protocolo-nav">
+                            <i class="material-icons">local_parking</i>
+                            <p>Protocolo
+                                <b class="caret"></b>
+                            </p>
+                        </a>
+                        <div class="collapse" id="protocolo-nav">
+                            <ul class="nav">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="./?view=newbeneficencia">
+                                        <span class="sidebar-mini"> <i class="material-icons">get_app</i> </span>
+                                        <span class="sidebar-normal"> Solicitar escritura </span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="./?view=convertnumbertoword">
+                                        <span class="sidebar-mini"> <i class="material-icons">local_convenience_store</i>
+                                        </span>
+                                        <span class="sidebar-normal"> Convertir n&uacute;meros a letras</span>
+                                    </a>
+                                </li>
+                                <?php if ($user->user_level== 1 || $user->user_level== 4 || $user->user_level== 5):?>
+                                <li class="nav-item ">
+                                    <a class="nav-link" href="./?view=protocolocierres">
+                                        <span class="sidebar-mini"> <i class="material-icons">cancel</i></span>
+                                        <span class="sidebar-normal"> Cierres </span>
+                                    </a>
+                                </li>
+                                <li class="nav-item ">
+                                    <a class="nav-link" href="./?view=beneficencia">
+                                        <span class="sidebar-mini"> <i class="material-icons">search</i> </span>
+                                        <span class="sidebar-normal"> Busqueda escritura </span>
+                                    </a>
+                                </li>
+                                <?php endif;?>
+                            </ul>
+                        </div>
+                    </li>
+                    <?php if ($user->user_level== 1 || $user->user_level== 4 || $user->user_level== 6):?>
+                    <li class="nav-item ">
+                        <a class="nav-link" data-toggle="collapse" href="#bcs-nav">
+                            <i class="material-icons">account_balance</i>
+                            <p>BCS
+                                <b class="caret"></b>
+                            </p>
+                        </a>
+                        <div class="collapse" id="bcs-nav">
+                            <ul class="nav">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="./?view=creatememorandum">
+                                        <span class="sidebar-mini"> <i class="material-icons">add</i>
+                                        </span>
+                                        <span class="sidebar-normal"> Crear Minuta </span>
+                                    </a>
+                                </li>
+                                <li class="nav-item ">
+                                    <a class="nav-link" href="./?view=memorandumcreated">
+                                        <span class="sidebar-mini"> <i class="material-icons">search</i> </span>
+                                        <span class="sidebar-normal"> Minuta creadas </span>
+                                    </a>
+                                </li>
+                                <li class="nav-item ">
+                                    <a class="nav-link" href="./?view=checklistbcs">
+                                        <span class="sidebar-mini"> <i class="material-icons">format_list_bulleted</i>
+                                        </span>
+                                        <span class="sidebar-normal"> Lista de chequeo </span>
+                                    </a>
+                                </li>
+                                <li class="nav-item ">
+                                    <a class="nav-link" href="./?view=admintemplates">
+                                        <span class="sidebar-mini"> <i class="material-icons">assignment</i> </span>
+                                        <span class="sidebar-normal"> Administrador de plantillas </span>
+                                    </a>
+                                </li>
 
-                </ul><!-- /.sidebar-menu -->
-            </section>
-            <!-- /.sidebar -->
-        </aside>
-        <?php endif;?>
+                            </ul>
+                        </div>
+                    </li>
+                    <?php endif;?>
+                    <?php if ($user->user_level== 1 || $user->user_level== 4):?>
+                    <li class="nav-item ">
+                        <a class="nav-link" data-toggle="collapse" href="#setting-nav">
+                            <i class="material-icons">settings_applications</i>
+                            <p>Configuraci&oacute;n
+                                <b class="caret"></b>
+                            </p>
+                        </a>
+                        <div class="collapse" id="setting-nav">
+                            <ul class="nav">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="./?view=reports">
+                                        <span class="sidebar-mini"> <i class="material-icons">report</i> </span>
+                                        <span class="sidebar-normal"> Reportes </span>
+                                    </a>
+                                </li>
+                                <li class="nav-item ">
+                                    <a class="nav-link" href="./?view=users">
+                                        <span class="sidebar-mini"> <i class="material-icons">people</i> </span>
+                                        <span class="sidebar-normal"> Usuarios del sistema </span>
+                                    </a>
+                                </li>
+                                <li class="nav-item ">
+                                    <a class="nav-link" href="./?view=clients">
+                                        <span class="sidebar-mini"> <i class="material-icons">person</i> </span>
+                                        <span class="sidebar-normal"> Empleados </span>
+                                    </a>
+                                </li>
+                                <li class="nav-item ">
+                                    <a class="nav-link" href="./?view=usergroups">
+                                        <span class="sidebar-mini"> <i class="material-icons">pan_tool</i> </span>
+                                        <span class="sidebar-normal"> Permisos de usuarios </span>
+                                    </a>
+                                </li>
 
-        <!-- Content Wrapper. Contains page content -->
-        <?php if(isset($_SESSION["user_id"])   ):?>
-        <div class="content-wrapper">
-            <?php View::load("index");?>
-        </div><!-- /.content-wrapper -->
+                            </ul>
+                        </div>
+                    </li>
+                    <?php endif;?>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./?view=notarialprocedure">
+                            <i class="material-icons">wallpaper</i>
+                            <p> Consulta de tramite </p>
+                        </a>
+                    </li>
 
-        <footer class="main-footer">
-            <div class="pull-right hidden-xs">
-                <b>Version</b> v1.1
+                </ul>
             </div>
-            <strong>Copyright &copy; 2018 <a href="http://DigitalesWeb.com/company/" target="_blank">DigitalesWeb</a></strong>
-        </footer>
-        <?php else:?>
-        <?php if(isset($_GET["view"]) && $_GET["view"]=="pacientlogin"):?>
-
-        <?php elseif(isset($_GET["view"]) && $_GET["view"]=="mediclogin"):?>
-
-        <?php else:?>
-        <div class="login-box">
-            <div class="login-logo">
-                <a href="./"><b>TEP</b></a>
-            </div><!-- /.login-logo -->
-            <div class="login-box-body">
-                <form action="./?action=processlogin" method="post">
-                    <div class="form-group has-feedback">
-                        <input type="text" name="username" required class="form-control" placeholder="Usuario" />
-                        <span class="glyphicon glyphicon-user form-control-feedback"></span>
+        </div>
+        <div class="main-panel">
+            <!-- Navbar -->
+            <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top">
+                <div class="container-fluid">
+                    <div class="navbar-wrapper">
+                        <div class="navbar-minimize">
+                            <button id="minimizeSidebar" class="btn btn-just-icon btn-white btn-fab btn-round">
+                                <i class="material-icons text_align-center visible-on-sidebar-regular">more_vert</i>
+                                <i class="material-icons design_bullet-list-67 visible-on-sidebar-mini">view_list</i>
+                            </button>
+                        </div>
+                        <a class="navbar-brand" href="./">Sistema ADC de TEP</a>
                     </div>
-                    <div class="form-group has-feedback">
-                        <input type="password" name="password" required class="form-control" placeholder="Password" />
-                        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="navbar-toggler-icon icon-bar"></span>
+                        <span class="navbar-toggler-icon icon-bar"></span>
+                        <span class="navbar-toggler-icon icon-bar"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-end">
+                        <form class="navbar-form">
+                            <div class="input-group no-border">
+                                <input type="text" value="" class="form-control" placeholder="Buscar..." />
+                                <button type="submit" class="btn btn-white btn-round btn-just-icon">
+                                    <i class="material-icons">search</i>
+                                    <div class="ripple-container"></div>
+                                </button>
+                            </div>
+                        </form>
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="./">
+                                    <i class="material-icons">dashboard</i>
+                                    <p>
+                                        <span class="d-lg-none d-md-block">Stats</span>
+                                    </p>
+                                </a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link" href="./" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="false">
+                                    <i class="material-icons">notifications</i>
+                                    <span class="notification">5</span>
+                                    <p class="d-lg-none d-md-block">Some Actions</p>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                                    <a class="dropdown-item" href="#">Mike John responded to your email</a>
+                                    <a class="dropdown-item" href="#">You have 5 new tasks</a>
+                                    <a class="dropdown-item" href="#">You're now friend with Andrew</a>
+                                    <a class="dropdown-item" href="#">Another Notification</a>
+                                    <a class="dropdown-item" href="#">Another One</a>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link" href="./" id="navbarDropdownProfile" data-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="false">
+                                    <i class="material-icons">person</i>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownProfile">
+                                    <a class="dropdown-item" href="logout.php"><i class="material-icons">power_settings_new</i>
+                                        Salir</a>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
-                    <div class="row">
+                </div>
+            </nav>
+            <!-- End Navbar -->
+            <div class="content">
+                <div class="container-fluid">
 
-                        <div class="col-xs-12">
-                            <button type="submit" class="btn btn-primary btn-block btn-flat">Acceder</button>
-                        </div><!-- /.col -->
-                    </div>
-                </form>
-            </div><!-- /.login-box-body -->
-        </div><!-- /.login-box -->
-        <?php endif;?>
+                    <?php View::load("login"); ?>
 
-        <?php endif;?>
-
-
-    </div><!-- ./wrapper -->
-
-    <!-- REQUIRED JS SCRIPTS -->
-
-    <!-- jQuery 2.1.4 -->
-    <!-- Bootstrap 3.3.2 JS -->
-    <script src="bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
-    <!-- AdminLTE App -->
-    <script src="dist/js/app.min.js" type="text/javascript"></script>
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $(".pickadate").pickadate({
-                format: 'yyyy-mm-dd',
-                min: '<?php echo date('
-                Y - m - d ',time()-(24*60*60)); ?>'
-            });
-            $(".pickatime").pickatime({
-                format: 'HH:i',
-                interval: 10
-            });
-        })
-    </script>
-    <script src="plugins/datatables/jquery.dataTables.min.js"></script>
-    <script src="plugins/datatables/dataTables.bootstrap.min.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $(".datatable").DataTable({
-                "language": {
-                    "sProcessing": "Procesando...",
-                    "sLengthMenu": "Mostrar _MENU_ registros",
-                    "sZeroRecords": "No se encontraron resultados",
-                    "sEmptyTable": "Ningún dato disponible en esta tabla",
-                    "sInfo": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
-                    "sInfoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
-                    "sInfoFiltered": "(filtrado de un total de _MAX_ registros)",
-                    "sInfoPostFix": "",
-                    "sSearch": "Buscar:",
-                    "sUrl": "",
-                    "sInfoThousands": ",",
-                    "sLoadingRecords": "Cargando...",
-                    "oPaginate": {
-                        "sFirst": "Primero",
-                        "sLast": "Último",
-                        "sNext": "Siguiente",
-                        "sPrevious": "Anterior"
-                    },
-                    "oAria": {
-                        "sSortAscending": ": Activar para ordenar la columna de manera ascendente",
-                        "sSortDescending": ": Activar para ordenar la columna de manera descendente"
-                    }
-                }
-            });
-        });
-    </script>
-    <!-- Optionally, you can add Slimscroll and FastClick plugins.
-          Both of these plugins are recommended to enhance the
-          user experience. Slimscroll is required when using the
-          fixed layout. -->
+                </div>
+            </div>
+            <footer class="footer">
+                <div class="container-fluid">
+                    <nav class="pull-left">
+                        <ul>
+                            <li>
+                                <a href="./?view=changelog">
+                                    Log de cambios
+                                </a>
+                            </li>
+                            <li>
+                                <a href="//adc.notaria62bogota.com/" target="_blank">
+                                    Notaria62 ADC
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <p class="copyright pull-right">
+                        <a href="//adc.notaria62bogota.com" target="_blank">Notaria62 ADC</a>&copy; 2018
+                    </p>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <?php else:
+        View::load("login");
+    ?>
+    <?php endif;?>
 </body>
 
 </html>

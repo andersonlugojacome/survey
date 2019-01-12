@@ -9,11 +9,11 @@
  */
 
 if (count($_POST)>0) {
-    $cq = new SurveylistsquestionData();
+    $cq = new ChecklistsquestionData();
     $cq->question = $_POST["question"];
     $cq->description = $_POST["description"];
     $cq->linkpdf = isset($_POST["linkpdf"]) ? $_POST["linkpdf"] : null;
-    $cq->surveylists_id = $_POST["ddllists"];
+    $cq->checklists_id = $_POST["ddllists"];
     $cq->q_status = $_POST["ddllquestionstatus"];
     $cq->position = $_POST["position"];
     $cq->num_input = $_POST["num_input"];

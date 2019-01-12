@@ -19,8 +19,6 @@ class View {
 				include "core/app/".Core::$theme."/view/".$view."-view.php";				
 			}
 		}else{
-
-
 			if(View::isValid()){
 				$url ="";
 			if(Core::$root==""){
@@ -30,7 +28,7 @@ class View {
 			}
 				include $url;				
 			}else{
-				View::Error("<b>404 NOT FOUND</b> View <b>".$_GET['view']."</b> folder !! - <a href='http://DigitalesWeb.com/legobox/help/' target='_blank'>Help</a>");
+				View::Error("<b>404 NOT FOUND</b> View <b>".$_GET['view']."</b> folder !! - <a href='http://www.digitalesweb.com' target='_blank'>Help</a>");
 			}
 
 

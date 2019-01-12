@@ -9,7 +9,7 @@
  */
 
 if (count($_POST)>0) {
-    $cl = new SurveylistsData();
+    $cl = new ChecklistsData();
     $cl->name = $_POST["name"];
     $cl->description = $_POST["description"];
     $cl->checklist_status = $_POST['ddlchecklist_status'];

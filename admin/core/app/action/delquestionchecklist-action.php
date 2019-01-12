@@ -9,6 +9,6 @@
  * @version 1.0
  * @author sistemas
  */
-$clq = SurveylistsquestionData::getById($_GET["id"]);
+$clq = ChecklistsquestionData::getById($_GET["id"]);
 $clq->del();
 print "<script>window.location='./?view=adminquestionlist';</script>";

@@ -1,131 +1,86 @@
-<section class="content">
-<div class="row">
-	<div class="col-md-12">
-		<h1>Categorias</h1>
+<?php
+/**
+ * categories short summary.
+ *
+ * categories description.
+ *
+ * @version 1.0
+ * @author DigitalesWeb
+ */
+$result = CategoryData::getAll();
+?>
 
+<div class="card">
+	<div class="card-header card-header-primary">
+		<h4 class="card-title">Categorias</h4>
+		<p class="card-category">Se listan las categorias de productos de prestamos</p>
+	</div>
+	<div class="card-body">
+		<div class="card-title">
+			<a href="index.php?view=newcategory" class="btn btn-default">
+				<i class="material-icons">add</i> Nueva Categoria
+			</a>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<?php if (count($result) > 0) : ?>
+			<div class="material-datatables">
+				<table id="datatables" class="table table-striped table-no-bordered table-hover" cellspacing="0" width="100%" style="width:100%">
+					<thead>
+						<th>Id categoria</th>
+						<th>Nombre de categoria</th>
+						<th class="disabled-sorting text-right">Opciones</th>
 
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">
-Nueva Categria
-</button>
+					</thead>
+					<?php foreach ($result as $ca):?>
 
-<!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Nueva Categria</h4>
-      </div>
-      <div class="modal-body">
-		<form class="form-horizontal" method="post" id="addcategory" action="index.php?action=categories&opt=add" role="form">
-
-
-  <div class="form-group">
-    <label for="inputEmail1" class="col-lg-2 control-label">Nombre*</label>
-    <div class="col-md-6">
-      <input type="text" name="name" required class="form-control" id="name" placeholder="Nombre">
-    </div>
-  </div>
-
-
-  <div class="form-group">
-    <div class="col-lg-offset-2 col-lg-10">
-      <button type="submit" class="btn btn-primary">Agregar Categria</button>
-    </div>
-  </div>
-</form>
-
-      </div>
-
-    </div>
-  </div>
-</div>
-
-
-<br>
-<br>
-		<?php
-
-		$users = CategoryData::getAll();
-		if(count($users)>0){
-			// si hay usuarios
-			?>
-<div class="box box-primary">
-<div class="box-body">
-			<table class="table table-bordered table-hover datatable">
-			<thead>
-			<th>Categoria</th>
-			<th></th>
-			</thead>
-			<?php
-			foreach($users as $user){
-				?>
-				<tr>
-				<td><?php echo $user->name; ?></td>
-				<td style="width:130px;">
-
-<button type="button" class="btn btn-warning btn-xs" data-toggle="modal" data-target="#editModal<?php echo $user->id; ?>">
-Editar
-</button>
-<a href="index.php?action=categories&opt=del&id=<?php echo $user->id;?>" class="btn btn-danger btn-xs">Eliminar</a></td>
-				</tr>
-				<?php
-
-			}
-
-				?>
+					<tr>
+						<td><?=$ca->id;?>
+						</td>
+						<td><?=$ca->name;?>
+						</td>
+						<td><a href="./?view=editcategory&id=<?php echo $ca->id;?>"
+							 data-toggle="tooltip" title="Editar" class="btn btn-link btn-success btn-just-icon btn-sm">
+								<i class="material-icons">edit</i>
+							</a>
+							<a href="index.php?view=delcategory&id=<?php echo $ca->id;?>"
+							 data-toggle="tooltip" title="Eliminar" class="btn btn-link btn-danger btn-just-icon btn-sm">
+								<i class="material-icons">delete</i>
+							</a>
+						</td>
+					</tr>
+					<?php endforeach;?>
 				</table>
-<?php foreach($users as $user):?>
-<!-- Modal -->
-<div class="modal fade" id="editModal<?php echo $user->id; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Editar Categria</h4>
-      </div>
-      <div class="modal-body">
-		<form class="form-horizontal" method="post" id="addproduct" action="index.php?action=categories&opt=update" role="form">
-
-  <div class="form-group">
-    <label for="inputEmail1" class="col-lg-2 control-label">Categoria*</label>
-    <div class="col-md-6">
-      <input type="text" name="name" value="<?php echo $user->name;?>" class="form-control" id="name" placeholder="Categoria">
-    </div>
-  </div>
-
-
-
-
-  <div class="form-group">
-    <div class="col-lg-offset-2 col-lg-10">
-    <input type="hidden" name="user_id" value="<?php echo $user->id;?>">
-      <button type="submit" class="btn btn-primary">Actualizar Categria</button>
-    </div>
-  </div>
-</form>
-
-      </div>
-
-    </div>
-  </div>
-</div>
-<?php endforeach; ?>
-				</div>
-				</div>
-				<?php
-
-
-		}else{
-			echo "<p class='alert alert-danger'>No hay Categorias</p>";
-		}
-
-
-		?>
-
-
+			</div>
+			<?php
+                else :
+                    echo"<P class='alert alert-danger'>No hay categorias creadas.</p>";
+                endif;?>
+		</div>
 	</div>
 </div>
 
-</section>
+<script>
+	$(document).ready(function() {
+		$('#datatables').DataTable({
+			"columnDefs": [{
+				className: "text-right",
+				"targets": [2]
+			}],
+			"pagingType": "full_numbers",
+			"lengthMenu": [
+				[5, 10, 20, -1],
+				[5, 10, 20, "All"]
+			],
+			responsive: true,
+			language: {
+				search: "_INPUT_",
+				searchPlaceholder: "Buscar...",
+			}
+
+		});
+	});
+
+	$('.card .material-datatables label').addClass('form-group');
+</script>

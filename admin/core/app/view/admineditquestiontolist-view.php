@@ -8,7 +8,7 @@
  * @version 1.0
  * @author DigitalesWeb
  */
-$checklistquestion = SurveylistsquestionData::getById($_GET["id"]);
+$checklistquestion = ChecklistsquestionData::getById($_GET["id"]);
 $checklists_id = $_GET["checklist"];
 
 ?>
@@ -34,7 +34,7 @@ $checklists_id = $_GET["checklist"];
                     <div class="form-group">
                         <label for="ddllists" class="bmd-label-floating">Elija lista de control proceso</label>
                         <select id="ddllists" name="ddllists" class="form-control" required>
-                            <?php foreach (SurveylistsData::getAll() as $list):?>
+                            <?php foreach (ChecklistsData::getAll() as $list):?>
                             <option value="<?=$list->id; ?>" <?=($list->id == $checklists_id) ? "selected":"";?>>
                                 <?=$list->name.": ".$list->description; ?>
                             </option>

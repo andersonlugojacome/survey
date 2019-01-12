@@ -43,9 +43,7 @@ if ($count>0) {
     $body .= "Average : ".$average."\n<br/>";
     //echo "Sum: ".$sum.", Total: ".$total." Average;".$average." ". $body;
      	
-$_SESSION['body']=$body;
-    //mail("loly.alvarez@traduccionestep.com", "Linguistic survey of project number: ".$_POST['pn'], $body, "survey@spanishasap.com");
-    //mail("andersonlugojacome@gmail.com", "Linguistic survey of project number: ".$_POST['pn'], $body, "survey@spanishasap.com");
+            $_SESSION['body']=$body;
     //   CHANGE THE BELOW VARIABLES TO YOUR NEEDS
              //  MAKE SURE THE "FROM" EMAIL ADDRESS DOESN'T HAVE ANY NASTY STUFF IN IT
              $form ='survey@spanishasap.com';
@@ -55,7 +53,8 @@ $_SESSION['body']=$body;
             } else { 
                 return "The email address you entered was invalid. Please try again!"; 
             } 
-			$to = 'loly.alvarez@traduccionestep.com';
+            $to = 'loly.alvarez@traduccionestep.com';
+            //$to = 'andersonlugojacome@gmail.com';
 			$subject = "Linguistic survey of project number: ".$_POST['pn'];
 			$headers = "From: " . $cleanedFrom . "\r\n";
 			$headers .= "Reply-To: ". strip_tags($form) . "\r\n";
