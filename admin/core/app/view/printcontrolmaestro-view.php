@@ -19,7 +19,7 @@ $display_number = 1;
 
 <table class="material-datatables table-bordered">
     <tr>
-        <td><img src="themes/notaria62web/img/logo.png" alt="TEP" style="width: 70px;" /></td>
+        <td><img src="themes/TEP/img/logo.png" alt="TEP" style="width: 70px;" /></td>
         <td align="center">
             <h3>NOTARIA SESENTA Y DOS (62) DEL CIRCULO DE BOGOTA CARLOS ARTURO SERRATO GALEANO</h3>
         </td>

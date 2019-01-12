@@ -8,9 +8,9 @@ var open = require("gulp-open");
 var Paths = {
   HERE: "./",
   DIST: "dist/",
-  CSS: "./themes/notaria62web/css/",
-  SCSS_TOOLKIT_SOURCES: "./themes/notaria62web/scss/material-dashboard.scss",
-  SCSS: "./themes/notaria62web/scss/**/**"
+  CSS: "./themes/TEP/css/",
+  SCSS_TOOLKIT_SOURCES: "./themes/TEP/scss/material-dashboard.scss",
+  SCSS: "./themes/TEP/scss/**/**"
 };
 
 gulp.task("compile-scss", function() {

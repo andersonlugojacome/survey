@@ -246,7 +246,7 @@ if (isset($_GET["start_at"])) {
                 notification = new Notification($v1, {
                     body: $v2,
                     dir: 'auto',
-                    icon: 'themes/notaria62web/img/logonotaria62.jpg'
+                    icon: 'themes/TEP/img/logonotaria62.jpg'
                 });
 
             } else if (Notification.permission !== 'denied') {
@@ -257,7 +257,7 @@ if (isset($_GET["start_at"])) {
                             notification = new Notification($v1, {
                                 body: $v2,
                                 dir: 'auto',
-                                icon: 'themes/notaria62web/img/logonotaria62.jpg'
+                                icon: 'themes/TEP/img/logonotaria62.jpg'
                             });
                         }
                     });

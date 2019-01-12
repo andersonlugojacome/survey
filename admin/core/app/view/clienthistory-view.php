@@ -143,9 +143,9 @@ $client = ClientData::getById($_GET["id"]);
     });
 </script>
 
-<link href="themes/notaria62web/css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+<link href="themes/TEP/css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
 <!-- jQuery UI -->
-<script type="text/javascript" src="themes/notaria62web/js/jquery-ui.min.js"></script>
-<script type="text/javascript" src='themes/notaria62web/js/moment.min.js'></script>
-<script type="text/javascript" src="themes/notaria62web/js/es.js"></script>
-<script type="text/javascript" src="themes/notaria62web/js/bootstrap-datetimepicker.js"></script>
+<script type="text/javascript" src="themes/TEP/js/jquery-ui.min.js"></script>
+<script type="text/javascript" src='themes/TEP/js/moment.min.js'></script>
+<script type="text/javascript" src="themes/TEP/js/es.js"></script>
+<script type="text/javascript" src="themes/TEP/js/bootstrap-datetimepicker.js"></script>

@@ -18,7 +18,7 @@ if (Session::getUID()!="") {
                             <div class="card-body ">
                                 <span class="bmd-form-group">
                                     <div class="input-group justify-content-center">
-                                        <img src="themes/notaria62web/img/logo.png" alt="TEP" height="40" width="40" />
+                                        <img src="themes/TEP/img/logo.png" alt="TEP" height="40" width="40" />
                                     </div>
                                 </span>
                                 <span class="bmd-form-group">
