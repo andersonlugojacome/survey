@@ -65,18 +65,20 @@ foreach ($allnameTEP as $key => $value) {
                                 <?php echo $display_number; ?>.
                                 <?php echo $question1; ?>.
                                 <?php if (!empty($description) || (!empty($linkpdf))) :  ?>
-                                <a href="" data-toggle="modal" data-target="#myModal-<?php echo $surveylistsquestions_id; ?>"
+                                <a href="" data-toggle="modal"
+                                    data-target="#myModal-<?php echo $surveylistsquestions_id; ?>"
                                     title="<?php echo $description; ?>" class="btn-simple btn btn-danger btn-xs">
                                     Ver m&aacute;s
                                     <i class='fas fa-eye'></i>
                                 </a>
                                 <!-- Modal -->
-                                <div class="modal fade" id="myModal-<?php echo $surveylistsquestions_id; ?>" tabindex="-1"
-                                    role="dialog" aria-labelledby="myModalLabel">
+                                <div class="modal fade" id="myModal-<?php echo $surveylistsquestions_id; ?>"
+                                    tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                                     <div class="modal-dialog modal-lg" role="document">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <button type="button" class="close" data-dismiss="modal"
+                                                    aria-label="Close">
                                                     <span aria-hidden="true">&times;</span>
                                                 </button>
                                                 <h4 class="modal-title" id="myModalLabel">Acotaci&oacute;n</h4>
@@ -84,22 +86,25 @@ foreach ($allnameTEP as $key => $value) {
                                             <div class="modal-body">
                                                 <?php echo $description; ?>
                                                 <?php if (!empty($linkpdf)): ?>
-                                                <object width="100%" height="350px" data="<?php echo $linkpdf; ?>#zoom=85"
-                                                    type="application/pdf" trusted="yes" application="yes"></object>
+                                                <object width="100%" height="350px"
+                                                    data="<?php echo $linkpdf; ?>#zoom=85" type="application/pdf"
+                                                    trusted="yes" application="yes"></object>
                                                 <?php endif?>
                                             </div>
                                             <div class="modal-footer">
-                                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                <button type="button" class="btn btn-default"
+                                                    data-dismiss="modal">Close</button>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <?php endif; ?>
-                                <input type="hidden" name="qid[]" id="qid[]" value='<?php echo $surveylistsquestions_id; ?>'>
-                                <input type="hidden" name="<?php echo " q_".$surveylistsquestions_id; ?>"
-                                id="
+                                <input type="hidden" name="qid[]" id="qid[]"
+                                    value='<?php echo $surveylistsquestions_id; ?>'>
+                                <input type="hidden" name="<?php echo "q_".$surveylistsquestions_id; ?>"
+                                    id="
                                 <?php echo "q_".$surveylistsquestions_id; ?>"
-                                value='
+                                    value='
                                 <?php echo $question1; ?>'>
                             </td>
                             <td>

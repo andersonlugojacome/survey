@@ -90,11 +90,35 @@ class Util
     }
     public static function generateTextArea($name, $values=1, $rows =3, $cols=3)
     {
-        $o = '<label>' . "\n";
+        $o = '<label class="bmd-label-floating">' . "\n";
         for ($v = 1; $v <= $values; $v++) {
-            $o.= '<textarea class="" name="' . $name . '" id="' . $name . '" rows="' . $rows . '" cols="' . $cols . '"> </textarea>'. "\n";
+            $o.= '<textarea class="form-control" name="' . $name . '" id="' . $name . '" rows="' . $rows . '" cols="' . $cols . '"> </textarea>'. "\n";
         }
         $o.= '</label>' . "\n";
+        return $o;
+    }
+    public static function generateTextRate($name, $type, $values=1)
+    {
+        $o = '<div class="form-group">' . "\n";
+        $o.= ' <input class="form-control" type="'.$type.'" id="' . $name . '"name="' . $name . '">';
+        $o.= '</div>' . "\n";
+        return $o;
+    }
+    public static function generateRadioButtonsRate($name, $values = 5, $flag=false, $valueA="")
+    {
+        $o = '<div class="clasificacion">' . "\n";
+        for ($v = $values; $v >= 1; $v--) {
+            $o.= '<input required type="radio" id="' . $name . '_'.$v.'" name="' . $name . '" value="' . $v . '">';
+            $o.= '<label for="' . $name .'_'.$v.'">&#9733;</label>';
+        }
+        $o.= '</div>' . "\n";
+        return $o;
+    }
+    public static function generateTextAreaRate($name, $values=1, $rows =3, $cols=3)
+    {
+        $o = '<div class="form-group">' . "\n";
+        $o.= ' <textarea class="form-control" rows="'.$values.'" id="' . $name . '"name="' . $name . '"></textarea>';
+        $o.= '</div>' . "\n";
         return $o;
     }
 
