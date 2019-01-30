@@ -9,7 +9,7 @@
  * @author DigitalesWeb
  */
 //if(count($_POST)>0){
-$benefiCreated = BeneficenciaData::getByRange($_GET['start_at'], $_GET['finish_at']);
+$benefiCreated = SurveylistsanswerData::getByRange($_GET['start_at'], $_GET['finish_at']);
 if (count($benefiCreated)>0) {
     # code...
     $ar = array();

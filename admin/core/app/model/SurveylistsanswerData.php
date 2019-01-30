@@ -70,6 +70,13 @@ class SurveylistsanswerData
         $query = Executor::doit($sql);
         return Model::one($query[0], new SurveylistsanswerData());
     }
+    
+    public static function getByRange($start_at, $finish_at)
+    {
+        $sql = "select * from " . self::$tablename . " where created_at>=\"$start_at\" and created_at<=\"$finish_at\" ";
+        $query = Executor::doit($sql);
+        return Model::many($query[0], new SurveylistsanswerData());
+    }
     public static function getByPN($pn, $anho)
     {
         $sql = "select * from ".self::$tablename." where pn=$pn AND pn_anho=$anho";
@@ -91,6 +98,13 @@ class SurveylistsanswerData
     public static function getAllNumRow()
     {
         $sql = "select * from ".self::$tablename;
+        $query = Executor::doit($sql);
+        return Model::many($query[0], new SurveylistsanswerData());
+    }
+    
+    public static function getAllNumRowAnswerToListCustomer()
+    {
+        $sql = "select t1.* from " . self::$tablename . " t1 join (select pn, min(id) as min_fila from " . self::$tablename . " group by pn, pn_anho) t2 on t2.pn = t1.pn and t2.min_fila = t1.id order by t1.id ";
         $query = Executor::doit($sql);
         return Model::many($query[0], new SurveylistsanswerData());
     }

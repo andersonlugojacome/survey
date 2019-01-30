@@ -66,7 +66,8 @@
                             <td class="text-right">
                                 <input type="hidden" name="id" id="id" value="<?=$cla->pn; ?>" />
                                 <a onclick="openWindowsPrint('./?view=print&nep=<?=$cla->pn; ?>&anho=<?=$cla->pn_anho; ?>&idcp=<?=$cla->id; ?>&surveylists_id=<?=$cla->surveylists_id; ?>')"
-                                    data-toggle="tooltip" title="Download" class="btn btn-link btn-info btn-just-icon btn-sm print">
+                                    data-toggle="tooltip" title="Download"
+                                    class="btn btn-link btn-info btn-just-icon btn-sm print">
                                     <i class="material-icons">print</i>
                                 </a>
                                 <?php
@@ -74,11 +75,12 @@
                         if ($u->is_admin):
                             ?>
                                 <a href="./?view=edit&nep=<?=$cla->pn; ?>&anho=<?=$cla->pn_anho; ?>&idcp=<?=$cla->id; ?>&surveylists_id=<?=$cla->surveylists_id; ?>"
-                                    data-toggle="tooltip" title="Edit" class="btn btn-link btn-warning btn-just-icon btn-sm edit">
+                                    data-toggle="tooltip" title="Edit"
+                                    class="btn btn-link btn-warning btn-just-icon btn-sm edit">
                                     <i class="material-icons">edit</i>
                                 </a>
-                                <a href="./?action=admindelchecklists&id=<?=$cla->id; ?>" data-toggle="tooltip" title="Delete"
-                                    class="btn btn-link btn-danger btn-just-icon btn-sm remove">
+                                <a href="./?action=admindelchecklists&id=<?=$cla->id; ?>" data-toggle="tooltip"
+                                    title="Delete" class="btn btn-link btn-danger btn-just-icon btn-sm remove">
                                     <i class="material-icons">delete</i>
                                 </a>
                                 <?php endif; ?>
