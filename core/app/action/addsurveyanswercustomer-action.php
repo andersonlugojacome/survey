@@ -28,13 +28,11 @@ if ($count>0) {
     foreach ($_POST['qid'] as $key => $value) {
         $ca = new SurveylistsanswerData();
         $ca->pn = $_POST["pn"]!="" ? $_POST["pn"] : "";
-        ;
+        
         $ca->answer= $_POST['question_'.$value.'_answer'];
         $ca->surveylistsquestions_id = $value;
         $ca->pn_anho =  $_POST["pn_anho"]!="" ? $_POST["pn_anho"] : "";
-
         $ca->nameTEP = $_POST["nameTEP"]!="" ? $_POST["nameTEP"] : "";
-
         $ca->surveylists_id = $_POST['surveylists_id'];
         $ca->a_code_approval = $codeApproval;
         $ca->add();
@@ -67,10 +65,10 @@ if ($count>0) {
         // echo 'Your message has been sent.';
         Core::addFlash("info", "Exito!");
 
-        Core::redir("./?view=thankscustomer&msg=Agregado exitosamente, project number: ".$_POST['pn']);
+        Core::redir("./?view=thankscustomer&msg=Successfully added, project number: ".$_POST['pn']);
     } else {
         //echo 'There was a problem sending the email.';
-        Core::redir("./?view=thankscustomer&msg=Email no enviado");
+        Core::redir("./?view=thankscustomer&msg=Email not sent");
     }
 } else {
     Core::redir("./?view=thankscustomer&msg=Error");

@@ -56,7 +56,7 @@ Este es el layout principal, a partir de este layout o plantilla se muestran el 
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="./"><img width="170" class="" src="themes/survey/img/logo-tep.jpg"
+                    <a class="navbar-brand" href="./"><img width="170" class="" src="themes/TEP/img/Logo-spanish-ASAP-01-3.png"
                             alt="SURVEY"></a>
                 </div>
             </div>
