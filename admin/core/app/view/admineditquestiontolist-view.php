@@ -24,7 +24,7 @@ $surveylists_id = $_GET["checklist"];
     <div class="card-body">
         <div class="card-title">
             <a href="./?view=adminquestionlist" class="btn btn-default">
-                <i class="material-icons">list_alt</i> Ver listas de preguntas
+                <i class="material-icons">list_alt</i> See question lists
             </a>
         </div>
 

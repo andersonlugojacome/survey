@@ -16,13 +16,13 @@
 
 <div class="card">
     <div class="card-header card-header-primary">
-        <h4 class="card-title">Editar lista control de proceso</h4>
-        <p class="card-category">Se edita el control proceso</p>
+        <h4 class="card-title">Edit surveys</h4>
+        <p class="card-category">Edit</p>
     </div>
     <div class="card-body">
         <div class="card-title">
             <a href="./?view=adminquestionlist" class="btn btn-default">
-                <i class="material-icons">list_alt</i> Ver listas de preguntas
+                <i class="material-icons">list_alt</i> See question lists
             </a>
         </div>
 

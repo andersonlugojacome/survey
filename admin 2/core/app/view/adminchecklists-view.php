@@ -31,7 +31,7 @@
                 <i class="material-icons">library_add</i> Agregar pregunta
             </a>
             <a href="./?view=adminquestionlist" class="btn btn-default">
-                <i class="material-icons">list_alt</i> Ver listas de preguntas
+                <i class="material-icons">list_alt</i> See question lists
             </a>
         </div>
         <hr />

@@ -21,7 +21,7 @@
             <!-- End session comments-->
 
             <a href="./?view=adminchecklists" class="btn btn-default">
-                <i class="material-icons">view_list</i> Ver lista de control maestro
+                <i class="material-icons">view_list</i> See list of surveys
             </a>
             <a href="./?view=admincreatechecklist" class="btn btn-default">
                 <i class="material-icons">add</i> Crear control maestro

@@ -11,9 +11,9 @@ Session::currentURL();
 
 <div class="card">
     <div class="card-header card-header-primary">
-        <h4 class="card-title">Administrador de categorias menu principal <i class="material-icons">import_contacts</i>
+        <h4 class="card-title">Category manager main menu <i class="material-icons">import_contacts</i>
         </h4>
-        <p class="card-category">Categorias y permisos a usuarios</p>
+        <p class="card-category">Categories and user permits</p>
     </div>
     <div class="card-body">
         <div class="card-title">
@@ -21,7 +21,7 @@ Session::currentURL();
             <?= Util::display_msg(Session::$msg);?>
             <!-- End session comments-->
             <a href="./?view=adminnewcategorymenu" class="btn btn-default">
-                <i class="material-icons">add</i> Crear categoria
+                <i class="material-icons">add</i> Create category
             </a>
         </div>
         <div class="row">
@@ -45,7 +45,7 @@ Session::currentURL();
                     </li>
                 </ul>
                 <?php else:?>
-                <p class="alert alert-danger">No hay categorias</p>
+                <p class="alert alert-danger">There are no categories</p>
                 <?php endif;?>
             </div>
         </div>

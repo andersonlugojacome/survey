@@ -17,7 +17,7 @@
     <div class="card-body">
         <div class="card-title">
             <a href="./?view=adminchecklists" class="btn btn-default">
-                <i class="material-icons">view_list</i> Ver lista de control maestro
+                <i class="material-icons">view_list</i> See list of surveys
             </a>
             <a href="./?view=adminaddquestiontolist" class="btn btn-default">
                 <i class="material-icons">library_add</i> Agregar pregunta

@@ -19,7 +19,7 @@
     <div class="card-body">
         <div class="card-title">
             <a href="./?view=adminchecklists" class="btn btn-default">
-                <i class="material-icons">view_list</i> Ver lista de control maestro
+                <i class="material-icons">view_list</i> See list of surveys
             </a>
         </div>
         <hr />
@@ -76,7 +76,7 @@
                 </div>
                 <div class="col-md-12">
                     <div class="col-lg-offset-2 col-lg-10">
-                        <button type="submit" class="btn btn-primary">Crear pregunta</button>
+                        <button type="submit" class="btn btn-primary">create question</button>
                     </div>
                 </div>
             </div>

@@ -12,9 +12,9 @@ $categories = CategoryMenuData::get_base_categories();
 ?>
 <div class="card">
     <div class="card-header card-header-primary">
-        <h4 class="card-title">Editar categoria menu principal <i class="material-icons">import_contacts</i>
+        <h4 class="card-title">Edit main menu category <i class="material-icons">import_contacts</i>
         </h4>
-        <p class="card-category">Categorias y permisos a usuarios</p>
+        <p class="card-category">Categories and user permits</p>
     </div>
     <div class="card-body">
         <div class="card-title">
@@ -29,7 +29,7 @@ $categories = CategoryMenuData::get_base_categories();
             <div class="row">
                 <div class="col-md-4">
                     <div class="form-group">
-                        <label for="name" class="bmd-label-floating">Nombre</label>
+                        <label for="name" class="bmd-label-floating">Title</label>
                         <input type="text" class="form-control" id="name" name="name" value="<?= $cat->name; ?>"
                             required />
                     </div>
@@ -48,7 +48,7 @@ $categories = CategoryMenuData::get_base_categories();
                 </div>
                 <div class="col-md-4">
                     <div class="form-group">
-                        <label for="category_id">Categoria Padre</label>
+                        <label for="category_id">Category Father</label>
                         <select class="form-control" name="category_id" id="category_id">
                             <option value="">-- CATEGORIA SUPERIOR --</option>
                             <?php if (count($categories)>0):?>

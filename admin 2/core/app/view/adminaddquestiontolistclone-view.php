@@ -15,7 +15,7 @@ $checklistquestion = SurveylistsquestionData::getById($_GET["id"]);
     <div class="col-md-12">
         <div class="card">
             <div class="card-header" data-background-color="blue">
-                <h4 class="title">Clonar pregunta para control maestro</h4>
+                <h4 class="title">Clone question</h4>
                 <small></small>
             </div>
             <div class="card-content table-responsive">
