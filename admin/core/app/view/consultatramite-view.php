@@ -8,7 +8,7 @@
         width: 100%;
     }
     .general {
-        background-image: url(themes/TEP/css/images/background.jpg);
+        background-image: url(/themes/TEP/css/images/background.jpg);
         background-size: cover;
         background-position: center;
         position: absolute;
@@ -16,7 +16,7 @@
     }
 
     .logo {
-        background-image: url(themes/TEP/css/images/logonotaria62azul.png);
+        background-image: url(/themes/TEP/css/images/logonotaria62azul.png);
         background-size: cover;
         width: 77px;
         height: 80px;

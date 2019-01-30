@@ -16,8 +16,8 @@
 
 <div class="card">
     <div class="card-header card-header-primary">
-        <h4 class="card-title">Listas control de proceso</h4>
-        <p class="card-category">Se enlistan los control proceso</p>
+        <h4 class="card-title">Survey list</h4>
+        <p class="card-category">Survey list</p>
     </div>
     <div class="card-body">
         <div class="card-title">
@@ -25,22 +25,21 @@
             <?= Util::display_msg(Session::$msg);?>
             <!-- End session comments-->
             <a href="./?view=admincreatechecklist" class="btn btn-default">
-                <i class="material-icons">add</i> Crear control maestro
+                <i class="material-icons">add</i> Create survey list
             </a>
             <a href="./?view=adminaddquestiontolist" class="btn btn-default">
-                <i class="material-icons">library_add</i> Agregar pregunta
+                <i class="material-icons">library_add</i> Add question
             </a>
             <a href="./?view=adminquestionlist" class="btn btn-default">
-                <i class="material-icons">list_alt</i> Ver listas de preguntas
+                <i class="material-icons">list_alt</i> See question lists
             </a>
         </div>
         <hr />
         <div class="row">
             <div class="col-md-12">
-
                 <?php
                 $record_per_page = 5;
-                $result = ChecklistsData::getAllNumRow();
+                $result = SurveylistsData::getAllNumRow();
                 //echo " sdsdfsdfs ". $result."---";
                 $total_records = count($result);
                 $total_pages = ceil($total_records / $record_per_page);
@@ -54,7 +53,7 @@
                 }
 
                 $this_page_first_result = ($page - 1) * $record_per_page;
-                $checklists = ChecklistsData::getAllLimitRow($this_page_first_result, $record_per_page);
+                $checklists = SurveylistsData::getAllLimitRow($this_page_first_result, $record_per_page);
                 if (count($checklists) > 0) {
                     ?>
 
@@ -62,11 +61,11 @@
                     <thead>
                         <tr>
                             <th>ID</th>
-                            <th>Nombre</th>
-                            <th>Descripci&oacute;n</th>
-                            <th>Estado</th>
-                            <th>Fecha creaci&oacute;n</th>
-                            <th>Usuario</th>
+                            <th>Name</th>
+                            <th>Description</th>
+                            <th>Status</th>
+                            <th>Date of creation</th>
+                            <th>User</th>
                             <th></th>
                         </tr>
                     </thead>
@@ -84,7 +83,7 @@
                             <?=$cl->description; ?>
                         </td>
                         <td>
-                            <?=$cl->checklist_status; ?>
+                            <?=$cl->surveylist_status; ?>
                         </td>
                         <td>
                             <?=$cl->created_at; ?>
@@ -96,8 +95,8 @@
 
 
                         <td style="width:150px;" class="td-actions">
-                            <a href="./?view=admineditchecklists&id=<?=$cl->id; ?>"
-                                data-toggle="tooltip" title="Editar" class="btn btn-success btn-round">
+                            <a href="./?view=admineditchecklists&id=<?=$cl->id; ?>" data-toggle="tooltip" title="Editar"
+                                class="btn btn-success btn-round">
                                 <i class="material-icons">edit</i>
                             </a> |
                             <a onclick="openWindowsPrint('./?view=printcontrolmaestro&checklist=<?=$cl->id; ?>')"
@@ -109,10 +108,11 @@
                               $u = UserData::getById(Session::getUID());
                         if ($u->is_admin):
                             ?>
-                            <a href="./?action=delchecklists&id=<?=$cl->id; ?>"
-                                data-toggle="tooltip" title="Eliminar" class="btn btn-danger btn-round">
+                            <a href="./?action=delchecklists&id=<?=$cl->id; ?>" data-toggle="tooltip" title="Eliminar"
+                                class="btn btn-danger btn-round">
                                 <i class="material-icons">delete</i>
-                            </a><?php endif; ?>
+                            </a>
+                            <?php endif; ?>
                         </td>
 
                     </tr>
@@ -171,10 +171,10 @@
 </div>
 
 <script>
-    function openWindowsPrint($url) {
-        var newWindow = window.open($url, 'Reporte',
-            'width=700,height=700,location=no,menubar=no,scrollbars=no,resizable=no,left=200px'); //replace with your url
-        newWindow.focus(); //Sets focus window
+function openWindowsPrint($url) {
+    var newWindow = window.open($url, 'Reporte',
+        'width=700,height=700,location=no,menubar=no,scrollbars=no,resizable=no,left=200px'); //replace with your url
+    newWindow.focus(); //Sets focus window
 
-    }
+}
 </script>

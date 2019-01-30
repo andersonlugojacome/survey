@@ -16,8 +16,8 @@ if (count($result)>0) {
         $delUrl = "delchecklistbcs";
         $onclick = "onclick='md.showSwal(\"warning-message-and-confirmation-delete\",\"".$value->id."\", \"".$delUrl."\")'";
 
-        $btnDel = ($us->user_level)?'<a href="./?action=delchecklistbcs&cid='.$value->checklists_id.'&ep='.$value->numeroescriturapublica.'&nr='.$value->numradicado.'" data-toggle="tooltip" title="Eliminar" class="btn btn-link btn-danger btn-just-icon btn-sm"> <i class="material-icons">delete</i></a>':'';
-        $btnPrint = '<a onclick="openWindowsPrint(\'./?view=printchecklistbcs&nep='.$value->numeroescriturapublica.'&anho='.$value->numradicado.'&idcp='.$value->id.'&checklists_id='.$value->checklists_id.'\')"
+        $btnDel = ($us->user_level)?'<a href="./?action=delchecklistbcs&cid='.$value->surveylists_id.'&ep='.$value->numeroescriturapublica.'&nr='.$value->numradicado.'" data-toggle="tooltip" title="Eliminar" class="btn btn-link btn-danger btn-just-icon btn-sm"> <i class="material-icons">delete</i></a>':'';
+        $btnPrint = '<a onclick="openWindowsPrint(\'./?view=printchecklistbcs&nep='.$value->numeroescriturapublica.'&anho='.$value->numradicado.'&idcp='.$value->id.'&surveylists_id='.$value->surveylists_id.'\')"
                      data-toggle="tooltip" title="Imprimir lista de chequeo" class="btn btn-link btn-info btn-just-icon btn-sm"><i class="material-icons">print</i> </a> <input type="hidden" name="id" id="id" value="'.$value->numeroescriturapublica.'" />';
         $modal = ' <!-- Classic Modal -->
                         <div class="modal fade" id="myModal-'.$value->id.'"
@@ -60,7 +60,7 @@ if (count($result)>0) {
         'created_at'=>$value->created_at,
         'usuarioSolicitud'=>$u->name,
         'nroanotacion'=>"Coord: $value->numanotacioncoordinador, Revisor: $value->numanotacionrevisor".$modal,
-        'options'=>$btnPrint.'<a href="./?view=editchecklistbcs&nep='.$value->numeroescriturapublica.'&nrad='.$value->numradicado.'&idcl='.$value->id.'&checklists_id='.$value->checklists_id.'" data-toggle="tooltip" title="Editar" class="btn btn-link btn-success btn-just-icon btn-sm"><i class="material-icons">edit</i> </a>'.$btnDel.$btnModal
+        'options'=>$btnPrint.'<a href="./?view=editchecklistbcs&nep='.$value->numeroescriturapublica.'&nrad='.$value->numradicado.'&idcl='.$value->id.'&surveylists_id='.$value->surveylists_id.'" data-toggle="tooltip" title="Editar" class="btn btn-link btn-success btn-just-icon btn-sm"><i class="material-icons">edit</i> </a>'.$btnDel.$btnModal
         );
     }
     echo json_encode($ar);

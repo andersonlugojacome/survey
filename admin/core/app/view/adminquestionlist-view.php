@@ -6,6 +6,15 @@
  * @version 1.0
  * @author DigitalesWeb
  */-->
+<?php
+
+ if (isset($_GET['checklist'])) {
+     $surveylists_id = $_GET['checklist'];
+ } else {
+     $surveylists_id=0;
+ }
+
+ ?>
 
 
 
@@ -31,23 +40,17 @@
             </a>
 
         </div>
-
-
-
-
-
-
-
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group bmd-form-group is-filled">
                     <label for="ddllists" class="bmd-label-floating">Elija lista de control proceso</label>
                     <select id="ddllists" name="ddllists" class="custom-select" onchange="location = this.options[this.selectedIndex].value;"
                         required>
-                        <option value="/?view=adminquestionlist&checklist=0">--- SELECCIONE ---</option>
-                        <?php foreach (ChecklistsData::getAll() as $list):?>
-                        <option value="/?view=adminquestionlist&checklist=<?=$list->id; ?>"
-                            <?=($list->id == $checklists_id) ? "selected":"";?>><?=$list->name.": ".$list->description; ?>
+                        <option value="./?view=adminquestionlist&checklist=0">--- SELECCIONE ---</option>
+                        <?php foreach (SurveylistsData::getAll() as $list):?>
+                        <option value="./?view=adminquestionlist&checklist=<?=$list->id; ?>" <?=($list->id ==
+                            $surveylists_id) ? "selected":"";?>>
+                            <?=$list->name.": ".$list->description; ?>
                         </option>
                         <?php endforeach; ?>
                     </select>
@@ -60,7 +63,7 @@
 
                 <?php
                 $record_per_page = 10;
-                $result = ChecklistsquestionData::getAllNumRowQuestionToList($checklists_id);
+                $result = SurveylistsquestionData::getAllNumRowQuestionToList($surveylists_id);
 
                 //echo " sdsdfsdfs ". $result."---";
                 $total_records = count($result);
@@ -75,7 +78,7 @@
                 }
 
                 $this_page_first_result = ($page - 1) * $record_per_page;
-                $checklistsquestion = ChecklistsquestionData::getAllLimitRowQuestionToList($checklists_id, $this_page_first_result, $record_per_page);
+                $checklistsquestion = SurveylistsquestionData::getAllLimitRowQuestionToList($surveylists_id, $this_page_first_result, $record_per_page);
                 if (count($checklistsquestion) > 0) {
                     ?>
 
@@ -95,7 +98,7 @@
                     <?php foreach ($checklistsquestion as $cq) {
                         $user = UserData::getById($cq->user_id);
                         $color= $cq->q_status; ?>
-                    <tr data-background-color-approval="<?=($color=="off")? 'no-approval': ''; ?>">
+                    <tr data-background-color-approval="<?=($color==" off")? 'no-approval' : '' ; ?>">
                         <td>
                             <?=$cq->position; ?>
                         </td>
@@ -109,7 +112,7 @@
                         echo ($cq->description !="")?"...":""; ?>
                         </td>
                         <td>
-                            <?=$cq->checklists_id; ?>
+                            <?=$cq->surveylists_id; ?>
                         </td>
                         <td>
                             <?=$cq->created_at; ?>
@@ -118,22 +121,23 @@
                             <?= $user->name ?>
                         </td>
                         <td style="width:150px;" class="td-actions">
-                            <a href="./?view=admineditquestiontolist&id=<?=$cq->id; ?>&checklist=<?=$cq->checklists_id; ?>"
+                            <a href="./?view=admineditquestiontolist&id=<?=$cq->id; ?>&checklist=<?=$cq->surveylists_id; ?>"
                                 data-toggle="tooltip" title="Editar" class="btn btn-success btn-round">
                                 <i class="material-icons">edit</i>
                             </a> |
-                            <a href="./?view=adminaddquestiontolistclone&id=<?=$cq->id; ?>"
-                                data-toggle="tooltip" title="Clonar pregunta" class="btn btn-warning btn-round">
+                            <a href="./?view=adminaddquestiontolistclone&id=<?=$cq->id; ?>" data-toggle="tooltip" title="Clonar pregunta"
+                                class="btn btn-warning btn-round">
                                 <i class="material-icons">toll</i>
                             </a> |
                             <?php
                               $u = UserData::getById(Session::getUID());
                         if ($u->is_admin):
                             ?>
-                            <a href="./?action=delquestionchecklist&id=<?=$cq->id; ?>"
-                                data-toggle="tooltip" title="Eliminar" class="btn btn-danger btn-round">
+                            <a href="./?action=delquestionchecklist&id=<?=$cq->id; ?>" data-toggle="tooltip" title="Eliminar"
+                                class="btn btn-danger btn-round">
                                 <i class="material-icons">delete</i>
-                            </a><?php endif; ?>
+                            </a>
+                            <?php endif; ?>
 
                         </td>
 

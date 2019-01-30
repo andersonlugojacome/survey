@@ -9,11 +9,11 @@
 */
 
 $numeroescriturapublica = $_GET['numeroescriturapublica'];
-$checklists_id = $_GET['ddllists'];
+$surveylists_id = $_GET['ddllists'];
 $client_id = $_GET['ddlabogado'];
 $anho = $_GET['ep_anho'];
-$questions = ChecklistsquestionData::getAllQuestionsOn("open", $checklists_id);
-$checkanswers = ChecklistsanswerData::getByEP($numeroescriturapublica, $anho);
+$questions = SurveylistsquestionData::getAllQuestionsOn("open", $surveylists_id);
+$checkanswers = SurveylistsanswerData::getByEP($numeroescriturapublica, $anho);
 if (count($checkanswers) <= 0) {
     ?>
 <form class="" method="post" id="addcontrolofprocess" action="./?action=addcontrolofprocess" role="form">
@@ -100,7 +100,7 @@ if (count($checkanswers) <= 0) {
         <div class="col-lg-offset-2 col-lg-10">
             <input type="hidden" name="numeroescriturapublica" id="numeroescriturapublica" value="<?php echo $_GET['numeroescriturapublica']; ?>"
             />
-            <input type="hidden" name="checklists_id" id="checklists_id" value="<?php echo $_GET['ddllists']; ?>"
+            <input type="hidden" name="surveylists_id" id="surveylists_id" value="<?php echo $_GET['ddllists']; ?>"
             />
             <input type="hidden" name="client_id" id="client_id" value="<?php echo $_GET['ddlabogado']; ?>"
             />

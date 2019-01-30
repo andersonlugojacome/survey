@@ -10,7 +10,7 @@
  */
 
 class SurveylistsanswerData
-{ 
+{
     public static $tablename = "surveylistsanswers";
     public function __construct()
     {
@@ -71,22 +71,20 @@ class SurveylistsanswerData
         return Model::one($query[0], new SurveylistsanswerData());
     }
     public static function getByPN($pn, $anho)
-
-    
     {
         $sql = "select * from ".self::$tablename." where pn=$pn AND pn_anho=$anho";
         $query = Executor::doit($sql);
         return Model::one($query[0], new SurveylistsanswerData());
     }
-    public static function getAllAnswersOn($numeroescriturapublica, $anho, $surveylists_id)
+    public static function getAllAnswersOn($pn, $anho, $surveylists_id)
     {
-        $sql = "SELECT cl.id as cl_id, cla.id as cla_id, cla.surveylistsquestions_id as clq_id,  cla.answer as respuesta FROM surveylists as cl LEFT JOIN surveylistsanswers as cla ON cl.id = cla.surveylists_id WHERE cl.surveylist_status = 'open' AND cl.id = '".$surveylists_id."' AND cla.numeroescriturapublica ='".$numeroescriturapublica."' AND cla.ep_anho='".$anho."' ORDER BY cla.id ASC ";
+        $sql = "SELECT cl.id as cl_id, cla.id as cla_id, cla.surveylistsquestions_id as clq_id,  cla.answer as respuesta FROM surveylists as cl LEFT JOIN surveylistsanswers as cla ON cl.id = cla.surveylists_id WHERE cl.surveylist_status = 'open' AND cl.id = '".$surveylists_id."' AND cla.pn ='".$pn."' AND cla.pn_anho='".$anho."' ORDER BY cla.id ASC ";
         $query = Executor::doit($sql);
         return Model::many($query[0], new SurveylistsanswerData());
     }
-    public static function getAllAnswers($numeroescriturapublica, $anho, $surveylists_id)
+    public static function getAllAnswers($pn, $anho, $surveylists_id)
     {
-        $sql = "SELECT cl.id as cl_id, cla.id as cla_id, cla.surveylistsquestions_id as clq_id, cla.answer as respuesta FROM surveylists as cl LEFT JOIN surveylistsanswers as cla ON cl.id = cla.surveylists_id WHERE cl.id = '".$surveylists_id."' AND cla.numeroescriturapublica ='".$numeroescriturapublica."' AND cla.ep_anho='".$anho."' ORDER BY cla.id ASC ";
+        $sql = "SELECT cl.id as cl_id, cla.id as cla_id, cla.surveylistsquestions_id as clq_id, cla.answer as respuesta FROM surveylists as cl LEFT JOIN surveylistsanswers as cla ON cl.id = cla.surveylists_id WHERE cl.id = '".$surveylists_id."' AND cla.pn ='".$pn."' AND cla.pn_anho='".$anho."' ORDER BY cla.id ASC ";
         $query = Executor::doit($sql);
         return Model::many($query[0], new SurveylistsanswerData());
     }
@@ -98,13 +96,13 @@ class SurveylistsanswerData
     }
     public static function getAllNumRowAnswerToList()
     {
-        $sql = "select t1.* from ".self::$tablename. " t1 join (select numeroescriturapublica, min(id) as min_fila from ".self::$tablename." group by numeroescriturapublica, ep_anho) t2 on t2.numeroescriturapublica = t1.numeroescriturapublica and t2.min_fila = t1.id order by t1.id ";
+        $sql = "select t1.* from ".self::$tablename. " t1 join (select pn, min(id) as min_fila from ".self::$tablename." group by pn, pn_anho) t2 on t2.pn = t1.pn and t2.min_fila = t1.id order by t1.id ";
         $query = Executor::doit($sql);
         return Model::many($query[0], new SurveylistsanswerData());
     }
     public static function getAllLimitRowAnswerToList($this_page_first_result, $results_per_page)
     {
-        $sql = "select t1.* from ".self::$tablename. " t1 join (select numeroescriturapublica, min(id) as min_fila from ".self::$tablename." group by numeroescriturapublica, ep_anho) t2 on t2.numeroescriturapublica = t1.numeroescriturapublica and t2.min_fila = t1.id order by t1.id LIMIT " . $this_page_first_result . "," .  $results_per_page;
+        $sql = "select t1.* from ".self::$tablename. " t1 join (select pn, min(id) as min_fila from ".self::$tablename." group by pn, pn_anho) t2 on t2.pn = t1.pn and t2.min_fila = t1.id order by t1.id LIMIT " . $this_page_first_result . "," .  $results_per_page;
         $query = Executor::doit($sql);
         return Model::many($query[0], new SurveylistsanswerData());
     }

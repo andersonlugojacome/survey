@@ -3,9 +3,12 @@ class Database {
 	public static $db;
 	public static $con;
 	function __construct(){
-		$this->user="root";
-                $this->pass="root";
-                $this->host="localhost";
+		//$this->user="spanisi6_sp";
+                //$this->pass="]GY^Tm&3{)IT";
+				//$this->host="localhost";
+				$this->user="root";
+				$this->pass="root";
+					$this->host="localhost";
                 $this->ddbb="spanisi6_sp";
                /// echo $_SESSION['user_id'];
 

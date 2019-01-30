@@ -9,7 +9,7 @@
  * @author DigitalesWeb
  */
 $idcl = $_GET['idcl'];
-$checklists_id= $_GET['checklists_id'];
+$surveylists_id= $_GET['surveylists_id'];
 $caux= ChecklistsanswerBCSData::getById($idcl);
 $numeroescriturapublica = $caux->numeroescriturapublica;
 $numradicado = $caux->numradicado;
@@ -20,8 +20,8 @@ $dateradication = $caux->dateradication;
 $datenotaryauthorization = $caux->datenotaryauthorization;
 $observation = $caux->observation;
 $numday = $caux->numday;
-$list = ChecklistsData::getById($checklists_id);
-$answers = ChecklistsanswerBCSData::getAllAnswersOn($numeroescriturapublica, $numradicado, $checklists_id);
+$list = SurveylistsData::getById($surveylists_id);
+$answers = ChecklistsanswerBCSData::getAllAnswersOn($numeroescriturapublica, $numradicado, $surveylists_id);
 $display_number = 1;
 ?>
 
@@ -139,7 +139,7 @@ $display_number = 1;
                             </tr>
                         </thead>
                         <?php foreach ($answers as $key => $value) :
-                            $question = ChecklistsquestionData::getById($value->clq_id);
+                            $question = SurveylistsquestionData::getById($value->clq_id);
                             $q_format= $question->q_format;
                             $cla_id=$value->cla_id;
                             $question1 = $question->question;
@@ -202,7 +202,7 @@ $display_number = 1;
                 </div>
 
                 <div class="col-lg-offset-2 col-lg-10">
-                    <input type="hidden" name="checklists_id" id="checklists_id" value="<?= $checklists_id ?>" />
+                    <input type="hidden" name="surveylists_id" id="surveylists_id" value="<?= $surveylists_id ?>" />
                     <button type="submit" class="btn btn-success">Guardar</button>
                 </div>
 

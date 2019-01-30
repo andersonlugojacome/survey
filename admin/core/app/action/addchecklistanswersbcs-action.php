@@ -34,7 +34,7 @@ if (count($_POST)>0) {
             $ca->answer= isset($_POST['question_'.$value.'_answer'])? $_POST['question_'.$value.'_answer']: 0;
             $ca->checklistsquestions_id = $value;
             $ca->user_id= Session::getUID();
-            $ca->checklists_id = $_POST['checklists_id'];
+            $ca->surveylists_id = $_POST['surveylists_id'];
             $ca->client_id = $_POST['client_id'];
             $ca->a_code_approval = $codeApproval;
             $ca->add();

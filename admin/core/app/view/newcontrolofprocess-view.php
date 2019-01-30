@@ -44,7 +44,7 @@
                         <label for="" class="bmd-label-floating">Tipo de proceso</label>
                         <select id="ddllists" name="ddllists" class="custom-select" required>
                             <option value="">-- SELECCIONE ---</option>
-                            <?php foreach (ChecklistsData::getAllOpen() as $list):?>
+                            <?php foreach (SurveylistsData::getAllOpen() as $list):?>
                             <option value="<?php echo $list->id; ?>">
                                 <?php echo $list->name.": ".$list->description; ?>
                             </option>

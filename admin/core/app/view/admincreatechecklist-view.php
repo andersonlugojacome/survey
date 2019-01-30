@@ -40,8 +40,8 @@
                 </div>
                 <div class="col-md-4">
                     <div class="form-group bmd-form-group is-filled">
-                        <label for="ddlchecklist_status" class="bmd-label-floating">Estatus</label>
-                        <select id="ddlchecklist_status" name="ddlchecklist_status" class="custom-select" required>
+                        <label for="ddlsurveylist_status" class="bmd-label-floating">Estatus</label>
+                        <select id="ddlsurveylist_status" name="ddlsurveylist_status" class="custom-select" required>
                             <option value="open">Activo</option>
                             <option value="close">Inactivo</option>
                         </select>

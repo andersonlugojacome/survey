@@ -11,18 +11,18 @@
 
 
 $idcp = $_GET['idcp'];
-$checklists_id= $_GET['checklists_id'];
-$caux= ChecklistsanswerData::getById($idcp);
+$surveylists_id= $_GET['surveylists_id'];
+$caux= SurveylistsanswerData::getById($idcp);
  $numeroescriturapublica = $caux->numeroescriturapublica;
  $anho = $caux->ep_anho;
- $list = ChecklistsData::getById($checklists_id);
- $answers = ChecklistsanswerData::getAllAnswers($numeroescriturapublica, $anho, $checklists_id);
+ $list = SurveylistsData::getById($surveylists_id);
+ $answers = SurveylistsanswerData::getAllAnswers($numeroescriturapublica, $anho, $surveylists_id);
 $display_number = 1;
 ?>
 
 <table class="table">
     <tr>
-        <td><img src="themes/TEP/css/images/logo.gif" alt="TEP" style="width: 70px;" /></td>
+        <td><img src="/themes/TEP/css/images/logo.gif" alt="TEP" style="width: 70px;" /></td>
         <td align="center">NOTARIA SESENTA Y DOS (62) DEL CIRCULO DE BOGOTA CARLOS ARTURO SERRATO GALEANO</td>
     </tr>
     <tr>
@@ -44,7 +44,7 @@ $display_number = 1;
         </tr>
     </thead>
     <?php foreach ($answers as $key => $value) {
-    $question = ChecklistsquestionData::getById($value->clq_id);
+    $question = SurveylistsquestionData::getById($value->clq_id);
     $cla_id=$value->cla_id;
     $question1 = $question->question;
     $description = $question->description;

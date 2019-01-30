@@ -7,7 +7,7 @@
  * @version 1.0
  * @author DigitalesWeb
  */
- $checklist = ChecklistsData::getById($_GET["id"]);
+ $checklist = SurveylistsData::getById($_GET["id"]);
 ?>
 
 
@@ -45,10 +45,10 @@
                 </div>
                 <div class="col-md-4">
                     <div class="form-group bmd-form-group is-filleds">
-                        <label for="ddlchecklist_status" class="bmd-label-floating">Estatus</label>
-                        <select id="ddlchecklist_status" name="ddlchecklist_status" class="custom-select" required>
-                            <option value="open" <?= ($checklist->checklist_status == 'open') ? "selected":"";?>>Activo</option>
-                            <option value="close" <?=($checklist->checklist_status == 'close') ? "selected":"";?>>Inactivo</option>
+                        <label for="ddlsurveylist_status" class="bmd-label-floating">Estatus</label>
+                        <select id="ddlsurveylist_status" name="ddlsurveylist_status" class="custom-select" required>
+                            <option value="open" <?= ($checklist->surveylist_status == 'open') ? "selected":"";?>>Activo</option>
+                            <option value="close" <?=($checklist->surveylist_status == 'close') ? "selected":"";?>>Inactivo</option>
                         </select>
                     </div>
                 </div>

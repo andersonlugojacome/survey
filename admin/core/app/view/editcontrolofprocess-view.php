@@ -11,12 +11,12 @@
 
 
 $idcp = $_GET['idcp'];
-$checklists_id= $_GET['checklists_id'];
-$caux= ChecklistsanswerData::getById($idcp);
+$surveylists_id= $_GET['surveylists_id'];
+$caux= SurveylistsanswerData::getById($idcp);
  $numeroescriturapublica = $caux->numeroescriturapublica;
  $anho = $caux->ep_anho;
- $list = ChecklistsData::getById($checklists_id);
-$answers = ChecklistsanswerData::getAllAnswersOn($numeroescriturapublica, $anho, $checklists_id);
+ $list = SurveylistsData::getById($surveylists_id);
+$answers = SurveylistsanswerData::getAllAnswersOn($numeroescriturapublica, $anho, $surveylists_id);
 
 ?>
 
@@ -63,7 +63,7 @@ $answers = ChecklistsanswerData::getAllAnswersOn($numeroescriturapublica, $anho,
                         <?php
                         $display_number = 1;
     foreach ($answers as $key => $value) :
-        $question = ChecklistsquestionData::getById($value->clq_id);
+        $question = SurveylistsquestionData::getById($value->clq_id);
         $cla_id=$value->cla_id;
         $question1 = $question->question;
         $description = $question->description;

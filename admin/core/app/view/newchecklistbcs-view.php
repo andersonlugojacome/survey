@@ -9,10 +9,10 @@
  */
 
 $numeroescriturapublica = 0;
-$checklists_id = 12;//12 productions - 10 Developer
+$surveylists_id = 12;//12 productions - 10 Developer
 
 $client_id = 0;
-$questions = ChecklistsquestionData::getAllQuestionsOn("open", $checklists_id);
+$questions = SurveylistsquestionData::getAllQuestionsOn("open", $surveylists_id);
 $display_number = 1;
 ?>
 <div class="card">
@@ -177,7 +177,7 @@ $display_number = 1;
                 </div>
                 <div class="col-md-12">
                     <div class="col-lg-offset-2 col-lg-10">
-                        <input type="hidden" name="checklists_id" id="checklists_id" value="<?= $checklists_id ?>" />
+                        <input type="hidden" name="surveylists_id" id="surveylists_id" value="<?= $surveylists_id ?>" />
                         <input type="hidden" name="client_id" id="client_id" value="<?= $client_id ?>" />
                         <button type="submit" class="btn btn-success">Guardar</button>
                     </div>

@@ -24,7 +24,7 @@ if ($count>0) {
     }
     //echo "El codigo de aprobacion es: ". $codeApproval;
     foreach ($_POST['aid'] as $key => $value) {
-        $ca = ChecklistsanswerData::getById($value);
+        $ca = SurveylistsanswerData::getById($value);
         //print_r($ca);
         $ca->answer= $_POST['question'.$value.'_answer'];
         $ca->user_id= Session::getUID();

@@ -4,9 +4,9 @@
 
     div.main-panel { float: none; width: 100%; }
 
-    .general { background-image: url(themes/TEP/css/images/background.jpg); background-size: cover; background-position: center; position: absolute; width: 100%; }
+    .general { background-image: url(/themes/TEP/css/images/background.jpg); background-size: cover; background-position: center; position: absolute; width: 100%; }
 
-    .logo { background-image: url(themes/TEP/css/images/logonotaria62azul.png); background-size: cover; width: 77px; height: 80px; margin-top: 15px; margin-bottom: 15px; }
+    .logo { background-image: url(/themes/TEP/css/images/logonotaria62azul.png); background-size: cover; width: 77px; height: 80px; margin-top: 15px; margin-bottom: 15px; }
 
     .transparencia { height: 150px; background-color: rgba(0, 0, 0, 0.30); }
 

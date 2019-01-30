@@ -87,6 +87,31 @@ class Session
             self::$msg;
         }
     }
+
+    public static function currentURL()
+    {
+        $uri= $_SERVER["REQUEST_URI"];
+        //echo $uri;
+        $user = Util::current_user();
+        $ugcm = Util::getUrlGropus($user->user_level);
+        $flag = false;
+        foreach ($ugcm as $value) {
+            //echo $value->url;
+            $urlDB= substr($value->url, 1);
+            if (false !== strpos($uri, $urlDB)) {
+                //echo " -".$urlDB."- ";
+                //echo ' #Acepted# ';
+                $flag = true;
+                break;
+            }
+        }
+        if (false === strpos($uri, '/?view=home')) {
+            if (!$flag) {
+                Session::msg("d", "No tiene permiso para ver esa pagina por favor contactar al administrador del sistema...");
+                Core::redir("./?view=home");
+            }
+        }
+    }
 }
  $session = new Session();
  $msg = $session->msg();

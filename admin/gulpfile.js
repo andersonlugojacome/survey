@@ -8,9 +8,9 @@ var open = require("gulp-open");
 var Paths = {
   HERE: "./",
   DIST: "dist/",
-  CSS: "./themes/TEP/css/",
-  SCSS_TOOLKIT_SOURCES: "./themes/TEP/scss/material-dashboard.scss",
-  SCSS: "./themes/TEP/scss/**/**"
+  CSS: "././themes/TEP/css/",
+  SCSS_TOOLKIT_SOURCES: "././themes/TEPscss/material-dashboard.scss",
+  SCSS: "././themes/TEPscss/**/**"
 };
 
 gulp.task("compile-scss", function() {

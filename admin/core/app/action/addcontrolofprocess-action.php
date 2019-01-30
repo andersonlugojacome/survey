@@ -23,13 +23,13 @@ if ($count>0) {
     }
     //echo "El codigo de aprobacion es: ". $codeApproval;
     foreach ($_POST['qid'] as $key => $value) {
-        $ca = new ChecklistsanswerData();
+        $ca = new SurveylistsanswerData();
         $ca->numeroescriturapublica = $_POST['numeroescriturapublica'];
         $ca->answer= $_POST['question'.$value.'_answer'];
         $ca->checklistsquestions_id = $value;
         $ca->user_id= Session::getUID();
         $ca->ep_anho = $_POST['ep_anho'];
-        $ca->checklists_id = $_POST['checklists_id'];
+        $ca->surveylists_id = $_POST['surveylists_id'];
         $ca->client_id = $_POST['client_id'];
         $ca->a_code_approval = $codeApproval;
         $ca->add();
