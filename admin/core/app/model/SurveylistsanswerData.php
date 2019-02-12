@@ -77,6 +77,13 @@ class SurveylistsanswerData
         $query = Executor::doit($sql);
         return Model::many($query[0], new SurveylistsanswerData());
     }
+    public static function getByRangeCustomer($start_at, $finish_at)
+    {
+        $sql = "select  DISTINCT pn from " . self::$tablename . " where created_at>=\"$start_at\" and created_at<=\"$finish_at\" and surveylists_id=11 ";
+        $query = Executor::doit($sql);
+        //echo $sql;
+        return Model::many($query[0], new SurveylistsanswerData());
+    }
     public static function getByPN($pn, $anho)
     {
         $sql = "select * from ".self::$tablename." where pn=$pn AND pn_anho=$anho";

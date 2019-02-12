@@ -27,8 +27,7 @@ if ($count>0) {
     $total = count($_POST['qid'])-1;
     foreach ($_POST['qid'] as $key => $value) {
         $ca = new SurveylistsanswerData();
-        $ca->pn = $_POST["pn"]!="" ? $_POST["pn"] : "";
-        
+        $ca->pn = $_POST["pn"]!="" ? $_POST["pn"] : 1;
         $ca->answer= $_POST['question_'.$value.'_answer'];
         $ca->surveylistsquestions_id = $value;
         $ca->pn_anho =  $_POST["pn_anho"]!="" ? $_POST["pn_anho"] : "";
@@ -53,18 +52,17 @@ if ($count>0) {
     } else {
         return "The email address you entered was invalid. Please try again!";
     }
-    //$to = 'loly.alvarez@traduccionestep.com';
-    $to = 'andersonlugojacome@gmail.com';
-    $subject = "Linguistic survey of project number: ".$_POST['pn'];
+    
+    //$to = 'andersonlugojacome@gmail.com';
+    $to = 'customerfeedback@spanishasap.com';
+    $subject = "Customers survey of project number: ".$_POST['pn'];
     $headers = "From: " . $cleanedFrom . "\r\n";
     $headers .= "Reply-To: ". strip_tags($form) . "\r\n";
     $headers .= "MIME-Version: 1.0\r\n";
     $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
-
     if (mail($to, $subject, $body, $headers)) {
         // echo 'Your message has been sent.';
         Core::addFlash("info", "Exito!");
-
         Core::redir("./?view=thankscustomer&msg=Successfully added, project number: ".$_POST['pn']);
     } else {
         //echo 'There was a problem sending the email.';

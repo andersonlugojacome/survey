@@ -18,18 +18,53 @@
             </div>
             <?php endif; ?>
         </div>
-        <div class="row">
-            <div class="col–md–12">
-                <p>
-                    This information will be used by our QA Department internally. If you want us to
-                    contact you on this specific job, please clic <a href="#">here</a>.</p>
-                <p>You may also write directly to <a href="mailto:feedback@spanishasap.com">feedback@spanishasap.com</a>
-                    to let us know your concerns.</p>
+
+        <form class="" method="post" id="addsurveycustomer" action="./?action=sendemailcustomerscontact" role="form">
+            <div class="row">
+                <div class="col-12">
+                    <p>
+                        This information will be used by our QA Department internally. If you want us to
+                        contact you on this specific job, please clic <a href="#">here</a>.</p>
+                    <p> You may also write directly to <a
+                            href="mailto:customerfeedback@spanishasap.com">customerfeedback@spanishasap.com</a>
+                        to let us know your concerns.</p>
+                </div>
             </div>
-        </div>
 
 
+            <div class="row">
+                <div class="col-12">
+                    <p>
+                        Please choose how you would like us to contact you:
+                    </p>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group bmd-form-group">
+                        <label for="name" class="bmd-label-floating">
+                            Name</label>
+                        <input type="text" name="name" id="name" class="form-control">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group bmd-form-group">
+                        <label for="email" class="bmd-label-floating">
+                            Email address</label>
+                        <input type="text" name="email" id="email" class="form-control">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group bmd-form-group">
+                        <label for="phone" class="bmd-label-floating">
+                            Phone number</label>
+                        <input type="text" name="phone" id="phone" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-lg-offset-2 col-lg-10">
+                        <button type="submit" class="btn btn-success">Send</button>
+                    </div>
+                </div>
+            </div>
+        </form>
     </div>
-</div>
-
 </div>

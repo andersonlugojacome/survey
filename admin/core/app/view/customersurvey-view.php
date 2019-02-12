@@ -22,7 +22,6 @@ if (isset($_GET["start_at"])) {
 }
 ?>
 
-
 <div class="card">
     <div class="card-header card-header-primary">
         <h4 class="card-title">Customers survey</h4>
@@ -126,9 +125,6 @@ $(document).ready(function() {
             },
             {
                 "data": "usuarioSolicitud"
-            },
-            {
-                "data": "approvals"
             }, {
                 "data": "options"
             }

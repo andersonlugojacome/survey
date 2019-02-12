@@ -9,13 +9,20 @@
 $surveylists_id = "11";
 $anho = date('Y');
 $questions = SurveylistsquestionData::getAllQuestionsOn("open", $surveylists_id);
+
+$pnu= "";
+$c= "";
+if (isset($_GET["pn"])) {
+    $pnu = $_GET["pn"];
+}
+if (isset($_GET["c"])) {
+    $c = $_GET["c"];
+}
     ?>
-
-
-
 <div class="card">
     <div class="card-header card-header-primary">
-        <h4 class="card-title"><strong>We want to hear from you!</strong> <i class="material-icons">import_contacts</i></h4>
+        <h4 class="card-title"><strong>We want to hear from you!</strong> <i class="material-icons">import_contacts</i>
+        </h4>
         <p class="card-category">Whenever you want us to know something about a
             specific translation, you can use this tool to send a message <strong>directly</strong> to
             our QA Department. Your feedback is very important to us, as it helps us to improve the
@@ -24,14 +31,17 @@ $questions = SurveylistsquestionData::getAllQuestionsOn("open", $surveylists_id)
     <div class="card-body">
         <div class="card-title">
         </div>
-
-
         <form class="" method="post" id="addsurveycustomer" action="./?action=addsurveyanswercustomer" role="form">
             <div class="row">
                 <div class="col-md-12">
-                    <p>
-
-                    </p>
+                    <div class="form-group">
+                        <label for="pn" class="bmd-label-floating">Project number</label>
+                        <input type="text" class="form-control" id="pn" name="pn" value="<?=$pnu;?>" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="nameTEP" class="bmd-label-floating">Company name</label>
+                        <input type="text" class="form-control" id="nameTEP" name="nameTEP" value="<?= $c?>" required>
+                    </div>
                 </div>
             </div>
             <div class="row">
@@ -60,9 +70,10 @@ $questions = SurveylistsquestionData::getAllQuestionsOn("open", $surveylists_id)
                             <td style="vertical-align: middle;" colspan='<?= $q_format!="tip"?"":"2";?>'>
                                 <?php echo $display_number; ?>.
                                 <?php echo $question1; ?>.
-                                <input type="hidden" name="qid[]" id="qid[]" value='<?php echo $surveylistsquestions_id; ?>'>
-                                <input type="hidden" name="<?='q_'.$surveylistsquestions_id; ?>" id='<?="q_".$surveylistsquestions_id; ?>'
-                                    value="<?= $question1; ?>">
+                                <input type="hidden" name="qid[]" id="qid[]"
+                                    value='<?php echo $surveylistsquestions_id; ?>'>
+                                <input type="hidden" name="<?='q_'.$surveylistsquestions_id; ?>"
+                                    id='<?="q_".$surveylistsquestions_id; ?>' value="<?= $question1; ?>">
                             </td>
                             <?php if ($q_format!="tip") :?>
 

@@ -18,7 +18,7 @@ if (Session::getUID()!="") {
                             <div class="card-body ">
                                 <span class="bmd-form-group">
                                     <div class="input-group justify-content-center">
-                                        <img src="/themes/TEP/img/logo.png" alt="TEP" height="40" width="40" />
+                                        <img src="/themes/TEP/img/logo–compact.jpg" alt="TEP" height="40" width="40" />
                                     </div>
                                 </span>
                                 <span class="bmd-form-group">
@@ -28,7 +28,8 @@ if (Session::getUID()!="") {
                                                 <i class="material-icons">email</i>
                                             </span>
                                         </div>
-                                        <input type="email" name="mail" id="mail" class="form-control" placeholder="Correo electr&oacute;nico...">
+                                        <input type="email" name="mail" id="mail" class="form-control"
+                                            placeholder="Correo electr&oacute;nico...">
                                     </div>
                                 </span>
                                 <span class="bmd-form-group">
@@ -51,7 +52,8 @@ if (Session::getUID()!="") {
                     <?php if (isset($_COOKIE['password_updated'])):?>
                     <div class="alert alert-success alert-with-icon" data-notify="container">
                         <i class="material-icons" data-notify="icon">notifications</i>
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><i class="material-icons">close</i></button>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><i
+                                class="material-icons">close</i></button>
                         <span data-notify="icon" class="now-ui-icons ui-1_bell-53"></span>
                         <span data-notify="message">
                             ¡Se ha cambiado la contraseña exitosamente!
@@ -61,7 +63,8 @@ if (Session::getUID()!="") {
                     <?php if (isset($_COOKIE['loginInvalid'])):?>
                     <div class="alert alert-danger alert-with-icon" data-notify="container">
                         <i class="material-icons" data-notify="icon">notifications</i>
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><i class="material-icons">close</i></button>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><i
+                                class="material-icons">close</i></button>
                         <span data-notify="icon" class="now-ui-icons ui-1_bell-53"></span>
                         <span data-notify="message">
                             Usuario y/o contraseña incorrecta.
@@ -76,10 +79,10 @@ if (Session::getUID()!="") {
 </div>
 
 <script type="text/javascript">
-    $().ready(function() {
-        setTimeout(function() {
-            // after 1000 ms we add the class animated to the login/register card
-            $('.card').removeClass('card-hidden');
-        }, 500)
-    });
+$().ready(function() {
+    setTimeout(function() {
+        // after 1000 ms we add the class animated to the login/register card
+        $('.card').removeClass('card-hidden');
+    }, 500)
+});
 </script>
