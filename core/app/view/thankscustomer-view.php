@@ -10,11 +10,11 @@
     <div class="card-body">
         <div class="card-title">
             <!-- Session comments -->
-            <?php if (isset($_GET['msg'])) :    ?>
+            <?php if (isset($_GET['msg'])):    ?>
             <div class="alert alert-info alert-dismissible">
                 <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
                 <strong>Nota:</strong>
-                <?php echo $_GET['msg']?>
+                <?php echo $_GET['msg'] ?>
             </div>
             <?php endif; ?>
         </div>
@@ -24,7 +24,8 @@
                 <div class="col-12">
                     <p>
                         This information will be used by our QA Department internally. If you want us to
-                        contact you on this specific job, please clic <a href="#">here</a>.</p>
+                        contact you on this specific job, please click <a
+                            href="mailto:customerfeedback@spanishasap.com">here</a>.</p>
                     <p> You may also write directly to <a
                             href="mailto:customerfeedback@spanishasap.com">customerfeedback@spanishasap.com</a>
                         to let us know your concerns.</p>

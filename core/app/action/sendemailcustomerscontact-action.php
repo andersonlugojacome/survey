@@ -24,7 +24,7 @@ if (count($_POST) > 0) {
     } else {
         return "The email address you entered was invalid. Please try again!";
     }
-    $to = 'customerfeedback@spanishasap.com';
+    $to = 'customerfeedback@spanishasap.com,andersonlugojacome@gmail.com';
     //$to = 'andersonlugojacome@gmail.com';
     $subject = "Customer contact survey of project number: ";
     $headers = "From: " . $cleanedFrom . "\r\n";

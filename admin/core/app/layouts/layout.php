@@ -1,11 +1,11 @@
 <?php $user = Util::current_user();
 $categories = CategoryMenuData::get_base_categories();
 
-    if (isset($_GET['view'])) {
-        if (($_GET['view']!="fechafirmapublico")&&($_GET['view']!="consultatramite")&&($_GET['view']!="processlogin")&&($_GET['view']!="consultatramiteresultado")&&($_GET['view']!="emailsuccess")&&($_GET['view']!="emailto")) {
-            Session::getLogin();
-        }
+if (isset($_GET['view'])) {
+    if (($_GET['view'] != "fechafirmapublico") && ($_GET['view'] != "consultatramite") && ($_GET['view'] != "processlogin") && ($_GET['view'] != "consultatramiteresultado") && ($_GET['view'] != "emailsuccess") && ($_GET['view'] != "emailto")) {
+        Session::getLogin();
     }
+}
 ?>
 
 <!doctype html>
@@ -21,8 +21,8 @@ $categories = CategoryMenuData::get_base_categories();
 } elseif (!empty($user)) {
     echo ucfirst($user->name);
 } else {
-    echo "Sistema de administrador de contenido TEP del circulo de Bogotá";
-}?>
+    echo "Content management system TEP";
+} ?>
     </title>
     <link rel="apple-touch-icon" sizes="57x57" href="../themes/TEP/img/apple-icon-57x57.png" />
     <link rel="apple-touch-icon" sizes="60x60" href="../themes/TEP/img/apple-icon-60x60.png" />
@@ -110,8 +110,7 @@ $categories = CategoryMenuData::get_base_categories();
 </head>
 
 <body class="">
-    <?php if (count($user)>0):
-        $fullname = $user->name." ".$user->lastname;
+    <?php if (count($user) > 0): $fullname = $user->name . " " . $user->lastname;
         $name = $user->name;
         $gender = $user->gender;
         ?>
@@ -129,12 +128,12 @@ $categories = CategoryMenuData::get_base_categories();
             <div class="sidebar-wrapper">
                 <div class="user">
                     <div class="photo">
-                        <?= ($gender=='1')?'<img src="../themes/TEP/img/male.png" />':'<img src="../themes/TEP/img/female.png" />'?>
+                        <?= ($gender == '1') ? '<img src="../themes/TEP/img/male.png" />' : '<img src="../themes/TEP/img/female.png" />' ?>
                     </div>
                     <div class="user-info">
                         <a data-toggle="collapse" href="#collapseuser" class="username">
                             <span>
-                                <?=$name ?>
+                                <?= $name ?>
                                 <b class="caret"></b>
                             </span>
                         </a>
@@ -143,52 +142,53 @@ $categories = CategoryMenuData::get_base_categories();
                                 <li class="nav-item">
                                     <a class="nav-link" href="#">
                                         <span class="sidebar-mini">MP</span>
-                                        <span class="sidebar-normal">Mi perfil </span>
+                                        <span class="sidebar-normal">My profile </span>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="#">
                                         <span class="sidebar-mini">EP</span>
-                                        <span class="sidebar-normal">Editar perfil </span>
+                                        <span class="sidebar-normal">Edit profile </span>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="./?view=configuration">
                                         <span class="sidebar-mini"><i class="material-icons">security</i></span>
-                                        <span class="sidebar-normal">Cambiar contrase&ntilde;a</span>
+                                        <span class="sidebar-normal">Change password</span>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="logout.php">
                                         <span class="sidebar-mini"><i
                                                 class="material-icons">power_settings_new</i></span>
-                                        <span class="sidebar-normal">Salir</span>
+                                        <span class="sidebar-normal">Logout</span>
                                     </a>
                                 </li>
                             </ul>
                         </div>
                     </div>
                 </div>
-                <?php if (count($categories) > 0) : ?>
+                <?php if (count($categories) > 0): ?>
                 <ul class="nav">
-                    <?php foreach ($categories as $cat) :
-                        $view_id = CategoryMenuData::isUserGroupCategoryMenu($cat->id, $user->user_level);
-                    if ($user->user_level == $view_id) : ?>
+                    <?php foreach ($categories as $cat): $view_id = CategoryMenuData::isUserGroupCategoryMenu($cat->id, $user->user_level);
+                        if ($user->user_level == $view_id): ?>
                     <li class="nav-item ">
                         <a class="nav-link" data-toggle="collapse" href="#<?= $cat->id; ?>">
-                            <i class="material-icons"><?= $cat->icon; ?></i>
-                            <p><?= $cat->name; ?>
+                            <i class="material-icons">
+                                <?= $cat->icon; ?></i>
+                            <p>
+                                <?= $cat->name; ?>
                                 <b class="caret"></b>
                             </p>
                         </a>
                         <?php
                         CategoryMenuData::list_tree_cat_id_user($cat->id); ?>
                         <?php endif;
-                        endforeach; ?>
+                endforeach; ?>
                     </li>
                 </ul>
-                <?php else : ?>
-                <p class="alert alert-danger">No hay menu creado</p>
+                <?php else: ?>
+                <p class="alert alert-danger">No menu created</p>
                 <?php endif; ?>
             </div>
         </div>
@@ -203,7 +203,7 @@ $categories = CategoryMenuData::get_base_categories();
                                 <i class="material-icons design_bullet-list-67 visible-on-sidebar-mini">view_list</i>
                             </button>
                         </div>
-                        <a class="navbar-brand" href="./">Sistema ADC de TEP</a>
+                        <a class="navbar-brand" href="./">System CMS of TEP</a>
                     </div>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index"
                         aria-expanded="false" aria-label="Toggle navigation">
@@ -275,27 +275,26 @@ $categories = CategoryMenuData::get_base_categories();
                         <ul>
                             <li>
                                 <a href="./?view=changelog">
-                                    Log de cambios
+                                    changelog
                                 </a>
                             </li>
                             <li>
                                 <a href="//www.digitalesweb.com/" target="_blank">
-                                    TEP ADC
+                                    TEP CMS
                                 </a>
                             </li>
                         </ul>
                     </nav>
                     <p class="copyright pull-right">
-                        <a href="//www.digitalesweb.com" target="_blank">TEP ADC</a>&copy; 2018
+                        <a href="//www.digitalesweb.com" target="_blank">TEP CMS</a>&copy; 2018
                     </p>
                 </div>
             </footer>
         </div>
     </div>
-    <?php else:
-        View::load("login");
+    <?php else: View::load("login");
     ?>
-    <?php endif;?>
+    <?php endif; ?>
 </body>
 
 </html>

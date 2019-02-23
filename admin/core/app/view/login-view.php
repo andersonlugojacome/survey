@@ -1,8 +1,8 @@
 <?php
 
-if (Session::getUID()!="") {
+if (Session::getUID() != "") {
     Core::redir("./?view=home", false);
-}?>
+} ?>
 
 <div class="off-canvas-sidebar login-page">
     <div class="wrapper wrapper-full-page">
@@ -13,7 +13,7 @@ if (Session::getUID()!="") {
                     <form accept-charset="UTF-8" role="form" method="post" action="./?view=processlogin">
                         <div class="card card-login card-hidden">
                             <div class="card-header card-header-rose text-center">
-                                <h4 class="card-title">Iniciar session</h4>
+                                <h4 class="card-title">Login</h4>
                             </div>
                             <div class="card-body ">
                                 <span class="bmd-form-group">
@@ -29,7 +29,7 @@ if (Session::getUID()!="") {
                                             </span>
                                         </div>
                                         <input type="email" name="mail" id="mail" class="form-control"
-                                            placeholder="Correo electr&oacute;nico...">
+                                            placeholder="Email...">
                                     </div>
                                 </span>
                                 <span class="bmd-form-group">
@@ -40,37 +40,39 @@ if (Session::getUID()!="") {
                                             </span>
                                         </div>
                                         <input type="password" name="password" id="password" class="form-control"
-                                            placeholder="Contraseña...">
+                                            placeholder="Password...">
                                     </div>
                                 </span>
                             </div>
                             <div class="card-footer justify-content-center">
-                                <input class="btn btn-primary btn-round" type="submit" value="Iniciar Sesion" />
+                                <input class="btn btn-primary btn-round" type="submit" value="Login" />
                             </div>
                         </div>
                     </form>
-                    <?php if (isset($_COOKIE['password_updated'])):?>
+                    <?php if (isset($_COOKIE['password_updated'])): ?>
                     <div class="alert alert-success alert-with-icon" data-notify="container">
                         <i class="material-icons" data-notify="icon">notifications</i>
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close"><i
                                 class="material-icons">close</i></button>
                         <span data-notify="icon" class="now-ui-icons ui-1_bell-53"></span>
                         <span data-notify="message">
-                            ¡Se ha cambiado la contraseña exitosamente!
+                            The password has been changed successfully!
                         </span>
                     </div>
-                    <?php setcookie("password_updated", "", time()-18600); endif; ?>
-                    <?php if (isset($_COOKIE['loginInvalid'])):?>
+                    <?php setcookie("password_updated", "", time() - 18600);
+                endif; ?>
+                    <?php if (isset($_COOKIE['loginInvalid'])): ?>
                     <div class="alert alert-danger alert-with-icon" data-notify="container">
                         <i class="material-icons" data-notify="icon">notifications</i>
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close"><i
                                 class="material-icons">close</i></button>
                         <span data-notify="icon" class="now-ui-icons ui-1_bell-53"></span>
                         <span data-notify="message">
-                            Usuario y/o contraseña incorrecta.
+                            Username and / or incorrect password.
                         </span>
                     </div>
-                    <?php setcookie("loginInvalid", "", time()-18600); endif; ?>
+                    <?php setcookie("loginInvalid", "", time() - 18600);
+                endif; ?>
                 </div>
             </div>
 

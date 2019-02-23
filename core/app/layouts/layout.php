@@ -24,11 +24,13 @@ Este es el layout principal, a partir de este layout o plantilla se muestran el 
     <meta name="msapplication-TileImage" content="./themes/TEP/img/ms-icon-144x144.png" />
     <meta name="theme-color" content="#ffffff" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no'
+        name='viewport' />
     <meta name="viewport" content="width=device-width" />
 
     <!--     Fonts and icons     -->
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700%7CRoboto+Slab:400,700%7CMaterial+Icons" />
+    <link rel="stylesheet" type="text/css"
+        href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700%7CRoboto+Slab:400,700%7CMaterial+Icons" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
     <link rel="stylesheet" href="./themes/TEP/css/material-dashboard-v=2.0.1.css">
     <link rel="stylesheet" href="./themes/TEP/css/material-dashboard-print.css" media="print" />
@@ -49,15 +51,8 @@ Este es el layout principal, a partir de este layout o plantilla se muestran el 
         <nav class="navbar navbar-inverse navbar-static-top">
             <div class="container">
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
-                        aria-expanded="false">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="./"><img width="170" class="" src="themes/TEP/img/Logo-spanish-ASAP-01-3.png"
-                            alt="SURVEY"></a>
+                    <a class="navbar-brand" href="./"><img width="170" class=""
+                            src="themes/TEP/img/Logo-spanish-ASAP-01-3.png" alt="SURVEY"></a>
                 </div>
             </div>
         </nav>
@@ -71,7 +66,8 @@ Este es el layout principal, a partir de este layout o plantilla se muestran el 
 
         <footer class="footer">
             <div class="container-fluid">
-                <p class="text-muted text-center">Powered by <a href="http://www.digitalesweb.com/" target="_blank">DigitalesWeb</a>
+                <p class="text-muted text-center">Powered by <a href="http://www.digitalesweb.com/"
+                        target="_blank">DigitalesWeb</a>
                     &copy; 2018</p>
             </div>
         </footer>
