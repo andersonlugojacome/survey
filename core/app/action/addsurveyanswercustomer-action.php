@@ -21,22 +21,23 @@ if ($count>0) {
             //$codeApproval=NumeroALetras::generarCodigo(10);
         }
     }
-    //echo "El codigo de aprobacion es: ". $codeApproval;
     $body = "";
     $sum = 0;
     $total = count($_POST['qid'])-1;
     foreach ($_POST['qid'] as $key => $value) {
+        $qa = isset($_POST['question_'.$value. '_answer']) ? $_POST['question_'.$value.'_answer'] : "5";
         $ca = new SurveylistsanswerData();
         $ca->pn = $_POST["pn"]!="" ? $_POST["pn"] : 1;
-        $ca->answer= $_POST['question_'.$value.'_answer'];
+        $ca->answer= $qa;
+
         $ca->surveylistsquestions_id = $value;
         $ca->pn_anho =  $_POST["pn_anho"]!="" ? $_POST["pn_anho"] : "";
         $ca->nameTEP = $_POST["nameTEP"]!="" ? $_POST["nameTEP"] : "";
         $ca->surveylists_id = $_POST['surveylists_id'];
         $ca->a_code_approval = $codeApproval;
         $ca->add();
-        $body .= $_POST['q_'.$value].", answer: ".$_POST['question_'.$value.'_answer']."\n<br/>";
-        $sum += $_POST['question_'.$value.'_answer'];
+        $body .= $_POST['q_'.$value].", answer: ". $qa."\n<br/>";
+        $sum += $qa;
     }
     $average = $sum / $total;
     $body .= "Average : ".$average."\n<br/>";
@@ -52,9 +53,8 @@ if ($count>0) {
     } else {
         return "The email address you entered was invalid. Please try again!";
     }
-    
     //$to = 'andersonlugojacome@gmail.com';
-    $to = 'customerfeedback@spanishasap.com';
+    $to = 'customerfeedback@spanishasap.com,andersonlugojacome@gmail.com';
     $subject = "Customers survey of project number: ".$_POST['pn'];
     $headers = "From: " . $cleanedFrom . "\r\n";
     $headers .= "Reply-To: ". strip_tags($form) . "\r\n";
