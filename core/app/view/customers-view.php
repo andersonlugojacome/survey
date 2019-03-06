@@ -68,8 +68,8 @@ if (isset($_GET["c"])) {
     ?>
                         <tr data-background-color-approval="">
                             <td style="vertical-align: middle;" colspan='<?= $q_format!="tip"?"":"2";?>'>
-                                <?php echo $display_number; ?>.
-                                <?php echo $question1; ?>.
+                                <?= ($q_format!="tip") ? $display_number:""; ?>.
+                                <?php echo $question1; ?>
                                 <input type="hidden" name="qid[]" id="qid[]"
                                     value='<?php echo $surveylistsquestions_id; ?>'>
                                 <input type="hidden" name="<?='q_'.$surveylistsquestions_id; ?>"
@@ -98,9 +98,9 @@ if (isset($_GET["c"])) {
               }
           } ?>
                             </td>
-                            <?php endif;?>
+                            <?php $display_number++; endif;?>
                         </tr>
-                        <?php $display_number++; endforeach; ?>
+                        <?php  endforeach; ?>
                     </table>
                 </div>
             </div>

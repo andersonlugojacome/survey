@@ -41,7 +41,6 @@ if ($count>0) {
     }
     $average = $sum / $total;
     $body .= "Average : ".$average."\n<br/>";
-    //echo "Sum: ".$sum.", Total: ".$total." Average;".$average." ". $body;
          
     $_SESSION['body']=$body;
     //   CHANGE THE BELOW VARIABLES TO YOUR NEEDS
