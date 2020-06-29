@@ -1,0 +1,528 @@
+[12-Jan-2019 18:26:25 America/Chicago] PHP Fatal error:  Uncaught Error: Call to a member function fetch_array() on boolean in /home4/spanisi6/public_html/survey/admin/core/controller/Model.php:26
+Stack trace:
+#0 /home4/spanisi6/public_html/survey/admin/core/app/model/ChecklistsData.php(60): Model::many(false, Object(ChecklistsData))
+#1 /home4/spanisi6/public_html/survey/admin/core/app/view/newcontrolofprocess-view.php(47): ChecklistsData::getAllOpen()
+#2 /home4/spanisi6/public_html/survey/admin/core/controller/View.php(29): include('/home4/spanisi6...')
+#3 /home4/spanisi6/public_html/survey/admin/core/app/layouts/layout.php(487): View::load('login')
+#4 /home4/spanisi6/public_html/survey/admin/core/controller/Module.php(12): include('/home4/spanisi6...')
+#5 /home4/spanisi6/public_html/survey/admin/core/app/init.php(9): Module::loadLayout('index')
+#6 /home4/spanisi6/public_html/survey/admin/core/controller/Lb.php(15): include('/home4/spanisi6...')
+#7 /home4/spanisi6/public_html/survey/admin/index.php(27): Lb->start()
+#8 {main}
+  thrown in /home4/spanisi6/public_html/survey/admin/core/controller/Model.php on line 26
+[12-Jan-2019 18:26:28 America/Chicago] PHP Fatal error:  Uncaught Error: Call to a member function fetch_array() on boolean in /home4/spanisi6/public_html/survey/admin/core/controller/Model.php:26
+Stack trace:
+#0 /home4/spanisi6/public_html/survey/admin/core/app/model/ChecklistsanswerData.php(100): Model::many(false, Object(ChecklistsanswerData))
+#1 /home4/spanisi6/public_html/survey/admin/core/app/view/controlofprocess-view.php(30): ChecklistsanswerData::getAllNumRowAnswerToList()
+#2 /home4/spanisi6/public_html/survey/admin/core/controller/View.php(29): include('/home4/spanisi6...')
+#3 /home4/spanisi6/public_html/survey/admin/core/app/layouts/layout.php(487): View::load('login')
+#4 /home4/spanisi6/public_html/survey/admin/core/controller/Module.php(12): include('/home4/spanisi6...')
+#5 /home4/spanisi6/public_html/survey/admin/core/app/init.php(9): Module::loadLayout('index')
+#6 /home4/spanisi6/public_html/survey/admin/core/controller/Lb.php(15): include('/home4/spanisi6...')
+#7 /home4/spanisi6/public_html/survey/admin/index.php(27): Lb->start()
+#8 {main}
+  thrown in /home4/spanisi6/public_html/survey/admin/core/controller/Model.php on line 26
+[12-Jan-2019 18:26:56 America/Chicago] PHP Fatal error:  Uncaught Error: Call to a member function fetch_array() on boolean in /home4/spanisi6/public_html/survey/admin/core/controller/Model.php:26
+Stack trace:
+#0 /home4/spanisi6/public_html/survey/admin/core/app/model/ProcedureData.php(95): Model::many(false, Object(ProcedureData))
+#1 /home4/spanisi6/public_html/survey/admin/core/app/view/notarialprocedure-view.php(67): ProcedureData::getAllNumRow()
+#2 /home4/spanisi6/public_html/survey/admin/core/controller/View.php(29): include('/home4/spanisi6...')
+#3 /home4/spanisi6/public_html/survey/admin/core/app/layouts/layout.php(487): View::load('login')
+#4 /home4/spanisi6/public_html/survey/admin/core/controller/Module.php(12): include('/home4/spanisi6...')
+#5 /home4/spanisi6/public_html/survey/admin/core/app/init.php(9): Module::loadLayout('index')
+#6 /home4/spanisi6/public_html/survey/admin/core/controller/Lb.php(15): include('/home4/spanisi6...')
+#7 /home4/spanisi6/public_html/survey/admin/index.php(27): Lb->start()
+#8 {main}
+  thrown in /home4/spanisi6/public_html/survey/admin/core/controller/Model.php on line 26
+[12-Jan-2019 18:33:29 America/Chicago] PHP Fatal error:  Uncaught Error: Call to a member function fetch_array() on boolean in /home4/spanisi6/public_html/survey/admin/core/controller/Model.php:26
+Stack trace:
+#0 /home4/spanisi6/public_html/survey/admin/core/app/model/ChecklistsanswerData.php(100): Model::many(false, Object(ChecklistsanswerData))
+#1 /home4/spanisi6/public_html/survey/admin/core/app/view/controlofprocess-view.php(30): ChecklistsanswerData::getAllNumRowAnswerToList()
+#2 /home4/spanisi6/public_html/survey/admin/core/controller/View.php(29): include('/home4/spanisi6...')
+#3 /home4/spanisi6/public_html/survey/admin/core/app/layouts/layout.php(327): View::load('login')
+#4 /home4/spanisi6/public_html/survey/admin/core/controller/Module.php(12): include('/home4/spanisi6...')
+#5 /home4/spanisi6/public_html/survey/admin/core/app/init.php(9): Module::loadLayout('index')
+#6 /home4/spanisi6/public_html/survey/admin/core/controller/Lb.php(15): include('/home4/spanisi6...')
+#7 /home4/spanisi6/public_html/survey/admin/index.php(27): Lb->start()
+#8 {main}
+  thrown in /home4/spanisi6/public_html/survey/admin/core/controller/Model.php on line 26
+[12-Jan-2019 18:33:34 America/Chicago] PHP Fatal error:  Uncaught Error: Call to a member function fetch_array() on boolean in /home4/spanisi6/public_html/survey/admin/core/controller/Model.php:26
+Stack trace:
+#0 /home4/spanisi6/public_html/survey/admin/core/app/model/ChecklistsanswerData.php(100): Model::many(false, Object(ChecklistsanswerData))
+#1 /home4/spanisi6/public_html/survey/admin/core/app/view/controlofprocess-view.php(30): ChecklistsanswerData::getAllNumRowAnswerToList()
+#2 /home4/spanisi6/public_html/survey/admin/core/controller/View.php(29): include('/home4/spanisi6...')
+#3 /home4/spanisi6/public_html/survey/admin/core/app/layouts/layout.php(327): View::load('login')
+#4 /home4/spanisi6/public_html/survey/admin/core/controller/Module.php(12): include('/home4/spanisi6...')
+#5 /home4/spanisi6/public_html/survey/admin/core/app/init.php(9): Module::loadLayout('index')
+#6 /home4/spanisi6/public_html/survey/admin/core/controller/Lb.php(15): include('/home4/spanisi6...')
+#7 /home4/spanisi6/public_html/survey/admin/index.php(27): Lb->start()
+#8 {main}
+  thrown in /home4/spanisi6/public_html/survey/admin/core/controller/Model.php on line 26
+[12-Jan-2019 18:33:41 America/Chicago] PHP Fatal error:  Uncaught Error: Call to a member function fetch_array() on boolean in /home4/spanisi6/public_html/survey/admin/core/controller/Model.php:26
+Stack trace:
+#0 /home4/spanisi6/public_html/survey/admin/core/app/model/ChecklistsanswerData.php(100): Model::many(false, Object(ChecklistsanswerData))
+#1 /home4/spanisi6/public_html/survey/admin/core/app/view/controlofprocess-view.php(30): ChecklistsanswerData::getAllNumRowAnswerToList()
+#2 /home4/spanisi6/public_html/survey/admin/core/controller/View.php(29): include('/home4/spanisi6...')
+#3 /home4/spanisi6/public_html/survey/admin/core/app/layouts/layout.php(327): View::load('login')
+#4 /home4/spanisi6/public_html/survey/admin/core/controller/Module.php(12): include('/home4/spanisi6...')
+#5 /home4/spanisi6/public_html/survey/admin/core/app/init.php(9): Module::loadLayout('index')
+#6 /home4/spanisi6/public_html/survey/admin/core/controller/Lb.php(15): include('/home4/spanisi6...')
+#7 /home4/spanisi6/public_html/survey/admin/index.php(27): Lb->start()
+#8 {main}
+  thrown in /home4/spanisi6/public_html/survey/admin/core/controller/Model.php on line 26
+[12-Jan-2019 18:33:43 America/Chicago] PHP Fatal error:  Uncaught Error: Call to a member function fetch_array() on boolean in /home4/spanisi6/public_html/survey/admin/core/controller/Model.php:26
+Stack trace:
+#0 /home4/spanisi6/public_html/survey/admin/core/app/model/ChecklistsData.php(60): Model::many(false, Object(ChecklistsData))
+#1 /home4/spanisi6/public_html/survey/admin/core/app/view/newcontrolofprocess-view.php(47): ChecklistsData::getAllOpen()
+#2 /home4/spanisi6/public_html/survey/admin/core/controller/View.php(29): include('/home4/spanisi6...')
+#3 /home4/spanisi6/public_html/survey/admin/core/app/layouts/layout.php(327): View::load('login')
+#4 /home4/spanisi6/public_html/survey/admin/core/controller/Module.php(12): include('/home4/spanisi6...')
+#5 /home4/spanisi6/public_html/survey/admin/core/app/init.php(9): Module::loadLayout('index')
+#6 /home4/spanisi6/public_html/survey/admin/core/controller/Lb.php(15): include('/home4/spanisi6...')
+#7 /home4/spanisi6/public_html/survey/admin/index.php(27): Lb->start()
+#8 {main}
+  thrown in /home4/spanisi6/public_html/survey/admin/core/controller/Model.php on line 26
+[12-Jan-2019 18:37:07 America/Chicago] PHP Fatal error:  Uncaught Error: Call to a member function fetch_array() on boolean in /home4/spanisi6/public_html/survey/admin/core/controller/Model.php:26
+Stack trace:
+#0 /home4/spanisi6/public_html/survey/admin/core/app/model/ClientData.php(64): Model::many(false, Object(ClientData))
+#1 /home4/spanisi6/public_html/survey/admin/core/app/view/clients-view.php(20): ClientData::getAllNumRow()
+#2 /home4/spanisi6/public_html/survey/admin/core/controller/View.php(29): include('/home4/spanisi6...')
+#3 /home4/spanisi6/public_html/survey/admin/core/app/layouts/layout.php(327): View::load('login')
+#4 /home4/spanisi6/public_html/survey/admin/core/controller/Module.php(12): include('/home4/spanisi6...')
+#5 /home4/spanisi6/public_html/survey/admin/core/app/init.php(9): Module::loadLayout('index')
+#6 /home4/spanisi6/public_html/survey/admin/core/controller/Lb.php(15): include('/home4/spanisi6...')
+#7 /home4/spanisi6/public_html/survey/admin/index.php(27): Lb->start()
+#8 {main}
+  thrown in /home4/spanisi6/public_html/survey/admin/core/controller/Model.php on line 26
+[12-Jan-2019 19:11:51 America/Chicago] PHP Fatal error:  Uncaught Error: Call to a member function fetch_array() on boolean in /home4/spanisi6/public_html/survey/admin/core/controller/Model.php:26
+Stack trace:
+#0 /home4/spanisi6/public_html/survey/admin/core/app/model/ChecklistsanswerData.php(100): Model::many(false, Object(ChecklistsanswerData))
+#1 /home4/spanisi6/public_html/survey/admin/core/app/view/controlofprocess-view.php(30): ChecklistsanswerData::getAllNumRowAnswerToList()
+#2 /home4/spanisi6/public_html/survey/admin/core/controller/View.php(29): include('/home4/spanisi6...')
+#3 /home4/spanisi6/public_html/survey/admin/core/app/layouts/layout.php(323): View::load('login')
+#4 /home4/spanisi6/public_html/survey/admin/core/controller/Module.php(12): include('/home4/spanisi6...')
+#5 /home4/spanisi6/public_html/survey/admin/core/app/init.php(9): Module::loadLayout('index')
+#6 /home4/spanisi6/public_html/survey/admin/core/controller/Lb.php(15): include('/home4/spanisi6...')
+#7 /home4/spanisi6/public_html/survey/admin/index.php(27): Lb->start()
+#8 {main}
+  thrown in /home4/spanisi6/public_html/survey/admin/core/controller/Model.php on line 26
+[15-Jan-2019 13:19:56 America/Chicago] PHP Notice:  Undefined index: num_input in /home4/spanisi6/public_html/survey/admin/core/app/action/addchecklistquestion-action.php on line 19
+[15-Jan-2019 13:20:26 America/Chicago] PHP Notice:  Undefined index: num_input in /home4/spanisi6/public_html/survey/admin/core/app/action/addchecklistquestion-action.php on line 19
+[15-Jan-2019 13:20:46 America/Chicago] PHP Notice:  Undefined index: num_input in /home4/spanisi6/public_html/survey/admin/core/app/action/addchecklistquestion-action.php on line 19
+[15-Jan-2019 13:21:02 America/Chicago] PHP Notice:  Undefined index: num_input in /home4/spanisi6/public_html/survey/admin/core/app/action/addchecklistquestion-action.php on line 19
+[15-Jan-2019 13:21:33 America/Chicago] PHP Notice:  Undefined index: num_input in /home4/spanisi6/public_html/survey/admin/core/app/action/addchecklistquestion-action.php on line 19
+[15-Jan-2019 13:21:49 America/Chicago] PHP Notice:  Undefined index: num_input in /home4/spanisi6/public_html/survey/admin/core/app/action/addchecklistquestion-action.php on line 19
+[15-Jan-2019 13:22:05 America/Chicago] PHP Notice:  Undefined index: num_input in /home4/spanisi6/public_html/survey/admin/core/app/action/addchecklistquestion-action.php on line 19
+[15-Jan-2019 13:22:21 America/Chicago] PHP Notice:  Undefined index: num_input in /home4/spanisi6/public_html/survey/admin/core/app/action/addchecklistquestion-action.php on line 19
+[15-Jan-2019 13:22:34 America/Chicago] PHP Notice:  Undefined index: num_input in /home4/spanisi6/public_html/survey/admin/core/app/action/addchecklistquestion-action.php on line 19
+[15-Jan-2019 13:23:01 America/Chicago] PHP Notice:  Undefined index: num_input in /home4/spanisi6/public_html/survey/admin/core/app/action/addchecklistquestion-action.php on line 19
+[15-Jan-2019 13:23:29 America/Chicago] PHP Notice:  Undefined index: num_input in /home4/spanisi6/public_html/survey/admin/core/app/action/addchecklistquestion-action.php on line 19
+[15-Jan-2019 15:53:13 America/Chicago] PHP Notice:  Undefined index: num_input in /home4/spanisi6/public_html/survey/admin/core/app/action/addchecklistquestion-action.php on line 19
+[29-Jan-2019 16:21:55 America/Chicago] PHP Fatal error:  Uncaught Error: Class 'CategoryMenuData' not found in /home4/spanisi6/public_html/survey/admin/core/app/layouts/layout.php:2
+Stack trace:
+#0 /home4/spanisi6/public_html/survey/admin/core/controller/Module.php(12): include()
+#1 /home4/spanisi6/public_html/survey/admin/core/app/init.php(9): Module::loadLayout('index')
+#2 /home4/spanisi6/public_html/survey/admin/core/controller/Lb.php(15): include('/home4/spanisi6...')
+#3 /home4/spanisi6/public_html/survey/admin/index.php(27): Lb->start()
+#4 {main}
+  thrown in /home4/spanisi6/public_html/survey/admin/core/app/layouts/layout.php on line 2
+[29-Jan-2019 16:24:47 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined method Session::currentURL() in /home4/spanisi6/public_html/survey/admin/core/app/view/admincategorymenu-view.php:8
+Stack trace:
+#0 /home4/spanisi6/public_html/survey/admin/core/controller/View.php(29): include()
+#1 /home4/spanisi6/public_html/survey/admin/core/app/layouts/layout.php(268): View::load('login')
+#2 /home4/spanisi6/public_html/survey/admin/core/controller/Module.php(12): include('/home4/spanisi6...')
+#3 /home4/spanisi6/public_html/survey/admin/core/app/init.php(9): Module::loadLayout('index')
+#4 /home4/spanisi6/public_html/survey/admin/core/controller/Lb.php(15): include('/home4/spanisi6...')
+#5 /home4/spanisi6/public_html/survey/admin/index.php(27): Lb->start()
+#6 {main}
+  thrown in /home4/spanisi6/public_html/survey/admin/core/app/view/admincategorymenu-view.php on line 8
+[29-Jan-2019 16:25:46 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:25:46 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:25:46 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:25:46 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:25:46 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:25:46 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:25:46 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:25:46 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:25:46 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:25:46 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:26:15 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:26:15 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:26:15 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:26:15 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:26:15 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:26:15 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:26:15 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:26:15 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:26:15 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:26:15 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:26:24 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:26:24 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:26:24 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:26:24 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:26:24 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:26:24 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:26:24 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:26:24 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:26:24 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:26:24 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:26:33 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:26:33 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:26:33 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:26:33 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:26:33 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:26:33 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:26:33 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:26:33 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:26:33 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:26:33 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:26:42 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:26:42 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:26:42 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:26:42 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:26:42 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:26:42 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:26:42 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:26:42 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:26:42 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:26:42 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:26:51 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:26:51 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:26:51 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:26:51 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:26:51 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:26:51 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:26:51 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:26:51 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:26:51 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:26:51 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:26:58 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:26:58 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:26:58 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:26:58 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:26:58 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:26:58 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:26:58 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:26:58 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:26:58 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:26:58 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:27:04 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:27:04 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:27:04 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:27:04 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:27:04 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:27:04 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:27:04 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:27:04 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:27:04 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:27:04 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:27:08 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:27:08 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:27:08 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:27:08 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:27:08 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:27:08 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:27:08 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:27:08 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:27:08 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:27:08 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:27:13 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:27:13 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:27:13 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:27:13 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:27:13 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:27:13 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:27:13 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:27:13 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:27:13 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:27:13 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:27:19 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:27:19 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:27:19 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:27:19 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:27:19 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:27:19 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:27:19 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:27:19 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:27:19 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:27:19 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:27:24 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:27:24 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:27:24 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:27:24 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:27:24 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:27:24 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:27:24 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:27:24 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:27:24 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:27:24 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:27:28 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:27:28 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:27:28 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:27:28 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:27:28 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:27:28 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:27:28 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:27:28 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:27:28 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:27:28 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:27:33 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:27:33 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:27:33 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:27:33 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:27:33 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:27:33 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:27:33 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:27:33 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:27:33 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:27:33 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:27:37 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:27:37 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:27:37 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:27:37 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:27:37 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:27:37 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:27:37 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:27:37 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:27:37 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:27:41 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:27:41 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:27:41 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:27:41 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:27:41 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:27:41 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:27:41 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:27:41 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:27:45 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:27:45 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:27:45 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:27:45 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:27:45 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:27:45 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:27:45 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:27:50 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:27:50 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:27:50 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:27:50 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:27:50 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:27:50 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:27:54 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:27:54 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:27:54 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:27:54 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:27:54 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:27:54 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:27:58 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:27:58 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:27:58 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:27:58 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:27:58 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:27:58 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:28:07 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:28:07 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:28:07 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:28:07 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:28:07 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:28:16 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:28:16 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:28:16 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:28:16 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:28:23 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:28:23 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:28:23 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:28:34 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:28:34 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:28:40 America/Chicago] PHP Notice:  Trying to get property of non-object in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 78
+[29-Jan-2019 16:28:53 America/Chicago] PHP Fatal error:  Uncaught Error: Call to a member function fetch_array() on boolean in /home4/spanisi6/public_html/survey/admin/core/controller/Model.php:26
+Stack trace:
+#0 /home4/spanisi6/public_html/survey/admin/core/app/model/ClientData.php(64): Model::many(false, Object(ClientData))
+#1 /home4/spanisi6/public_html/survey/admin/core/app/view/clients-view.php(20): ClientData::getAllNumRow()
+#2 /home4/spanisi6/public_html/survey/admin/core/controller/View.php(29): include('/home4/spanisi6...')
+#3 /home4/spanisi6/public_html/survey/admin/core/app/layouts/layout.php(268): View::load('login')
+#4 /home4/spanisi6/public_html/survey/admin/core/controller/Module.php(12): include('/home4/spanisi6...')
+#5 /home4/spanisi6/public_html/survey/admin/core/app/init.php(9): Module::loadLayout('index')
+#6 /home4/spanisi6/public_html/survey/admin/core/controller/Lb.php(15): include('/home4/spanisi6...')
+#7 /home4/spanisi6/public_html/survey/admin/index.php(27): Lb->start()
+#8 {main}
+  thrown in /home4/spanisi6/public_html/survey/admin/core/controller/Model.php on line 26
+[29-Jan-2019 20:46:55 America/Chicago] PHP Deprecated:  Non-static method CategoryMenuData::selected_tree_cat_id() should not be called statically in /home4/spanisi6/public_html/survey/admin/core/app/view/admineditcategorymenu-view.php on line 60
+[29-Jan-2019 20:46:55 America/Chicago] PHP Deprecated:  Non-static method CategoryMenuData::selected_tree_cat_id() should not be called statically in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 152
+[29-Jan-2019 20:46:55 America/Chicago] PHP Deprecated:  Non-static method CategoryMenuData::selected_tree_cat_id() should not be called statically in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 152
+[29-Jan-2019 20:46:55 America/Chicago] PHP Deprecated:  Non-static method CategoryMenuData::selected_tree_cat_id() should not be called statically in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 152
+[29-Jan-2019 20:46:55 America/Chicago] PHP Deprecated:  Non-static method CategoryMenuData::selected_tree_cat_id() should not be called statically in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 152
+[29-Jan-2019 20:46:55 America/Chicago] PHP Deprecated:  Non-static method CategoryMenuData::selected_tree_cat_id() should not be called statically in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 152
+[29-Jan-2019 20:48:42 America/Chicago] PHP Deprecated:  Non-static method CategoryMenuData::selected_tree_cat_id() should not be called statically in /home4/spanisi6/public_html/survey/admin/core/app/view/admineditcategorymenu-view.php on line 60
+[29-Jan-2019 20:48:42 America/Chicago] PHP Deprecated:  Non-static method CategoryMenuData::selected_tree_cat_id() should not be called statically in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 152
+[29-Jan-2019 20:48:42 America/Chicago] PHP Deprecated:  Non-static method CategoryMenuData::selected_tree_cat_id() should not be called statically in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 152
+[29-Jan-2019 20:48:42 America/Chicago] PHP Deprecated:  Non-static method CategoryMenuData::selected_tree_cat_id() should not be called statically in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 152
+[29-Jan-2019 20:48:42 America/Chicago] PHP Deprecated:  Non-static method CategoryMenuData::selected_tree_cat_id() should not be called statically in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 152
+[29-Jan-2019 20:48:42 America/Chicago] PHP Deprecated:  Non-static method CategoryMenuData::selected_tree_cat_id() should not be called statically in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 152
+[29-Jan-2019 20:48:42 America/Chicago] PHP Deprecated:  Non-static method CategoryMenuData::selected_tree_cat_id() should not be called statically in /home4/spanisi6/public_html/survey/admin/core/app/view/admineditcategorymenu-view.php on line 60
+[29-Jan-2019 20:48:42 America/Chicago] PHP Deprecated:  Non-static method CategoryMenuData::selected_tree_cat_id() should not be called statically in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 152
+[29-Jan-2019 20:49:55 America/Chicago] PHP Deprecated:  Non-static method CategoryMenuData::selected_tree_cat_id() should not be called statically in /home4/spanisi6/public_html/survey/admin/core/app/view/admineditcategorymenu-view.php on line 60
+[29-Jan-2019 20:49:55 America/Chicago] PHP Deprecated:  Non-static method CategoryMenuData::selected_tree_cat_id() should not be called statically in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 152
+[29-Jan-2019 20:49:55 America/Chicago] PHP Deprecated:  Non-static method CategoryMenuData::selected_tree_cat_id() should not be called statically in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 152
+[29-Jan-2019 20:49:55 America/Chicago] PHP Deprecated:  Non-static method CategoryMenuData::selected_tree_cat_id() should not be called statically in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 152
+[29-Jan-2019 20:49:55 America/Chicago] PHP Deprecated:  Non-static method CategoryMenuData::selected_tree_cat_id() should not be called statically in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 152
+[29-Jan-2019 20:49:55 America/Chicago] PHP Deprecated:  Non-static method CategoryMenuData::selected_tree_cat_id() should not be called statically in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 152
+[29-Jan-2019 20:49:55 America/Chicago] PHP Deprecated:  Non-static method CategoryMenuData::selected_tree_cat_id() should not be called statically in /home4/spanisi6/public_html/survey/admin/core/app/view/admineditcategorymenu-view.php on line 60
+[29-Jan-2019 20:49:55 America/Chicago] PHP Deprecated:  Non-static method CategoryMenuData::selected_tree_cat_id() should not be called statically in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 152
+[29-Jan-2019 20:49:55 America/Chicago] PHP Deprecated:  Non-static method CategoryMenuData::selected_tree_cat_id() should not be called statically in /home4/spanisi6/public_html/survey/admin/core/app/view/admineditcategorymenu-view.php on line 60
+[29-Jan-2019 21:01:04 America/Chicago] PHP Fatal error:  Uncaught Error: Call to a member function fetch_array() on boolean in /home4/spanisi6/public_html/survey/admin/core/controller/Model.php:26
+Stack trace:
+#0 /home4/spanisi6/public_html/survey/admin/core/app/model/ClientData.php(64): Model::many(false, Object(ClientData))
+#1 /home4/spanisi6/public_html/survey/admin/core/app/view/clients-view.php(20): ClientData::getAllNumRow()
+#2 /home4/spanisi6/public_html/survey/admin/core/controller/View.php(29): include('/home4/spanisi6...')
+#3 /home4/spanisi6/public_html/survey/admin/core/app/layouts/layout.php(268): View::load('login')
+#4 /home4/spanisi6/public_html/survey/admin/core/controller/Module.php(12): include('/home4/spanisi6...')
+#5 /home4/spanisi6/public_html/survey/admin/core/app/init.php(9): Module::loadLayout('index')
+#6 /home4/spanisi6/public_html/survey/admin/core/controller/Lb.php(15): include('/home4/spanisi6...')
+#7 /home4/spanisi6/public_html/survey/admin/index.php(27): Lb->start()
+#8 {main}
+  thrown in /home4/spanisi6/public_html/survey/admin/core/controller/Model.php on line 26
+[30-Jan-2019 12:37:56 America/Chicago] PHP Fatal error:  Uncaught Error: Call to a member function fetch_array() on boolean in /home4/spanisi6/public_html/survey/admin/core/controller/Model.php:26
+Stack trace:
+#0 /home4/spanisi6/public_html/survey/admin/core/app/model/BeneficenciaData.php(95): Model::many(false, Object(BeneficenciaData))
+#1 /home4/spanisi6/public_html/survey/admin/core/app/action/searchescrituras-action.php(12): BeneficenciaData::getByRange('2018-12-30 13:3...', '2019-01-30 14:3...')
+#2 /home4/spanisi6/public_html/survey/admin/core/controller/Action.php(22): include('/home4/spanisi6...')
+#3 /home4/spanisi6/public_html/survey/admin/core/app/init.php(11): Action::load('searchescritura...')
+#4 /home4/spanisi6/public_html/survey/admin/core/controller/Lb.php(15): include('/home4/spanisi6...')
+#5 /home4/spanisi6/public_html/survey/admin/index.php(27): Lb->start()
+#6 {main}
+  thrown in /home4/spanisi6/public_html/survey/admin/core/controller/Model.php on line 26
+[30-Jan-2019 12:44:30 America/Chicago] PHP Fatal error:  Uncaught Error: Call to a member function fetch_array() on boolean in /home4/spanisi6/public_html/survey/admin/core/controller/Model.php:26
+Stack trace:
+#0 /home4/spanisi6/public_html/survey/admin/core/app/model/BeneficenciaData.php(95): Model::many(false, Object(BeneficenciaData))
+#1 /home4/spanisi6/public_html/survey/admin/core/app/action/searchescrituras-action.php(12): BeneficenciaData::getByRange('2018-12-30 13:4...', '2019-01-30 14:4...')
+#2 /home4/spanisi6/public_html/survey/admin/core/controller/Action.php(22): include('/home4/spanisi6...')
+#3 /home4/spanisi6/public_html/survey/admin/core/app/init.php(11): Action::load('searchescritura...')
+#4 /home4/spanisi6/public_html/survey/admin/core/controller/Lb.php(15): include('/home4/spanisi6...')
+#5 /home4/spanisi6/public_html/survey/admin/index.php(27): Lb->start()
+#6 {main}
+  thrown in /home4/spanisi6/public_html/survey/admin/core/controller/Model.php on line 26
+[30-Jan-2019 12:48:07 America/Chicago] PHP Fatal error:  Uncaught Error: Call to a member function fetch_array() on boolean in /home4/spanisi6/public_html/survey/admin/core/controller/Model.php:26
+Stack trace:
+#0 /home4/spanisi6/public_html/survey/admin/core/app/model/BeneficenciaData.php(95): Model::many(false, Object(BeneficenciaData))
+#1 /home4/spanisi6/public_html/survey/admin/core/app/action/searchescrituras-action.php(12): BeneficenciaData::getByRange('2018-12-30 13:4...', '2019-01-30 14:4...')
+#2 /home4/spanisi6/public_html/survey/admin/core/controller/Action.php(22): include('/home4/spanisi6...')
+#3 /home4/spanisi6/public_html/survey/admin/core/app/init.php(11): Action::load('searchescritura...')
+#4 /home4/spanisi6/public_html/survey/admin/core/controller/Lb.php(15): include('/home4/spanisi6...')
+#5 /home4/spanisi6/public_html/survey/admin/index.php(27): Lb->start()
+#6 {main}
+  thrown in /home4/spanisi6/public_html/survey/admin/core/controller/Model.php on line 26
+[30-Jan-2019 12:48:26 America/Chicago] PHP Fatal error:  Uncaught Error: Call to a member function fetch_array() on boolean in /home4/spanisi6/public_html/survey/admin/core/controller/Model.php:26
+Stack trace:
+#0 /home4/spanisi6/public_html/survey/admin/core/app/model/BeneficenciaData.php(95): Model::many(false, Object(BeneficenciaData))
+#1 /home4/spanisi6/public_html/survey/admin/core/app/action/searchescrituras-action.php(12): BeneficenciaData::getByRange('2018-12-30 13:4...', '2019-01-30 14:4...')
+#2 /home4/spanisi6/public_html/survey/admin/core/controller/Action.php(22): include('/home4/spanisi6...')
+#3 /home4/spanisi6/public_html/survey/admin/core/app/init.php(11): Action::load('searchescritura...')
+#4 /home4/spanisi6/public_html/survey/admin/core/controller/Lb.php(15): include('/home4/spanisi6...')
+#5 /home4/spanisi6/public_html/survey/admin/index.php(27): Lb->start()
+#6 {main}
+  thrown in /home4/spanisi6/public_html/survey/admin/core/controller/Model.php on line 26
+[30-Jan-2019 13:03:47 America/Chicago] PHP Fatal error:  Uncaught Error: Call to a member function fetch_array() on boolean in /home4/spanisi6/public_html/survey/admin/core/controller/Model.php:26
+Stack trace:
+#0 /home4/spanisi6/public_html/survey/admin/core/app/model/BeneficenciaData.php(109): Model::many(false, Object(BeneficenciaData))
+#1 /home4/spanisi6/public_html/survey/admin/core/app/view/beneficencia-view.php(84): BeneficenciaData::getAllNumRow()
+#2 /home4/spanisi6/public_html/survey/admin/core/controller/View.php(29): include('/home4/spanisi6...')
+#3 /home4/spanisi6/public_html/survey/admin/core/app/layouts/layout.php(268): View::load('login')
+#4 /home4/spanisi6/public_html/survey/admin/core/controller/Module.php(12): include('/home4/spanisi6...')
+#5 /home4/spanisi6/public_html/survey/admin/core/app/init.php(9): Module::loadLayout('index')
+#6 /home4/spanisi6/public_html/survey/admin/core/controller/Lb.php(15): include('/home4/spanisi6...')
+#7 /home4/spanisi6/public_html/survey/admin/index.php(27): Lb->start()
+#8 {main}
+  thrown in /home4/spanisi6/public_html/survey/admin/core/controller/Model.php on line 26
+[30-Jan-2019 13:12:10 America/Chicago] PHP Fatal error:  Uncaught Error: Call to a member function fetch_array() on boolean in /home4/spanisi6/public_html/survey/admin/core/controller/Model.php:26
+Stack trace:
+#0 /home4/spanisi6/public_html/survey/admin/core/app/model/BeneficenciaData.php(109): Model::many(false, Object(BeneficenciaData))
+#1 /home4/spanisi6/public_html/survey/admin/core/app/view/beneficencia-view.php(84): BeneficenciaData::getAllNumRow()
+#2 /home4/spanisi6/public_html/survey/admin/core/controller/View.php(29): include('/home4/spanisi6...')
+#3 /home4/spanisi6/public_html/survey/admin/core/app/layouts/layout.php(268): View::load('login')
+#4 /home4/spanisi6/public_html/survey/admin/core/controller/Module.php(12): include('/home4/spanisi6...')
+#5 /home4/spanisi6/public_html/survey/admin/core/app/init.php(9): Module::loadLayout('index')
+#6 /home4/spanisi6/public_html/survey/admin/core/controller/Lb.php(15): include('/home4/spanisi6...')
+#7 /home4/spanisi6/public_html/survey/admin/index.php(27): Lb->start()
+#8 {main}
+  thrown in /home4/spanisi6/public_html/survey/admin/core/controller/Model.php on line 26
+[12-Feb-2019 12:39:06 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined method SurveylistsanswerData::getByRangeCustomer() in /home4/spanisi6/public_html/survey/admin/core/app/action/searchcustomersurvey-action.php:12
+Stack trace:
+#0 /home4/spanisi6/public_html/survey/admin/core/controller/Action.php(22): include()
+#1 /home4/spanisi6/public_html/survey/admin/core/app/init.php(11): Action::load('searchcustomers...')
+#2 /home4/spanisi6/public_html/survey/admin/core/controller/Lb.php(15): include('/home4/spanisi6...')
+#3 /home4/spanisi6/public_html/survey/admin/index.php(27): Lb->start()
+#4 {main}
+  thrown in /home4/spanisi6/public_html/survey/admin/core/app/action/searchcustomersurvey-action.php on line 12
+[12-Feb-2019 12:40:11 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined method SurveylistsanswerData::getByRangeCustomer() in /home4/spanisi6/public_html/survey/admin/core/app/action/searchcustomersurvey-action.php:12
+Stack trace:
+#0 /home4/spanisi6/public_html/survey/admin/core/controller/Action.php(22): include()
+#1 /home4/spanisi6/public_html/survey/admin/core/app/init.php(11): Action::load('searchcustomers...')
+#2 /home4/spanisi6/public_html/survey/admin/core/controller/Lb.php(15): include('/home4/spanisi6...')
+#3 /home4/spanisi6/public_html/survey/admin/index.php(27): Lb->start()
+#4 {main}
+  thrown in /home4/spanisi6/public_html/survey/admin/core/app/action/searchcustomersurvey-action.php on line 12
+[23-Feb-2019 08:12:07 America/Chicago] PHP Deprecated:  Non-static method CategoryMenuData::selected_tree_cat_id() should not be called statically in /home4/spanisi6/public_html/survey/admin/core/app/view/admineditcategorymenu-view.php on line 60
+[23-Feb-2019 08:12:07 America/Chicago] PHP Deprecated:  Non-static method CategoryMenuData::selected_tree_cat_id() should not be called statically in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 152
+[23-Feb-2019 08:12:07 America/Chicago] PHP Deprecated:  Non-static method CategoryMenuData::selected_tree_cat_id() should not be called statically in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 152
+[23-Feb-2019 08:12:07 America/Chicago] PHP Deprecated:  Non-static method CategoryMenuData::selected_tree_cat_id() should not be called statically in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 152
+[23-Feb-2019 08:12:07 America/Chicago] PHP Deprecated:  Non-static method CategoryMenuData::selected_tree_cat_id() should not be called statically in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 152
+[23-Feb-2019 08:12:07 America/Chicago] PHP Deprecated:  Non-static method CategoryMenuData::selected_tree_cat_id() should not be called statically in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 152
+[23-Feb-2019 08:12:07 America/Chicago] PHP Deprecated:  Non-static method CategoryMenuData::selected_tree_cat_id() should not be called statically in /home4/spanisi6/public_html/survey/admin/core/app/view/admineditcategorymenu-view.php on line 60
+[23-Feb-2019 08:12:07 America/Chicago] PHP Deprecated:  Non-static method CategoryMenuData::selected_tree_cat_id() should not be called statically in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 152
+[23-Feb-2019 08:12:07 America/Chicago] PHP Deprecated:  Non-static method CategoryMenuData::selected_tree_cat_id() should not be called statically in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 152
+[23-Feb-2019 08:12:07 America/Chicago] PHP Deprecated:  Non-static method CategoryMenuData::selected_tree_cat_id() should not be called statically in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 152
+[23-Feb-2019 08:12:25 America/Chicago] PHP Deprecated:  Non-static method CategoryMenuData::selected_tree_cat_id() should not be called statically in /home4/spanisi6/public_html/survey/admin/core/app/view/admineditcategorymenu-view.php on line 60
+[23-Feb-2019 08:12:25 America/Chicago] PHP Deprecated:  Non-static method CategoryMenuData::selected_tree_cat_id() should not be called statically in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 152
+[23-Feb-2019 08:12:25 America/Chicago] PHP Deprecated:  Non-static method CategoryMenuData::selected_tree_cat_id() should not be called statically in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 152
+[23-Feb-2019 08:12:25 America/Chicago] PHP Deprecated:  Non-static method CategoryMenuData::selected_tree_cat_id() should not be called statically in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 152
+[23-Feb-2019 08:12:25 America/Chicago] PHP Deprecated:  Non-static method CategoryMenuData::selected_tree_cat_id() should not be called statically in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 152
+[23-Feb-2019 08:12:25 America/Chicago] PHP Deprecated:  Non-static method CategoryMenuData::selected_tree_cat_id() should not be called statically in /home4/spanisi6/public_html/survey/admin/core/app/view/admineditcategorymenu-view.php on line 60
+[23-Feb-2019 08:12:25 America/Chicago] PHP Deprecated:  Non-static method CategoryMenuData::selected_tree_cat_id() should not be called statically in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 152
+[23-Feb-2019 08:12:25 America/Chicago] PHP Deprecated:  Non-static method CategoryMenuData::selected_tree_cat_id() should not be called statically in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 152
+[23-Feb-2019 08:12:25 America/Chicago] PHP Deprecated:  Non-static method CategoryMenuData::selected_tree_cat_id() should not be called statically in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 152
+[23-Feb-2019 08:13:08 America/Chicago] PHP Deprecated:  Non-static method CategoryMenuData::selected_tree_cat_id() should not be called statically in /home4/spanisi6/public_html/survey/admin/core/app/view/admineditcategorymenu-view.php on line 60
+[23-Feb-2019 08:13:08 America/Chicago] PHP Deprecated:  Non-static method CategoryMenuData::selected_tree_cat_id() should not be called statically in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 152
+[23-Feb-2019 08:13:08 America/Chicago] PHP Deprecated:  Non-static method CategoryMenuData::selected_tree_cat_id() should not be called statically in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 152
+[23-Feb-2019 08:13:08 America/Chicago] PHP Deprecated:  Non-static method CategoryMenuData::selected_tree_cat_id() should not be called statically in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 152
+[23-Feb-2019 08:13:08 America/Chicago] PHP Deprecated:  Non-static method CategoryMenuData::selected_tree_cat_id() should not be called statically in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 152
+[23-Feb-2019 08:13:08 America/Chicago] PHP Deprecated:  Non-static method CategoryMenuData::selected_tree_cat_id() should not be called statically in /home4/spanisi6/public_html/survey/admin/core/app/view/admineditcategorymenu-view.php on line 60
+[23-Feb-2019 08:13:08 America/Chicago] PHP Deprecated:  Non-static method CategoryMenuData::selected_tree_cat_id() should not be called statically in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 152
+[23-Feb-2019 08:13:08 America/Chicago] PHP Deprecated:  Non-static method CategoryMenuData::selected_tree_cat_id() should not be called statically in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 152
+[23-Feb-2019 08:13:08 America/Chicago] PHP Deprecated:  Non-static method CategoryMenuData::selected_tree_cat_id() should not be called statically in /home4/spanisi6/public_html/survey/admin/core/app/model/CategoryMenuData.php on line 152
+[01-Aug-2019 06:56:01 UTC] PHP Deprecated:  __autoload() is deprecated, use spl_autoload_register() instead in /home1/spanisi6/public_html/survey/admin/core/app/autoload.php on line 7
+[01-Aug-2019 06:56:01 UTC] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/spanisi6/public_html/survey/admin/core/app/layouts/layout.php on line 113
+[12-Dec-2019 13:52:08 UTC] PHP Deprecated:  __autoload() is deprecated, use spl_autoload_register() instead in /home1/spanisi6/public_html/survey/admin/core/app/autoload.php on line 7
+[12-Dec-2019 13:52:08 UTC] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/spanisi6/public_html/survey/admin/core/app/layouts/layout.php on line 113
+[15-Dec-2019 15:35:33 UTC] PHP Deprecated:  __autoload() is deprecated, use spl_autoload_register() instead in /home1/spanisi6/public_html/survey/admin/core/app/autoload.php on line 7
+[15-Dec-2019 15:35:33 UTC] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/spanisi6/public_html/survey/admin/core/app/layouts/layout.php on line 113
+[08-Mar-2020 14:50:38 America/Boise] PHP Deprecated:  __autoload() is deprecated, use spl_autoload_register() instead in /home1/spanisi6/public_html/survey/admin/core/app/autoload.php on line 7
+[08-Mar-2020 14:50:38 America/Boise] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/spanisi6/public_html/survey/admin/core/app/layouts/layout.php on line 113
+[22-Mar-2020 12:25:35 America/Boise] PHP Deprecated:  __autoload() is deprecated, use spl_autoload_register() instead in /home1/spanisi6/public_html/survey/admin/core/app/autoload.php on line 7
+[22-Mar-2020 12:25:35 America/Boise] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/spanisi6/public_html/survey/admin/core/app/layouts/layout.php on line 113
+[23-Jun-2020 13:11:25 America/Boise] PHP Deprecated:  __autoload() is deprecated, use spl_autoload_register() instead in /home1/spanisi6/public_html/survey/admin/core/app/autoload.php on line 7
+[23-Jun-2020 13:11:25 America/Boise] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/spanisi6/public_html/survey/admin/core/app/layouts/layout.php on line 113
+[23-Jun-2020 13:11:36 America/Boise] PHP Deprecated:  __autoload() is deprecated, use spl_autoload_register() instead in /home1/spanisi6/public_html/survey/admin/core/app/autoload.php on line 7
+[23-Jun-2020 13:11:36 America/Boise] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/spanisi6/public_html/survey/admin/core/app/layouts/layout.php on line 113
+[23-Jun-2020 13:11:37 America/Boise] PHP Deprecated:  __autoload() is deprecated, use spl_autoload_register() instead in /home1/spanisi6/public_html/survey/admin/core/app/autoload.php on line 7
+[23-Jun-2020 13:11:37 America/Boise] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/spanisi6/public_html/survey/admin/core/app/layouts/layout.php on line 113
+[23-Jun-2020 13:11:46 America/Boise] PHP Deprecated:  __autoload() is deprecated, use spl_autoload_register() instead in /home1/spanisi6/public_html/survey/admin/core/app/autoload.php on line 7
+[23-Jun-2020 13:11:46 America/Boise] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/spanisi6/public_html/survey/admin/core/app/layouts/layout.php on line 113
+[23-Jun-2020 13:14:29 America/Boise] PHP Deprecated:  __autoload() is deprecated, use spl_autoload_register() instead in /home1/spanisi6/public_html/survey/admin/core/app/autoload.php on line 7
+[23-Jun-2020 13:14:29 America/Boise] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/spanisi6/public_html/survey/admin/core/app/layouts/layout.php on line 113
+[23-Jun-2020 13:14:30 America/Boise] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/spanisi6/public_html/survey/admin/core/app/view/editorsurvey-view.php on line 29
+[23-Jun-2020 13:15:13 America/Boise] PHP Deprecated:  __autoload() is deprecated, use spl_autoload_register() instead in /home1/spanisi6/public_html/survey/admin/core/app/autoload.php on line 7
+[23-Jun-2020 13:15:13 America/Boise] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/spanisi6/public_html/survey/admin/core/app/layouts/layout.php on line 113
+[23-Jun-2020 13:15:44 America/Boise] PHP Deprecated:  __autoload() is deprecated, use spl_autoload_register() instead in /home1/spanisi6/public_html/survey/admin/core/app/autoload.php on line 7
+[23-Jun-2020 13:15:44 America/Boise] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/spanisi6/public_html/survey/admin/core/app/layouts/layout.php on line 113
+[23-Jun-2020 13:15:44 America/Boise] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/spanisi6/public_html/survey/admin/core/app/view/editorsurvey-view.php on line 29
+[23-Jun-2020 13:16:57 America/Boise] PHP Deprecated:  __autoload() is deprecated, use spl_autoload_register() instead in /home1/spanisi6/public_html/survey/admin/core/app/autoload.php on line 7
+[23-Jun-2020 13:16:57 America/Boise] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/spanisi6/public_html/survey/admin/core/app/layouts/layout.php on line 113
+[23-Jun-2020 13:16:59 America/Boise] PHP Deprecated:  __autoload() is deprecated, use spl_autoload_register() instead in /home1/spanisi6/public_html/survey/admin/core/app/autoload.php on line 7
+[23-Jun-2020 13:17:15 America/Boise] PHP Deprecated:  __autoload() is deprecated, use spl_autoload_register() instead in /home1/spanisi6/public_html/survey/admin/core/app/autoload.php on line 7
+[23-Jun-2020 13:17:15 America/Boise] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/spanisi6/public_html/survey/admin/core/app/layouts/layout.php on line 113
+[23-Jun-2020 13:17:16 America/Boise] PHP Deprecated:  __autoload() is deprecated, use spl_autoload_register() instead in /home1/spanisi6/public_html/survey/admin/core/app/autoload.php on line 7
+[23-Jun-2020 13:17:32 America/Boise] PHP Deprecated:  __autoload() is deprecated, use spl_autoload_register() instead in /home1/spanisi6/public_html/survey/admin/core/app/autoload.php on line 7
+[23-Jun-2020 13:17:32 America/Boise] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/spanisi6/public_html/survey/admin/core/app/layouts/layout.php on line 113
+[23-Jun-2020 13:17:34 America/Boise] PHP Deprecated:  __autoload() is deprecated, use spl_autoload_register() instead in /home1/spanisi6/public_html/survey/admin/core/app/autoload.php on line 7
+[23-Jun-2020 13:29:51 America/Boise] PHP Deprecated:  __autoload() is deprecated, use spl_autoload_register() instead in /home1/spanisi6/public_html/survey/admin/core/app/autoload.php on line 7
+[23-Jun-2020 13:29:52 America/Boise] PHP Deprecated:  __autoload() is deprecated, use spl_autoload_register() instead in /home1/spanisi6/public_html/survey/admin/core/app/autoload.php on line 7
+[23-Jun-2020 13:29:52 America/Boise] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/spanisi6/public_html/survey/admin/core/app/layouts/layout.php on line 113
