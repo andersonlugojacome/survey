@@ -3,8 +3,8 @@ $(function() {
     $("#main-wrapper").AdminSettings({
         Theme: false, // this can be true or false ( true means dark and false means light ),
         Layout: 'vertical',
-        LogoBg: 'skin5', // You can change the Value to be skin1/skin2/skin3/skin4/skin5/skin6 
-        NavbarBg: 'skin5', // You can change the Value to be skin1/skin2/skin3/skin4/skin5/skin6
+        LogoBg: 'skin4', // You can change the Value to be skin1/skin2/skin3/skin4/skin5/skin6 
+        NavbarBg: 'skin4', // You can change the Value to be skin1/skin2/skin3/skin4/skin5/skin6
         SidebarType: 'overlay', // You can change it full / mini-sidebar / iconbar / overlay
         SidebarColor: 'skin6', // You can change the Value to be skin1/skin2/skin3/skin4/skin5/skin6
         SidebarPosition: true, // it can be true / false ( true means Fixed and false means absolute )

@@ -51,16 +51,33 @@ class CategoryMenuData
         return Model::many($query[0], new CategoryMenuData());
     }
 
+    //public static function list_tree_cat_id($id)
+    //{
+    //    $subs = self::get_cats_by_cat_id($id);
+    //    if (count($subs)>0) {
+    //        echo "<ul>";
+    //        foreach ($subs as $s) {
+    //            $html='<li class=""> ';
+    //            $html.='<p><a href="'.$s->url.'"> ';
+    //            $html.='<i class="material-icons">'.$s->icon.'</i>'.$s->name.' </a>';
+    //            $html.= self::addHTMLUserGroupCategoryMenu($s->id).self::edit_btn($s->id).' '.self::del_btn($s->id).' </p></li>';
+    //            echo $html;
+    //            self::list_tree_cat_id($s->id);
+    //        }
+    //        echo "</ul>";
+    //    }
+    //}
+
     public static function list_tree_cat_id($id)
     {
         $subs = self::get_cats_by_cat_id($id);
         if (count($subs)>0) {
-            echo "<ul>";
+            echo '<ul aria-expanded="false" class="collapse  first-level">';
             foreach ($subs as $s) {
-                $html='<li class=""> ';
-                $html.='<p><a href="'.$s->url.'"> ';
-                $html.='<i class="material-icons">'.$s->icon.'</i>'.$s->name.' </a>';
-                $html.= self::addHTMLUserGroupCategoryMenu($s->id).self::edit_btn($s->id).' '.self::del_btn($s->id).' </p></li>';
+                $html='<li class="sidebar-item"> ';
+                $html.='<a href="'.$s->url.'" class="sidebar-link">';
+                $html.='<i class="'.$s->icon.'"></i><span class="hide-menu"> '.$s->name.' </span></a>';
+                $html.= self::addHTMLUserGroupCategoryMenu($s->id).self::edit_btn($s->id).' '.self::del_btn($s->id).' </li>';
                 echo $html;
                 self::list_tree_cat_id($s->id);
             }
@@ -112,19 +129,19 @@ class CategoryMenuData
         $subs = self::get_cats_by_cat_id($id);
         if (count($subs)>0) {
             $html="";
-            echo "<div class=\"collapse\" id=\"$id\"><ul class=\"nav\">";
+            echo '<ul aria-expanded="false" class="collapse  first-level">';
             foreach ($subs as $s) {
                 $view_id = CategoryMenuData::isUserGroupCategoryMenu($s->id, $user->user_level);
                 if ($user->user_level==$view_id) {
-                    $html='<li class="nav-item"> ';
-                    $html.='<a class="nav-link" href="'.$s->url.'"> ';
-                    $html.='<span class="sidebar-mini"> <i class="material-icons">'.$s->icon.'</i></span><span class="sidebar-normal">'.$s->name.'</span> ';
-                    $html.='</a> </li>';
+                    $html='<li class="sidebar-item"> ';
+                    $html.='<a href="'.$s->url.'" class="sidebar-link">';
+                    $html.='<i class="'.$s->icon.'"></i><span class="hide-menu"> '.$s->name.' </span></a>';
+                    $html.='</li>';
                     echo $html;
                     self::list_tree_cat_id_user($s->id);
                 }
             }
-            echo "</ul></div>";
+            echo "</ul>";
         }
     }
 

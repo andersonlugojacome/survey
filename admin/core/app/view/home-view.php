@@ -1,15 +1,47 @@
-<div class="card">
-    <div class="card-header card-header-primary">
-        <h4 class="card-title">Welcome to your Content Management System <i class="material-icons">import_contacts</i>
-        </h4>
-        <p class="card-category"></p>
-    </div>
-    <div class="card-body">
-        <div class="card-title">
-            <!-- Session comments -->
-            <?= Util::display_msg(Session::$msg); ?>
-            <!-- End session comments-->
-            <h2></h2>
-        </div>
+<!-- ============================================================== -->
+<!-- Bread crumb and right sidebar toggle -->
+<!-- ============================================================== -->
+<div class="row page-titles">
+    <div class="col-md-12 col-12 align-self-center">
+        <h3 class="text-themecolor mb-0">Welcome to your Content Management System</h3>
+        <ol class="breadcrumb mb-0 p-0 bg-transparent">
+            <li class="breadcrumb-item active">Home</li>
+        </ol>
+        <!-- Session comments -->
+        <?= Util::display_msg(Session::$msg); ?>
+        <!-- End session comments-->
     </div>
 </div>
+<!-- ============================================================== -->
+<!-- End Bread crumb and right sidebar toggle -->
+<!-- ============================================================== -->
+<!-- ============================================================== -->
+<!-- Container fluid  -->
+<!-- ============================================================== -->
+<div class="container-fluid">
+    <!-- ============================================================== -->
+    <!-- Start Page Content -->
+    <!-- ============================================================== -->
+    <div class="row">
+        <div class="col-sm-12 col-md-6 col-lg-4">
+            <div class="card">
+                <div class="card-body">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- End PAge Content -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- Right sidebar -->
+    <!-- ============================================================== -->
+    <!-- .right-sidebar -->
+    <!-- ============================================================== -->
+    <!-- End Right sidebar -->
+    <!-- ============================================================== -->
+</div>
+<!-- ============================================================== -->
+<!-- End Container fluid  -->
+<!-- ============================================================== -->

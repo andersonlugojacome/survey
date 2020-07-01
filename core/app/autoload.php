@@ -5,11 +5,11 @@
 // esta funcion elimina el hecho de estar agregando los modelos manualmente
 // by DigitalesWeb
 
-function __autoload($modelname){
+spl_autoload_register(function($modelname) {
 	if(Model::exists($modelname)){
 		include Model::getFullPath($modelname);
 	} 
-}
+});
 
 
 
