@@ -1,6 +1,9 @@
 <?php
 
 ?>
+
+
+
 <!-- ============================================================== -->
 <!-- Bread crumb and right sidebar toggle -->
 <!-- ============================================================== -->
@@ -19,18 +22,19 @@
 <!-- ============================================================== -->
 <!-- Container fluid  -->
 <!-- ============================================================== -->
-<div class="container-fluid">
+<div class="container-fluid h-100">
     <!-- ============================================================== -->
     <!-- Start Page Content -->
     <!-- ============================================================== -->
+
+
+    <!-- Row -->
     <div class="row">
-        <div class="col-sm-12 col-md-12">
+        <div class="col-12">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">Thanks</h4>
-                    <h6 class="card-subtitle"></h6>
-
-
+                <h4 class="card-title">Thanks</h4>
+                <h6 class="card-subtitle">
                     <!-- Session comments -->
                     <?php if (isset($_GET['msg'])) :    ?>
                         <div class="alert alert-info alert-dismissible">
@@ -38,18 +42,17 @@
                             <strong>Note:</strong>
                             <?php echo $_GET['msg'] ?>
                         </div>
-                    <?php endif; ?>
-
-                    <div class="row">
-                        <div class="col-lg-6 mb-4">
-                            <?= $_SESSION['body'] ?>
-                            <a type="button" href="/" class="btn btn-primary"><i class="fas fa-check"></i>
-                                Home</a>
-                        </div>
-                    </div>
-
-
-
+                    <?php endif; ?></h6>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-center h-100">
+        <div class="col-sm-12 col-md-12 align-self-center text-center">
+            <div class="card">
+            <h4 class="card-title"></h4>
+                <div class="card-body alert alert-primary alert-dismissible bg-primary text-white border-0">
+                    <h3 class="m-5 text-white">We will soon be contacting to by the means you provided.</h3>
                 </div>
             </div>
         </div>

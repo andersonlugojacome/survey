@@ -36,12 +36,12 @@ class CategoryMenuData
 
     public static function edit_btn($id)
     {
-        return '<a href="./?view=admineditcategorymenu&id='.$id.'" data-toggle="tooltip" title="Editar" class="btn btn-link btn-success btn-just-icon btn-sm"><i class="material-icons">edit</i> </a>';
+        return '<a href="./?view=admineditcategorymenu&id='.$id.'" data-toggle="tooltip" title="Editar" class="btn btn-link btn-success btn-just-icon btn-sm"><i class="mdi mdi-lead-pencil"></i> </a>';
     }
 
     public static function del_btn($id)
     {
-        return '<a href="./?view=admindelcategorymenu&id='.$id.'" data-toggle="tooltip" title="Eliminar" class="btn btn-link btn-danger btn-just-icon btn-sm"> <i class="material-icons">delete</i></a>';
+        return '<a href="./?view=admindelcategorymenu&id='.$id.'" data-toggle="tooltip" title="Eliminar" class="btn btn-link btn-danger btn-just-icon btn-sm"> <i class="mdi mdi-delete-forever"></i></a>';
     }
 
     public static function get_cats_by_cat_id($id)
@@ -72,11 +72,11 @@ class CategoryMenuData
     {
         $subs = self::get_cats_by_cat_id($id);
         if (count($subs)>0) {
-            echo '<ul aria-expanded="false" class="collapse  first-level">';
+            echo '<ul >';
             foreach ($subs as $s) {
                 $html='<li class="sidebar-item"> ';
                 $html.='<a href="'.$s->url.'" class="sidebar-link">';
-                $html.='<i class="'.$s->icon.'"></i><span class="hide-menu"> '.$s->name.' </span></a>';
+                $html.='<i class="mdi '.$s->icon.'"></i><span class="hide-menu"> '.$s->name.' </span></a>';
                 $html.= self::addHTMLUserGroupCategoryMenu($s->id).self::edit_btn($s->id).' '.self::del_btn($s->id).' </li>';
                 echo $html;
                 self::list_tree_cat_id($s->id);
@@ -135,7 +135,7 @@ class CategoryMenuData
                 if ($user->user_level==$view_id) {
                     $html='<li class="sidebar-item"> ';
                     $html.='<a href="'.$s->url.'" class="sidebar-link">';
-                    $html.='<i class="'.$s->icon.'"></i><span class="hide-menu"> '.$s->name.' </span></a>';
+                    $html.='<i class="mdi ' .$s->icon.'"></i><span class="hide-menu"> '.$s->name.' </span></a>';
                     $html.='</li>';
                     echo $html;
                     self::list_tree_cat_id_user($s->id);

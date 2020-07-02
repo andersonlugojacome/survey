@@ -25,7 +25,6 @@ class SurveylistsData
     {
         $sql= "INSERT INTO ".self::$tablename." (name, description, user_id, created_at, surveylist_status)";
         $sql .= " VALUES (\"$this->name\",\"$this->description\",\"$this->user_id\",\"$this->created_at\",\"$this->surveylist_status\" )";
-        //echo $sql;
         Executor::doit($sql);
     }
 
@@ -78,7 +77,13 @@ class SurveylistsData
     {
         $sql = "select * from ".self::$tablename. " LIMIT " . $this_page_first_result . "," .  $results_per_page;
         $query = Executor::doit($sql);
-        //echo $sql;
+        return Model::many($query[0], new surveylistsData());
+    }
+ 
+    public static function getAllNumRowToListByRange($start_at, $finish_at)
+    {
+        $sql = "select t1.* from ".self::$tablename. " t1 join (select name, min(id) as min_fila from ".self::$tablename." group by name, description) t2 on t2.name = t1.name and t2.min_fila = t1.id and  t1.created_at>=\"$start_at\" and t1.created_at<=\"$finish_at\" order by t1.id ";
+        $query = Executor::doit($sql);
         return Model::many($query[0], new surveylistsData());
     }
 }

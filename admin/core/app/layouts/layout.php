@@ -46,6 +46,9 @@ if (isset($_GET['view'])) {
     <meta name="viewport" content="width=device-width" />
 
     <link rel="canonical" href="https://www.wrappixel.com/templates/xtremeadmin/" />
+
+    <!-- This page plugin CSS -->
+    <link href="/themes/spanishasap/assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="/themes/spanishasap/dist/css/style.min.css" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -54,6 +57,38 @@ if (isset($_GET['view'])) {
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
+
+    <!-- ============================================================== -->
+    <!-- All Jquery -->
+    <!-- ============================================================== -->
+    <script src="/themes/spanishasap/assets/libs/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap tether Core JavaScript -->
+    <script src="/themes/spanishasap/assets/libs/popper.js/dist/umd/popper.min.js"></script>
+    <script src="/themes/spanishasap/assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- apps -->
+    <script src="/themes/spanishasap/dist/js/app.min.js"></script>
+    <script src="/themes/spanishasap/dist/js/app.init.overlay.js"></script>
+    <script src="/themes/spanishasap/dist/js/app-style-switcher.js"></script>
+    <!-- slimscrollbar scrollbar JavaScript -->
+    <script src="/themes/spanishasap/assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
+    <script src="/themes/spanishasap/assets/extra-libs/sparkline/sparkline.js"></script>
+    <!--Wave Effects -->
+    <script src="/themes/spanishasap/dist/js/waves.js"></script>
+    <!--Menu sidebar -->
+    <script src="/themes/spanishasap/dist/js/sidebarmenu.js"></script>
+    <!--Custom JavaScript -->
+    <script src="/themes/spanishasap/dist/js/custom.min.js"></script>
+    <!--This page plugins -->
+    <script src="/themes/spanishasap/assets/libs/datatables/media/js/jquery.dataTables.min.js"></script>
+    <script src="/themes/spanishasap/dist/js/pages/datatable/custom-datatable.js"></script>
+    <!-- start - This is for export functionality only -->
+    <script src="https://cdn.datatables.net/buttons/1.5.1/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.flash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.print.min.js"></script>
     </script>
 </head>
 
@@ -306,7 +341,7 @@ if (isset($_GET['view'])) {
                                         if ($user->user_level == $view_id) : ?>
                                             <li class="sidebar-item">
                                                 <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
-                                                    <i class="mdi mdi-gauge"></i>
+                                                    <i class="mdi <?= $cat->icon; ?>"></i>
                                                     <span class="hide-menu"><?= $cat->name; ?> </span>
                                                 </a>
                                                 <?php CategoryMenuData::list_tree_cat_id_user($cat->id); ?>
@@ -374,26 +409,21 @@ if (isset($_GET['view'])) {
     <?php
     else : View::load("login");
     endif; ?>
-    <!-- ============================================================== -->
-    <!-- All Jquery -->
-    <!-- ============================================================== -->
-    <script src="/themes/spanishasap/assets/libs/jquery/dist/jquery.min.js"></script>
-    <!-- Bootstrap tether Core JavaScript -->
-    <script src="/themes/spanishasap/assets/libs/popper.js/dist/umd/popper.min.js"></script>
-    <script src="/themes/spanishasap/assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
-    <!-- apps -->
-    <script src="/themes/spanishasap/dist/js/app.min.js"></script>
-    <script src="/themes/spanishasap/dist/js/app.init.overlay.js"></script>
-    <script src="/themes/spanishasap/dist/js/app-style-switcher.js"></script>
-    <!-- slimscrollbar scrollbar JavaScript -->
-    <script src="/themes/spanishasap/assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
-    <script src="/themes/spanishasap/assets/extra-libs/sparkline/sparkline.js"></script>
-    <!--Wave Effects -->
-    <script src="/themes/spanishasap/dist/js/waves.js"></script>
-    <!--Menu sidebar -->
-    <script src="/themes/spanishasap/dist/js/sidebarmenu.js"></script>
-    <!--Custom JavaScript -->
-    <script src="/themes/spanishasap/dist/js/custom.min.js"></script>
+
+
 </body>
+<style>
+    .page-titles {
+        background: #273c99;
+    }
+
+    .breadcrumb-item.active {
+        color: #fff;
+    }
+
+    .page-titles .text-themecolor {
+        color: #8cc63e;
+    }
+</style>
 
 </html>

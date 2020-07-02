@@ -157,7 +157,7 @@ function generateTextArea($name, $values = 6)
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label for="pn" class="bmd-label-floating">Project number:</label>
-                                    <input type="text" class="form-control" id="pn" name="pn" required>
+                                    <input type="text" class="form-control" id="pn" name="pn" autocomplete="off" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="nameTEP" class="bmd-label-floating">Editor name</label>
