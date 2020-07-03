@@ -7,7 +7,6 @@
  * @version 1.0
  * @author DigitalesWeb
  */
-
 $_SESSION['body'] = "";
         $body = "";
 $resultIs = SurveylistsanswerData::getPnByPnAnho($_POST['pn'], $_POST['pn_anho'], $_POST['surveylists_id']);
