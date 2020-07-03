@@ -1,8 +1,8 @@
 <?php
 /**
- * Addchecklist short summary.
+ *  short summary.
  *
- * Addchecklist description.
+ *  description.
  *
  * @version 1.0
  * @author DigitalesWeb
@@ -15,9 +15,9 @@ if (count($_POST)>0) {
     $cl->surveylist_status = $_POST['ddlsurveylist_status'];
     $cl->user_id=Session::getUID();
     $cl->add();
-    Session::msg("s", "Agregado satisfactoriamente.");
-    Core::redir("./?view=adminchecklists");
+    Session::msg("s", "Successfully added.");
+    Core::redir("./?view=adminsurveylists");
 } else {
-    Session::msg("d", "Error al agregar, por favor llame al administrador del sistema.");
-    Core::redir("./?view=adminchecklists");
+    Session::msg("d", "Error adding, please call system administrator.");
+    Core::redir("./?view=adminsurveylists");
 }

@@ -36,7 +36,6 @@ function generateTextArea($name, $values = 6)
     return $o;
 }
 ?>
-
 <style>
     label {
         color: grey;

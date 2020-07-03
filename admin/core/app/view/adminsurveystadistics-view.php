@@ -1,14 +1,19 @@
 <?php
 
 /**
- *  short summary.
+ * checklistbcs short summary.
  *
- *  description.
+ * checklistbcs description.
  *
  * @version 1.0
  * @author DigitalesWeb
  */
 
+if (isset($_GET["surveyid"])) {
+    $surveyId = $_GET["surveyid"];
+} else {
+    Core::redir("./?view=adminsurveylists");
+}
 if (isset($_GET["finish_at"])) {
     $finish_at = strtotime($_GET["finish_at"]);
     $now = $_GET["finish_at"];
@@ -24,6 +29,13 @@ if (isset($_GET["start_at"])) {
 
 
 ?>
+
+
+
+
+
+
+
 <!-- This Page CSS -->
 <link rel="stylesheet" type="text/css" href="/themes/spanishasap/assets/libs/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css">
 
@@ -76,7 +88,7 @@ if (isset($_GET["start_at"])) {
                         <?= Util::display_msg(Session::$msg); ?>
                         <!-- End session comments-->
                     </div>
-                    <h6 class="card-subtitle">Survey</h6>
+                    <h6 class="card-subtitle">Survey stadistics</h6>
                     <div class="row">
                         <div class="col-md-12">
                             <a href="./?view=adminnewsurveylist" class="btn btn-primary">
@@ -96,7 +108,8 @@ if (isset($_GET["start_at"])) {
                     <div class="row">
                         <div class="col-md-12">
                             <form class="form-horizontal" role="form">
-                                <input type="hidden" name="view" value="adminsurveylists" />
+                                <input type="hidden" name="view" value="adminsurveystadistics" />
+                                <input type="hidden" name="surveyid" value="<?=$surveyId?>" />
                                 <div class="row">
                                     <div class="col-md-3">
                                         <div class="form-group bmd-form-group has-success">
@@ -128,18 +141,17 @@ if (isset($_GET["start_at"])) {
                     <div class="row">
                         <div class="col-md-12">
                             <?php
-                            $result = SurveylistsData::getAllNumRow();
+                            $result = SurveylistsanswerData::getAllNumRowAnswerToList();
                             if (count($result) > 0) {
                             ?>
                                 <div class="material-datatables">
                                     <table id="datatables" class="table table-striped table-bordered dataTable" cellspacing="0" width="100%" style="width:100%">
                                         <thead>
                                             <tr>
+                                                <th>Num project</th>
                                                 <th>Name</th>
-                                                <th>Description</th>
-                                                <th>User_ID</th>
-                                                <th>Fecha creacion</th>
-                                                <th>Status</th>
+                                                <th>rating</th>
+                                                <th>Created</th>
                                                 <th class="disabled-sorting text-right">Opciones</th>
                                             </tr>
                                         </thead>
@@ -148,7 +160,7 @@ if (isset($_GET["start_at"])) {
                                 </div>
                             <?php
                             } else {
-                                echo "<p class='alert alert-danger'>No hay listas de chequeo creadas.</p>";
+                                echo "<p class='alert alert-danger'>No found</p>";
                             }
                             ?>
                         </div>
@@ -172,8 +184,6 @@ if (isset($_GET["start_at"])) {
 <!-- ============================================================== -->
 <!-- End Container fluid  -->
 <!-- ============================================================== -->
-
-
 <script>
     function openWindowsPrint($url) {
         var newWindow = window.open($url, 'Reporte',
@@ -185,8 +195,7 @@ if (isset($_GET["start_at"])) {
 <script language="javascript">
     $(document).ready(function() {
         var $url =
-            "<?= "./?action=searchsurveylist&start_at=" . $start_at . "&finish_at=" . $now; ?>";
-
+            "<?= "./?action=searchsurveyanswered&surveyid=".$surveyId."&start_at=" . $start_at . "&finish_at=" . $now; ?>";
         $('#datatables').DataTable({
             "ajax": {
                 "url": $url,
@@ -194,31 +203,29 @@ if (isset($_GET["start_at"])) {
                 "type": "GET"
             },
             "columns": [{
-                    "data": "name"
+                    "data": "pn"
                 },
                 {
-                    "data": "description"
+                    "data": "nameTEP"
                 },
-
+                {
+                    "data": "rating"
+                },
                 {
                     "data": "created_at"
-                },
-                {
-                    "data": "user_id"
-                },
-
-                {
-                    "data": "surveylist_status"
                 },
                 {
                     "data": "options"
                 }
             ],
             "columnDefs": [{
-                className: "text-right",
-                "targets": [4, 4]
+                className: "text-center",
+                "targets": [4]
             }],
             "fnRowCallback": function(nRow, aData, iDisplayIndex) {
+                //alert(aData.status);
+
+                //alert($('td:eq(1)', nRow).text());
                 if ($('td:eq(2)', nRow).text() != "") {
                     $('td:eq(2)', nRow).addClass('class_edit');
                 }
@@ -267,5 +274,6 @@ if (isset($_GET["start_at"])) {
         var table = $('#datatables').DataTable();
         table.order([3, 'desc']).draw();
         $('.card .material-datatables label').addClass('form-group');
+
     });
 </script>

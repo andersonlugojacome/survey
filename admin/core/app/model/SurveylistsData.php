@@ -19,7 +19,7 @@ class SurveylistsData
         $this->description = "";
         $this->user_id = "";
         $this->surveylist_status = "";
-        $this->created_at = (new \DateTime())->format('Y-m-d H:i:s');
+        $this->created_at = Util::getDatetimeNow();
     }
     public function add()
     {

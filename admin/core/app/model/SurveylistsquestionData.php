@@ -21,14 +21,14 @@ class SurveylistsquestionData
         $this->surveylists_id ="";
         $this->q_status = "";
         $this->position ="";
-        $this->q_format = "radio";
+        $this->q_format = "";
         $this->user_id ="";
-        $this->created_at = (new \DateTime())->format('Y-m-d H:i:s');
+        $this->created_at = Util::getDatetimeNow();
     }
     public function add()
     {
-        $sql= "INSERT INTO ".self::$tablename." (question, description, linkpdf, user_id, created_at, surveylists_id, q_status, position, q_format)";
-        $sql .= " VALUES (\"$this->question\",\"$this->description\",\"$this->linkpdf\",\"$this->user_id\",\"$this->created_at\",\"$this->surveylists_id\",\"$this->q_status\",\"$this->position\",\"$this->q_format\" )";
+        $sql= "INSERT INTO ".self::$tablename." (question, description, linkpdf, user_id, created_at, surveylists_id, q_status, position, q_format, num_input)";
+        $sql .= " VALUES (\"$this->question\",\"$this->description\",\"$this->linkpdf\",\"$this->user_id\",\"$this->created_at\",\"$this->surveylists_id\",\"$this->q_status\",\"$this->position\",\"$this->q_format\",\"$this->num_input\" )";
         Executor::doit($sql);
     }
 
