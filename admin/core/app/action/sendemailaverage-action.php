@@ -17,10 +17,18 @@ $surveylists_id = $_GET["surveyid"];
 $result2 = SurveylistsanswerData::getAllAnswersByPnAnhoSurveylistsID($pn, $pn_anho, $surveylists_id);
 
 if (!empty($result2)) {
+    //print_r($result2);
     $sum = 0;
     $count = 0;
+    $nameTEP ="";
     $body = "";
+    $_SESSION['body'] = "";
     foreach ($result2 as $v) {
+        if (empty($nameTEP)) {
+            # code...
+            $nameTEP = $v->nameTEP;
+            $body .= "<b>Name:</b> ".$nameTEP."\n<br/>";
+        }
         if (is_numeric($v->surveyanswer)) {
             $sum += $v->surveyanswer;
             $count++;
@@ -29,12 +37,8 @@ if (!empty($result2)) {
             $body .= $v->surveyquestion.", answer: " . $v->surveyanswer . "\n<br/>";
         }
     }
-
     $average = $sum / $count;
     $average = number_format($average, 1, ',', '');
-
-
-    $_SESSION['body'] = "";
     $body .= "Average : " . $average . " &#9733;\n<br/>";
 
     $_SESSION['body'] = $body;

@@ -96,9 +96,7 @@ class SurveylistsanswerData
     }
     public static function getByRangeAndSurveyID($start_at, $finish_at, $surveyId)
     {
-        //$sql = "select  DISTINCT pn from " . self::$tablename . " where created_at>=\"$start_at\" and created_at<=\"$finish_at\" and surveylists_id=\"$surveyId\" ";
         $sql = "select t1.* from surveylistsanswers t1 join (select pn, min(id) as min_fila from surveylistsanswers group by pn, pn_anho) t2 on t2.pn = t1.pn and t2.min_fila = t1.id and t1.created_at>=\"$start_at\" and t1.created_at<=\"$finish_at\" and t1.surveylists_id=$surveyId order by t1.id ";
-
         $query = Executor::doit($sql);
         //echo $sql;
         return Model::many($query[0], new SurveylistsanswerData());
@@ -131,8 +129,15 @@ class SurveylistsanswerData
     }
     public static function getAllAnswersByPnAnhoSurveylistsID($pn, $anho, $surveylists_id)
     {
-        $sql = "SELECT sl.name AS namesurvey, slq.question AS surveyquestion ,sla.answer AS surveyanswer FROM surveylists as sl LEFT JOIN surveylistsanswers as sla ON sl.id = sla.surveylists_id LEFT JOIN surveylistsquestions as slq ON sla.surveylistsquestions_id = slq.id WHERE sl.id = '" . $surveylists_id . "' AND sla.pn ='" . $pn . "' AND sla.pn_anho='" . $anho . "' ";
-        //$sql = "SELECT cl.id as cl_id, cla.id as cla_id, cla.surveylistsquestions_id as clq_id, cla.answer as respuesta FROM surveylists as cl LEFT JOIN surveylistsanswers as cla ON cl.id = cla.surveylists_id WHERE cl.id = '" . $surveylists_id . "' AND cla.pn ='" . $pn . "' AND cla.pn_anho='" . $anho . "' ORDER BY cla.id ASC ";
+        $sql = "SELECT sl.name AS namesurvey, slq.question AS surveyquestion ,sla.answer AS surveyanswer, sla.nameTEP AS nameTEP  FROM surveylists as sl LEFT JOIN surveylistsanswers as sla ON sl.id = sla.surveylists_id LEFT JOIN surveylistsquestions as slq ON sla.surveylistsquestions_id = slq.id WHERE sl.id = '" . $surveylists_id . "' AND sla.pn ='" . $pn . "' AND sla.pn_anho='" . $anho . "' ";
+        $query = Executor::doit($sql);
+        
+        return Model::many($query[0], new SurveylistsanswerData());
+    }
+
+    public static function getAllAnswersByPnAnhoSurveylistsIDReport($pn, $anho, $surveylists_id)
+    {
+        $sql = "SELECT sl.name AS namesurvey, slq.question AS surveyquestion ,sla.answer AS surveyanswer, sl.*, slq.*,sla.* FROM surveylists as sl LEFT JOIN surveylistsanswers as sla ON sl.id = sla.surveylists_id LEFT JOIN surveylistsquestions as slq ON sla.surveylistsquestions_id = slq.id WHERE sl.id = '" . $surveylists_id . "' AND sla.pn ='" . $pn . "' AND sla.pn_anho='" . $anho . "' ";
         $query = Executor::doit($sql);
         //echo $sql;
         return Model::many($query[0], new SurveylistsanswerData());

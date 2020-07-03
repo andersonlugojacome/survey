@@ -16,7 +16,7 @@ if (count($_POST)>0) {
     $cq->surveylists_id = $_POST["ddllists"];
     $cq->q_status = $_POST["ddllquestionstatus"];
     $cq->position = $_POST["position"];
-    $cq->num_input = $_POST["q_format"];
+    $cq->q_format = $_POST["q_format"];
     $cq->num_input = $_POST["num_input"];
     $cq->user_id=Session::getUID();
     $cq->add();
