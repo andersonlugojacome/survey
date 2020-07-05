@@ -27,7 +27,7 @@ if (!empty($resultIs)) {
         $sum = 0;
         $total = count($_POST['qid']) - 1;
         foreach ($_POST['qid'] as $key => $value) {
-            $qa = isset($_POST['question_' . $value . '_answer']) ? $_POST['question_' . $value . '_answer'] : "5";
+            $qa = isset($_POST['question_' . $value . '_answer']) ? $_POST['question_' . $value . '_answer'] : "";
             $ca = new SurveylistsanswerData();
             $ca->pn = $_POST['pn'];
             $ca->answer = $qa;

@@ -18,33 +18,21 @@ if (count($result) > 0) {
     $arAnswer = array();
     $totalSurvey = count($result);
     foreach ($result as $value) {
-
-        $count = 0;
-        $sum = 0;
-        $average = 0.0;
         $result2 = SurveylistsanswerData::getAllAnswersByPnAnhoSurveylistsIDReport($value->pn, $value->pn_anho, $value->surveylists_id);
         foreach ($result2 as $v) {
-
             if (is_numeric($v->surveyanswer)) {
-                $sum += $v->surveyanswer;
-                $count++;
+                //$sum += $v->surveyanswer;
+                
                 $arAnswer[] = array(
                     'surveyquestion' => $v->surveyquestion,
                     'surveyanswer' => $v->surveyanswer,
                     'surveyquestioncount' => "1"
-
-
                 );
             } else {
                 // do some error handling...
             }
         }
-        //$totalQuestions = count($arAnswer);
-        //$average = $sum / $count;
-        //$average = number_format($average, 1, ',', '');
-
     }
-    //$data = json_encode($arAnswer);
     $newArray = array();
     foreach ($arAnswer as $t) {
         $repeat = false;
@@ -58,52 +46,39 @@ if (count($result) > 0) {
             }
         }
         if ($repeat == false) {
-            //$average = $val1 / $val2;
-            //$average = number_format($average, 1, ',', '');
-            //echo $average ."<br>";
             $newArray[] = array(
                 'surveyquestion' => $t['surveyquestion'],
                 'surveyanswer' => $t['surveyanswer'],
                 'surveyquestioncount' => $t['surveyquestioncount'],
-                'created_at' => "-",
-                'options' => "-"
+                'average' => "-"
             );
         }
     }
+$newArray2 = array();
+foreach ($newArray as $val) {
+    $average = 0.0;
+    # code...
+    if (is_numeric($val['surveyanswer'])) {
+        $average = number_format($val['surveyanswer'] / $val['surveyquestioncount'], 1, ',', '');
+        $newArray2[] = array(
+            'surveyquestion' => $val['surveyquestion'],
+            'surveyanswer' => $val['surveyanswer'] . " &#9733;",
+            'surveyquestioncount' => $val['surveyquestioncount'],
+            'average' =>  $average. " &#9733;"
+        );
+    } else {
+        // do some error handling...
+    }
 
-   echo json_encode($newArray);
+}
+   echo json_encode($newArray2);
 
-
-    //echo "<pre>";
-    //
-    //print_r($arAnswer);
-    //
-    //echo "</pre>";
-
-    //echo "<pre>";
-//
-    //print_r($result);
-//
-    //echo "</pre>";
-
-
-
-
-
-
-
-
-
-
-
-    //echo json_encode($ar);
 } else {
     $newArray[] = array(
         'surveyquestion' => "-",
         'surveyanswer' => "-",
         'surveyquestioncount' => "-",
-        'created_at' => "-",
-        'options' =>  "-"
+        'average' => "-",
     );
     echo json_encode($newArray);
 }

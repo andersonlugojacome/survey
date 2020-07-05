@@ -14,6 +14,9 @@ if (isset($_GET["surveyid"])) {
 } else {
     Core::redir("./?view=adminsurveylists");
 }
+$survey = SurveylistsData::getById($surveyId);
+$surveyName = $survey->name;
+
 if (isset($_GET["finish_at"])) {
     $finish_at = strtotime($_GET["finish_at"]);
     $now = $_GET["finish_at"];
@@ -24,7 +27,7 @@ if (isset($_GET["finish_at"])) {
 if (isset($_GET["start_at"])) {
     $start_at = $_GET["start_at"];
 } else {
-    $start_at = date('Y\-m\-d\ H:i', strtotime("-1 month", $finish_at));
+    $start_at = date('Y\-m\-d\ H:i', strtotime("-1 week", $finish_at));
 }
 
 
@@ -62,10 +65,10 @@ if (isset($_GET["start_at"])) {
 <!-- ============================================================== -->
 <div class="row page-titles">
     <div class="col-md-12 col-12 align-self-center">
-        <h3 class="text-themecolor mb-0">Survey list <i class="mdi mdi-menu"></i></h3>
+        <h3 class="text-themecolor mb-0">Survey stadistics <?=$surveyName?> <i class="mdi mdi-chart-bar"></i></h3>
         <ol class="breadcrumb mb-0 p-0 bg-transparent">
             <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
-            <li class="breadcrumb-item active">Lists</li>
+            <li class="breadcrumb-item active">Survey stadistics <?=$surveyName?></li>
         </ol>
     </div>
 </div>
@@ -88,7 +91,7 @@ if (isset($_GET["start_at"])) {
                         <?= Util::display_msg(Session::$msg); ?>
                         <!-- End session comments-->
                     </div>
-                    <h6 class="card-subtitle">Survey stadistics</h6>
+                    <h6 class="card-subtitle">Survey stadistics <?=$surveyName?></h6>
                     <div class="row">
                         <div class="col-md-12">
                             <a href="./?view=adminnewsurveylist" class="btn btn-primary">
@@ -109,7 +112,7 @@ if (isset($_GET["start_at"])) {
                         <div class="col-md-12">
                             <form class="form-horizontal" role="form">
                                 <input type="hidden" name="view" value="adminsurveystadisticsreport" />
-                                <input type="hidden" name="surveyid" value="<?=$surveyId?>" />
+                                <input type="hidden" name="surveyid" value="<?= $surveyId ?>" />
                                 <div class="row">
                                     <div class="col-md-3">
                                         <div class="form-group bmd-form-group has-success">
@@ -151,8 +154,8 @@ if (isset($_GET["start_at"])) {
                                                 <th>Question</th>
                                                 <th>Rating total</th>
                                                 <th>Num question</th>
-                                                <th>Created</th>
-                                                <th class="disabled-sorting text-right">Opciones</th>
+                                                <th>average</th>
+                                               
                                             </tr>
                                         </thead>
 
@@ -191,11 +194,10 @@ if (isset($_GET["start_at"])) {
         newWindow.focus(); //Sets focus window
     }
 </script>
-
 <script language="javascript">
     $(document).ready(function() {
         var $url =
-            "<?= "./?action=searchsurveyansweredreport&surveyid=".$surveyId."&start_at=" . $start_at . "&finish_at=" . $now; ?>";
+            "<?= "./?action=searchsurveyansweredreport&surveyid=" . $surveyId . "&start_at=" . $start_at . "&finish_at=" . $now; ?>";
         $('#datatables').DataTable({
             "ajax": {
                 "url": $url,
@@ -212,23 +214,20 @@ if (isset($_GET["start_at"])) {
                     "data": "surveyquestioncount"
                 },
                 {
-                    "data": "created_at"
-                },
-                {
-                    "data": "options"
+                    "data": "average"
                 }
             ],
             "columnDefs": [{
                 className: "text-center",
-                "targets": [4]
+                "targets": [1,2,3]
             }],
             "fnRowCallback": function(nRow, aData, iDisplayIndex) {
                 //alert(aData.status);
 
                 //alert($('td:eq(1)', nRow).text());
-                if ($('td:eq(2)', nRow).text() != "") {
-                    $('td:eq(2)', nRow).addClass('class_edit');
-                }
+                //if ($('td:eq(2)', nRow).text() != "") {
+                //    $('td:eq(2)', nRow).addClass('class_edit');
+                //}
 
 
                 return nRow;
@@ -236,8 +235,8 @@ if (isset($_GET["start_at"])) {
             "bProcessing": true,
             "pagingType": "full_numbers",
             "lengthMenu": [
-                [5, 10, 20, -1],
-                [5, 10, 20, "All"]
+                [10, 15, 20, -1],
+                [10, 15, 20, "All"]
             ],
             responsive: true,
             dom: 'lBfrtip',

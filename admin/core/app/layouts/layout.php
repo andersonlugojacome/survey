@@ -168,7 +168,7 @@ if (isset($_GET['view'])) {
                             <!-- ============================================================== -->
                             <!-- Comment -->
                             <!-- ============================================================== -->
-                            <li class="nav-item dropdown">
+                            <!--<li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="mdi mdi-message"></i>
                                     <div class="notify"> <span class="heartbit"></span> <span class="point"></span> </div>
                                 </a>
@@ -181,7 +181,7 @@ if (isset($_GET['view'])) {
                                         </li>
                                         <li>
                                             <div class="message-center notifications position-relative" style="height:50px;">
-                                                <!-- Message -->
+                                                 Message 
                                                 <a href="javascript:void(0)" class="message-item d-flex align-items-center border-bottom px-3 py-2">
                                                     <span class="btn btn-danger rounded-circle btn-circle"><i class="fa fa-link"></i></span>
                                                     <div class="w-75 d-inline-block v-middle pl-2">
@@ -196,14 +196,14 @@ if (isset($_GET['view'])) {
                                         </li>
                                     </ul>
                                 </div>
-                            </li>
+                            </li>-->
                             <!-- ============================================================== -->
                             <!-- End Comment -->
                             <!-- ============================================================== -->
                             <!-- ============================================================== -->
                             <!-- Messages -->
                             <!-- ============================================================== -->
-                            <li class="nav-item dropdown">
+                            <!--  <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle waves-effect waves-dark" href="" id="2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="mdi mdi-email"></i>
                                     <div class="notify"> <span class="heartbit"></span> <span class="point"></span> </div>
                                 </a>
@@ -216,7 +216,7 @@ if (isset($_GET['view'])) {
                                         </li>
                                         <li>
                                             <div class="message-center message-body position-relative" style="height:50px;">
-                                                <!-- Message -->
+                                               Message 
                                                 <a href="javascript:void(0)" class="message-item d-flex align-items-center border-bottom px-3 py-2">
                                                     <span class="user-img position-relative d-inline-block"> <img src="../assets/images/users/1.jpg" alt="user" class="rounded-circle w-100"> <span class="profile-status rounded-circle online"></span> </span>
                                                     <div class="w-75 d-inline-block v-middle pl-2">
@@ -232,7 +232,7 @@ if (isset($_GET['view'])) {
                                         </li>
                                     </ul>
                                 </div>
-                            </li>
+                            </li>-->
                             <!-- ============================================================== -->
                             <!-- End Messages -->
                             <!-- ============================================================== -->
@@ -276,11 +276,11 @@ if (isset($_GET['view'])) {
                             </li>
                             <!-- ============================================================== -->
                             <!-- Language -->
-                            <!-- ============================================================== -->
+                            <!-- ============================================================== 
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="flag-icon flag-icon-us"></i></a>
                                 <div class="dropdown-menu dropdown-menu-right scale-up"> <a class="dropdown-item" href="#"><i class="flag-icon flag-icon-in"></i> India</a> <a class="dropdown-item" href="#"><i class="flag-icon flag-icon-fr"></i> French</a> <a class="dropdown-item" href="#"><i class="flag-icon flag-icon-cn"></i> China</a> <a class="dropdown-item" href="#"><i class="flag-icon flag-icon-de"></i> Dutch</a> </div>
-                            </li>
+                            </li>-->
                         </ul>
                     </div>
                 </nav>

@@ -172,8 +172,6 @@ if (isset($_GET["start_at"])) {
 <!-- ============================================================== -->
 <!-- End Container fluid  -->
 <!-- ============================================================== -->
-
-
 <script>
     function openWindowsPrint($url) {
         var newWindow = window.open($url, 'Reporte',
