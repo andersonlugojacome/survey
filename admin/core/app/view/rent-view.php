@@ -88,7 +88,7 @@
                             <input type="submit" value="Procesar" class="btn btn-primary btn-block" placeholder="Procesar">
                         </div>
                         <div class="col-md-1">
-                            <a href="./?action=clearcart" class="btn btn-danger btn-block"><i class="material-icons">close</i></a>
+                            <a href="./?action=clearcart" class="btn btn-danger btn-block"><i class="ti-close "></i></a>
                         </div>
                     </div>
             </div>
@@ -114,7 +114,7 @@
                 </td>
                 <td style="width:30px;">
                     <a href="index.php?view=clearcart&product_id=<?= $book->id; ?>"
-                        class="btn btn-xs btn-danger"><i class="material-icons">close</i> Cancelar</a>
+                        class="btn btn-xs btn-danger"><i class="ti-close "></i> Cancelar</a>
                 </td>
             </tr>
             <?php endforeach; ?>

@@ -13,11 +13,12 @@ $result = SurveylistsData::getAllNumRowToListByRange($_GET['start_at'], $_GET['f
 if (count($result) > 0) {
     $ar = array();
     foreach ($result as $value) {
+        
         $u = UserData::getById($value->user_id);
         $us = UserData::getById(Session::getUID());
         $delUrl = "delsurveylist";
         $onclick = "onclick='md.showSwal(\"warning-message-and-confirmation-delete\",\"" . $value->id . "\", \"" . $delUrl . "\")'";
-        $editHref ='./?view=admineditsurveylist&nep=' . $value->name ;
+        $editHref ='./?view=admineditsurveylist&id=' . $value->id ;
         $seeHref ='./?view=adminsurveystadistics&surveyid=' . $value->id ;
         $delHref = ($us->user_level) ? './?action=delsurveylist&cid=' . $value->id . '&ep=' . $value->name  : '';
         $btnAction = '<div class="btn-group"><button type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="ti-settings"></i></button>
@@ -27,8 +28,6 @@ if (count($result) > 0) {
             <a class="dropdown-item" href="'.$delHref.'"><i class="ti-trash"></i> Delete</a>
            
         </div></div>';
-        $btnEdit = '<a href="" data-toggle="tooltip" title="Editar" class="btn btn-sm btn-icon btn-pure btn-outline"><i class="mdi mdi-lead-pencil"></i> </a>';
-        $btnDel = ($us->user_level) ? '<a href="./?action=delsurveylist&cid=' . $value->id . '&ep=' . $value->name . '&nr=' . $value->name . '" data-toggle="tooltip" title="Eliminar" class="btn btn-sm btn-icon btn-pure btn-outline"> <i class="mdi mdi-delete-forever"></i></a>' : '';
         $btnPrint = '<a onclick="openWindowsPrint(\'./?view=printsurveylist&nep=' . $value->name . '&anho=' . $value->name . '&idcp=' . $value->id . '&surveylists_id=' . $value->id . '\')"
                      data-toggle="tooltip" title="Imprimir lista de chequeo" class="btn btn-link btn-info btn-just-icon btn-sm"><i class="material-icons">print</i> </a> <input type="hidden" name="id" id="id" value="' . $value->name . '" />';
         $ar[] = array(

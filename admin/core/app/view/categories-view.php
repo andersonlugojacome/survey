@@ -42,11 +42,11 @@ $result = CategoryData::getAll();
 						</td>
 						<td><a href="./?view=editcategory&id=<?php echo $ca->id;?>"
 							 data-toggle="tooltip" title="Editar" class="btn btn-link btn-success btn-just-icon btn-sm">
-								<i class="material-icons">edit</i>
+								<i class="ti-pencil-alt"></i>
 							</a>
 							<a href="index.php?view=delcategory&id=<?php echo $ca->id;?>"
 							 data-toggle="tooltip" title="Eliminar" class="btn btn-link btn-danger btn-just-icon btn-sm">
-								<i class="material-icons">delete</i>
+								<i class="ti-pencil-alt"></i>
 							</a>
 						</td>
 					</tr>

@@ -24,7 +24,7 @@ if (count($result) > 0) {
         $us = UserData::getById(Session::getUID());
         $sendHref = './?action=sendemailaverage&pn='.$value->pn.'&anho='.$value->pn_anho.'&surveyid='.$value->surveylists_id;
         
-        $editHref = './?view=admineditsurveylist&pn=' . $value->pn;
+        $editHref = './?view=admineditsurveyanswered&pn=' . $value->pn.'&anho='.$value->pn_anho.'&surveyid='.$value->surveylists_id;
         $delHref = ($us->user_level) ? './?action=delsurveylist&cid=' . $value->id . '&pn=' . $value->pn  : '';
         $btnAction = '<div class="btn-group"><button type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="ti-settings"></i></button>
         <div class="dropdown-menu animated rubberBand" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 35px, 0px);">

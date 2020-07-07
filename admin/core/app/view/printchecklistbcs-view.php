@@ -108,7 +108,7 @@ $display_number = 1;
 
 <button onclick="javascript:window.print()" class="btn btn-success"><i class="material-icons">print</i>
     Imprimir</button>
-<button onclick="javascript:window.close()" class="btn btn-danger"><i class="material-icons">close</i>
+<button onclick="javascript:window.close()" class="btn btn-danger"><i class="ti-close "></i>
     Cerrar</button>
 <style>
     .sidebar,

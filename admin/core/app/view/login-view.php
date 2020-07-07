@@ -42,12 +42,11 @@ if (Session::getUID() != "") {
                             </div>
                         </div>
 
-
                     </form>
                     <?php if (isset($_COOKIE['password_updated'])) : ?>
                         <div class="alert alert-success alert-with-icon" data-notify="container">
-                            <i class="material-icons" data-notify="icon">notifications</i>
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><i class="material-icons">close</i></button>
+                            <i class="ti-info-alt" data-notify="icon"></i>
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><i class="ti-close "></i></button>
                             <span data-notify="icon" class="now-ui-icons ui-1_bell-53"></span>
                             <span data-notify="message">
                                 The password has been changed successfully!
@@ -57,8 +56,8 @@ if (Session::getUID() != "") {
                     endif; ?>
                     <?php if (isset($_COOKIE['loginInvalid'])) : ?>
                         <div class="alert alert-danger alert-with-icon" data-notify="container">
-                            <i class="material-icons" data-notify="icon">notifications</i>
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><i class="material-icons">close</i></button>
+                            <i class="ti-info-alt " data-notify="icon"></i>
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><i class="ti-close "></i></button>
                             <span data-notify="icon" class="now-ui-icons ui-1_bell-53"></span>
                             <span data-notify="message">
                                 Username and / or incorrect password.

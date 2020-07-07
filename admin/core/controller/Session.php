@@ -99,8 +99,6 @@ class Session
             //echo $value->url;
             $urlDB= substr($value->url, 1);
             if (false !== strpos($uri, $urlDB)) {
-                //echo " -".$urlDB."- ";
-                //echo ' #Acepted# ';
                 $flag = true;
                 break;
             }

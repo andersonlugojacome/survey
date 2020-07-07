@@ -36,12 +36,12 @@ class CategoryMenuData
 
     public static function edit_btn($id)
     {
-        return '<a href="./?view=admineditcategorymenu&id='.$id.'" data-toggle="tooltip" title="Editar" class="btn btn-link btn-success btn-just-icon btn-sm"><i class="material-icons">edit</i> </a>';
+        return '<a href="./?view=admineditcategorymenu&id='.$id.'" data-toggle="tooltip" title="Editar" class="btn btn-link btn-success btn-just-icon btn-sm"><i class="ti-pencil-alt"></i> </a>';
     }
 
     public static function del_btn($id)
     {
-        return '<a href="./?view=admindelcategorymenu&id='.$id.'" data-toggle="tooltip" title="Eliminar" class="btn btn-link btn-danger btn-just-icon btn-sm"> <i class="material-icons">delete</i></a>';
+        return '<a href="./?view=admindelcategorymenu&id='.$id.'" data-toggle="tooltip" title="Eliminar" class="btn btn-link btn-danger btn-just-icon btn-sm"> <i class="ti-pencil-alt"></i></a>';
     }
 
     public static function get_cats_by_cat_id($id)

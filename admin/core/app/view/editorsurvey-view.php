@@ -77,11 +77,11 @@
                                 <a href="./?view=edit&nep=<?=$cla->pn; ?>&anho=<?=$cla->pn_anho; ?>&idcp=<?=$cla->id; ?>&surveylists_id=<?=$cla->surveylists_id; ?>"
                                     data-toggle="tooltip" title="Edit"
                                     class="btn btn-link btn-warning btn-just-icon btn-sm edit">
-                                    <i class="material-icons">edit</i>
+                                    <i class="ti-pencil-alt"></i>
                                 </a>
                                 <a href="./?action=admindelchecklists&id=<?=$cla->id; ?>" data-toggle="tooltip"
                                     title="Delete" class="btn btn-link btn-danger btn-just-icon btn-sm remove">
-                                    <i class="material-icons">delete</i>
+                                    <i class="ti-pencil-alt"></i>
                                 </a>
                                 <?php endif; ?>
                             </td>

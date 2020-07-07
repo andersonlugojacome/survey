@@ -50,7 +50,7 @@ class Util
         if (!empty($msg)) {
             foreach ($msg as $key => $value) {
                 $output = "<div class=\"alert alert-{$key} alert-with-icon\" data-notify=\"container\">";
-                $output .= "<i class=\"material-icons\" data-notify=\"icon\">notifications</i>";
+                $output .= "<i class=\"ti-info-alt\" data-notify=\"icon\"></i>";
                 $output .= "<button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><i class=\"material-icons\">close</i></button>";
                 $output .= "<span data-notify=\"icon\" class=\"now-ui-icons ui-1_bell-53\"></span>";
                 $output .= "<span data-notify=\"message\">";

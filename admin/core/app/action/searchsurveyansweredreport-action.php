@@ -10,9 +10,9 @@
  */
 //$_GET['surveyid'];
 
-
+//echo $_GET['start_at']."......". $_GET['finish_at']."......". $_GET['surveyid'];
 $result = SurveylistsanswerData::getByRangeAndSurveyID($_GET['start_at'], $_GET['finish_at'], $_GET['surveyid']);
-
+//print_r($result);
 if (count($result) > 0) {
     $ar = array();
     $arAnswer = array();
@@ -21,8 +21,6 @@ if (count($result) > 0) {
         $result2 = SurveylistsanswerData::getAllAnswersByPnAnhoSurveylistsIDReport($value->pn, $value->pn_anho, $value->surveylists_id);
         foreach ($result2 as $v) {
             if (is_numeric($v->surveyanswer)) {
-                //$sum += $v->surveyanswer;
-                
                 $arAnswer[] = array(
                     'surveyquestion' => $v->surveyquestion,
                     'surveyanswer' => $v->surveyanswer,

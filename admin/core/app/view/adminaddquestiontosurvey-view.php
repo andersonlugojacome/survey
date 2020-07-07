@@ -128,6 +128,7 @@
                             <div class="col-md-12">
                                 <div class="col-lg-offset-2 col-lg-10">
                                     <button type="submit" class="btn btn-primary">Create question</button>
+                                    <button class="btn btn-dark hBack" type="button"><i class="ti-back-left"></i> Back</button>
                                 </div>
                             </div>
                         </div>

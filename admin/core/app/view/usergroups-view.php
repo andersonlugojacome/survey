@@ -47,7 +47,7 @@
                     </td>
                     <td class="text-right">
                         <a href="./?view=editgroup&id=<?= $g->id; ?>"
-                            class="btn btn-link btn-warning btn-just-icon edit"><i class="material-icons">edit</i></a>
+                            class="btn btn-link btn-warning btn-just-icon edit"><i class="ti-pencil-alt"></i></a>
                     </td>
                 </tr>
                 <?php

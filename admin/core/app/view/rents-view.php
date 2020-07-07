@@ -100,7 +100,7 @@
                         <td style="width:30px;">
                             <a href="./?action=deloperation&id=<?=$sell->id; ?>"
                                 class="btn btn-xs btn-danger">
-                                <i class="material-icons">close</i>
+                                <i class="ti-close "></i>
                             </a>
                         </td>
                     </tr>

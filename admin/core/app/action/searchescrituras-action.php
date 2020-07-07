@@ -18,7 +18,7 @@ if (count($benefiCreated)>0) {
         $us = UserData::getById(Session::getUID());
         $userDelivered = UserData::getById($value->user_id_delivered);
         $is_delivered = ($value->is_delivered == "1") ? 'checked': '';
-        $btnDel = ($us->is_admin)?'<a href="./?action=delbeneficencia&id='.$value->id.'" data-toggle="tooltip" title="Eliminar" class="btn btn-link btn-danger btn-just-icon btn-sm"> <i class="material-icons">delete</i></a>':'';
+        $btnDel = ($us->is_admin)?'<a href="./?action=delbeneficencia&id='.$value->id.'" data-toggle="tooltip" title="Eliminar" class="btn btn-link btn-danger btn-just-icon btn-sm"> <i class="ti-pencil-alt"></i></a>':'';
         $modal = ' <!-- Classic Modal -->
                         <div class="modal fade" id="myModal-'.$value->id.'"
                             tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -64,7 +64,7 @@ if (count($benefiCreated)>0) {
         'finished_at'=>$value->finished_at.$modal,
         'userDelivered'=>isset($userDelivered->name)? $userDelivered->name :'<strong style="color:red">--- En procesos ---</strong> ',
         'approvals'=>"<form action='./?action=updatedeliveredbeneficencia' method='post'><input class='' type='checkbox' name='is_delivered' id='is_delivered' value='0' ".$is_delivered." ><button type='submit' data-toggle='tooltip' title='Actualizar' class='btn btn-link btn-info btn-just-icon btn-sm'><i class='material-icons'>thumb_up_alt</i></button><input type='hidden' name='id' id='id' value='".$value->id."' /> </form>",
-        'options'=>'<a href="./?view=editbeneficencia&id='.$value->id.'" data-toggle="tooltip" title="Editar" class="btn btn-link btn-success btn-just-icon btn-sm"><i class="material-icons">edit</i> </a>'.$btnDel.$btnModal
+        'options'=>'<a href="./?view=editbeneficencia&id='.$value->id.'" data-toggle="tooltip" title="Editar" class="btn btn-link btn-success btn-just-icon btn-sm"><i class="ti-pencil-alt"></i> </a>'.$btnDel.$btnModal
         );
     }
     echo json_encode($ar);

@@ -58,11 +58,11 @@
                         class="btn btn-default btn-xs">Ejemplares</a>
                     <a href="./?view=editbook&id=<?php echo $user->id; ?>"
                         data-toggle="tooltip" title="Editar" class="btn btn-simple btn-warning btn-xs">
-                        <i class="material-icons">edit</i>
+                        <i class="ti-pencil-alt"></i>
                     </a>
                     <a href="./?view=delbook&id=<?php echo $user->id; ?>"
                         data-toggle="tooltip" title="Eliminar" class="btn btn-simple btn-danger btn-xs">
-                        <i class="material-icons">delete</i>
+                        <i class="ti-pencil-alt"></i>
                     </a>
                 </td>
             </tr>

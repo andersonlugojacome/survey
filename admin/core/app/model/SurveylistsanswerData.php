@@ -61,7 +61,7 @@ class SurveylistsanswerData
 
     public static function getPnByPnAnho($pn,$pn_anho, $surveyId)
     {
-        $sql = "select id from " . self::$tablename. " WHERE pn=$pn AND pn_anho=$pn_anho AND surveylists_id=$surveyId  LIMIT 1 ";
+        $sql = "select id from " . self::$tablename. " WHERE pn=\"$pn\" AND pn_anho=$pn_anho AND surveylists_id=$surveyId  LIMIT 1 ";
         $query = Executor::doit($sql);
         return Model::one($query[0], new SurveylistsanswerData());
     }
@@ -96,7 +96,7 @@ class SurveylistsanswerData
     }
     public static function getByRangeAndSurveyID($start_at, $finish_at, $surveyId)
     {
-        $sql = "select t1.* from surveylistsanswers t1 join (select pn, min(id) as min_fila from surveylistsanswers group by pn, pn_anho) t2 on t2.pn = t1.pn and t2.min_fila = t1.id and t1.created_at>=\"$start_at\" and t1.created_at<=\"$finish_at\" and t1.surveylists_id=$surveyId order by t1.id ";
+        $sql = "select t1.* from surveylistsanswers t1 join (select pn, min(id) as min_fila from surveylistsanswers where surveylists_id=$surveyId group by pn, pn_anho) t2 on t2.pn = t1.pn and t2.min_fila = t1.id and t1.created_at>=\"$start_at\" and t1.created_at<=\"$finish_at\" and t1.surveylists_id=$surveyId order by t1.id ";
         $query = Executor::doit($sql);
         //echo $sql;
         return Model::many($query[0], new SurveylistsanswerData());
@@ -111,6 +111,7 @@ class SurveylistsanswerData
     {
         $sql = "SELECT cl.id as cl_id, cla.id as cla_id, cla.surveylistsquestions_id as clq_id,  cla.answer as respuesta FROM surveylists as cl LEFT JOIN surveylistsanswers as cla ON cl.id = cla.surveylists_id WHERE cl.surveylist_status = 'open' AND cl.id = '" . $surveylists_id . "' AND cla.pn ='" . $pn . "' AND cla.pn_anho='" . $anho . "' ORDER BY cla.id ASC ";
         $query = Executor::doit($sql);
+        //echo $sql;
         return Model::many($query[0], new SurveylistsanswerData());
     }
     public static function getAllAnswers($pn, $anho, $surveylists_id)

@@ -45,7 +45,7 @@ $total= $sell->total-$sell->discount;
 
 		</td>
 		<td><?php echo $sell->created_at; ?></td>
-		<td style="width:30px;"><a href="index.php?view=delsell&id=<?php echo $sell->id; ?>" class="btn btn-xs btn-danger"><i class="material-icons">close</i></a></td>
+		<td style="width:30px;"><a href="index.php?view=delsell&id=<?php echo $sell->id; ?>" class="btn btn-xs btn-danger"><i class="ti-close "></i></a></td>
 	</tr>
 
 <?php endforeach; ?>

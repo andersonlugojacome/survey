@@ -87,10 +87,10 @@ if (isset($consultaBusqueda)) {
 
         <td style="width:130px;" class="td-actions">
             <a href="./?view=editprocedure&id=<?php echo $procedure->id;?>" data-toggle="tooltip" title="Editar" class="btn btn-simple btn-warning btn-xs">
-                <i class="material-icons">edit</i>
+                <i class="ti-pencil-alt"></i>
             </a>
             <a href="./?action=delprocedure&id=<?php echo $procedure->id;?>" data-toggle="tooltip" title="Eliminar" class=" btn-simple btn btn-danger btn-xs">
-                <i class="material-icons">delete</i>
+                <i class="ti-pencil-alt"></i>
             </a>
         </td>
 

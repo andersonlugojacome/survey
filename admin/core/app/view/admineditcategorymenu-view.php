@@ -109,7 +109,7 @@ $categories = CategoryMenuData::get_base_categories();
                             <div class="col-lg-offset-2 col-lg-10">
                                 <input type="hidden" name="id" value="<?= $cat->id; ?>">
                                 <button type="submit" class="btn btn-primary">Update</button>
-                                <button class="btn btn-dark hBack" type="button"><i class="mdi mdi-keyboard-backspace"></i> Back</button>
+                                <button class="btn btn-dark hBack" type="button"><i class="ti-back-left"></i> Back</button>
                             </div>
 
                         </div>

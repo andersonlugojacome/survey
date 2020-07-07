@@ -144,7 +144,7 @@ if (isset($_GET['checklist'])) {
                                                 </td>
                                                 <td style="width:150px;" class="td-actions">
                                                     <a href="./?view=admineditquestiontolist&id=<?= $cq->id; ?>&checklist=<?= $cq->surveylists_id; ?>" data-toggle="tooltip" title="Editar" class="btn btn-success btn-round">
-                                                        <i class="material-icons">edit</i>
+                                                        <i class="ti-pencil-alt"></i>
                                                     </a> |
                                                     <a href="./?view=adminaddquestiontolistclone&id=<?= $cq->id; ?>" data-toggle="tooltip" title="Clonar pregunta" class="btn btn-warning btn-round">
                                                         <i class="material-icons">toll</i>
@@ -154,7 +154,7 @@ if (isset($_GET['checklist'])) {
                                                     if ($u->is_admin) :
                                                     ?>
                                                         <a href="./?action=delquestionchecklist&id=<?= $cq->id; ?>" data-toggle="tooltip" title="Eliminar" class="btn btn-danger btn-round">
-                                                            <i class="material-icons">delete</i>
+                                                            <i class="ti-pencil-alt"></i>
                                                         </a>
                                                     <?php endif; ?>
 
