@@ -61,7 +61,7 @@ foreach ($newArray as $val) {
         $newArray2[] = array(
             'surveyquestion' => $val['surveyquestion'],
             'surveyanswer' => $val['surveyanswer'] . " &#9733;",
-            'surveyquestioncount' => $val['surveyquestioncount'],
+            //'surveyquestioncount' => $val['surveyquestioncount'],
             'average' =>  $average. " &#9733;"
         );
     } else {
@@ -75,7 +75,7 @@ foreach ($newArray as $val) {
     $newArray[] = array(
         'surveyquestion' => "-",
         'surveyanswer' => "-",
-        'surveyquestioncount' => "-",
+        //'surveyquestioncount' => "-",
         'average' => "-",
     );
     echo json_encode($newArray);

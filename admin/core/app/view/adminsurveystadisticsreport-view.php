@@ -153,7 +153,6 @@ if (isset($_GET["start_at"])) {
                                             <tr>
                                                 <th>Question</th>
                                                 <th>Rating total</th>
-                                                <th>Num question</th>
                                                 <th>average</th>
                                                
                                             </tr>
@@ -211,25 +210,14 @@ if (isset($_GET["start_at"])) {
                     "data": "surveyanswer"
                 },
                 {
-                    "data": "surveyquestioncount"
-                },
-                {
                     "data": "average"
                 }
             ],
             "columnDefs": [{
                 className: "text-center",
-                "targets": [1,2,3]
+                "targets": [1,2]
             }],
             "fnRowCallback": function(nRow, aData, iDisplayIndex) {
-                //alert(aData.status);
-
-                //alert($('td:eq(1)', nRow).text());
-                //if ($('td:eq(2)', nRow).text() != "") {
-                //    $('td:eq(2)', nRow).addClass('class_edit');
-                //}
-
-
                 return nRow;
             },
             "bProcessing": true,
@@ -256,7 +244,7 @@ if (isset($_GET["start_at"])) {
                 {
                     extend: 'pdf',
                     exportOptions: {
-                        columns: [0, 1, 2, 3, 4]
+                        columns: [0, 1, 2]
                     }
                 }
             ],
@@ -271,7 +259,7 @@ if (isset($_GET["start_at"])) {
         });
 
         var table = $('#datatables').DataTable();
-        table.order([3, 'desc']).draw();
+        table.order([2, 'desc']).draw();
         $('.card .material-datatables label').addClass('form-group');
 
     });
