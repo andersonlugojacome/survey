@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Addsurveylistquestion short summary.
  *
@@ -8,19 +9,34 @@
  * @author DigitalesWeb
  */
 $_SESSION['body'] = "";
-        $body = "";
+$body = "";
+
+
 $resultIs = SurveylistsanswerData::getPnByPnAnho($_POST['pn'], $_POST['pn_anho'], $_POST['surveylists_id']);
+
+
+
 
 if (!empty($resultIs)) {
     # code...
-    Core::redir("./?view=thanks&msg=Este proyecto ya fue calificado para este año y tipo de survey");
+    Core::redir("./?view=thanks&msg=This project was already qualified for this year and type of survey");
 } else {
 
 
     $counter = 0;
     $count = count($_POST['qid']);
-    
+    $nameTEP = $_POST['nameTEP'];
+    $surveyId = $_POST['surveylists_id'];
     $codeApproval = "";
+    $subjectName = "";
+    if ($surveyId == "1") {
+        # code...
+        $subjectName == "Linguistic ";
+    }
+    if ($surveyId == "12") {
+        # code...
+        $subjectName == "Editor ";
+    }
     if ($count > 0) {
         $_SESSION['body'] = "";
         $body = "";
@@ -46,6 +62,10 @@ if (!empty($resultIs)) {
                 // do some error handling...
             }
         }
+        if (!empty($nameTEP)) {
+            # code...
+            $body .= "<b>Name:</b> " . $nameTEP . "\n<br/>";
+        }
         $average = $sum / $total;
         $body .= "Average : " . $average . "\n<br/>";
 
@@ -60,8 +80,8 @@ if (!empty($resultIs)) {
         } else {
             return "The email address you entered was invalid. Please try again!";
         }
-        $to = 'spanishasap@spanishasap.com';
-        $subject = "Linguistic survey of project number: " . $_POST['pn'];
+        $to = 'spanishasap@spanishasap.com, info@digitalesweb.tech';
+        $subject = $subjectName ."survey of project number: " . $_POST['pn'];
         $headers = "From: " . $cleanedFrom . "\r\n";
         $headers .= "Reply-To: " . strip_tags($form) . "\r\n";
         $headers .= "MIME-Version: 1.0\r\n";

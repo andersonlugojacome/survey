@@ -14,14 +14,6 @@ $count = count($_POST['qid']);
 $_SESSION['body'] = "";
 $codeApproval = "";
 if ($count > 0) {
-    ///foreach ($_POST['qid'] as $key => $value) {
-    ///    if ($_POST['question_'.$value.'_answer'] == 1) {
-    ///        $counter++;
-    ///    }
-    ///   // if ($counter == $count) {
-    ///        //$codeApproval=NumeroALetras::generarCodigo(10);
-    ///    //}
-    ///}
     $body = "";
     $sum = 0;
     $total = count($_POST['qid']) - 1;
