@@ -9,11 +9,13 @@
  * @author DigitalesWeb
  */
 
-$counter = 0;
+
 $count = count($_POST['qid']);
 $_SESSION['body'] = "";
 $codeApproval = "";
 if ($count > 0) {
+    $counter = 0;
+    $nameTEP = $_POST['nameTEP'];
     $body = "";
     $sum = 0;
     $total = count($_POST['qid']) - 1;
@@ -22,7 +24,6 @@ if ($count > 0) {
         $ca = new SurveylistsanswerData();
         $ca->pn = $_POST["pn"] != "" ? $_POST["pn"] : 1;
         $ca->answer = $qa;
-
         $ca->surveylistsquestions_id = $value;
         $ca->pn_anho =  $_POST["pn_anho"] != "" ? $_POST["pn_anho"] : "";
         $ca->nameTEP = $_POST["nameTEP"] != "" ? $_POST["nameTEP"] : "";
@@ -33,11 +34,16 @@ if ($count > 0) {
 
         if (is_numeric($qa)) {
             $sum += $qa;
+            $counter ++;
         } else {
             // do some error handling...
         }
     }
-    $average = $sum / $total;
+    if (!empty($nameTEP)) {
+        # code...
+        $body .= "<b>Name:</b> " . $nameTEP . "\n<br/>";
+    }
+    $average = $sum / $counter;
     $body .= "Average : " . $average . "\n<br/>";
 
     $_SESSION['body'] = $body;
@@ -52,7 +58,7 @@ if ($count > 0) {
         return "";
     }
     //$to = 'andersonlugojacome@gmail.com';
-    $to = 'customerfeedback@spanishasap.com';
+    $to = 'customerfeedback@spanishasap.com, info@digitalesweb.tech';
     $subject = "Customers survey of project number: " . $_POST['pn'];
     $headers = "From: " . $cleanedFrom . "\r\n";
     $headers .= "Reply-To: " . strip_tags($form) . "\r\n";

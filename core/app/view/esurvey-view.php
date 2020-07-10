@@ -37,84 +37,84 @@ function generateTextArea($name, $values = 6)
 }
 ?>
 <style>
-label {
-    color: grey;
-}
+    label {
+        color: grey;
+    }
 
-input[type="radio"] {
-    display: none;
-}
+    input[type="radio"] {
+        display: none;
+    }
 
-input[type="radio"],
-input[type="checkbox"] {
-    padding: 0;
-}
+    input[type="radio"],
+    input[type="checkbox"] {
+        padding: 0;
+    }
 
-.clasificacion {
-    direction: rtl;
-    unicode-bidi: bidi-override;
-}
+    .clasificacion {
+        direction: rtl;
+        unicode-bidi: bidi-override;
+    }
 
-.clasificacion label {
-    font-size: 20px;
-}
-
-
-
-label:hover,
-label:hover~label {
-    color: orange;
-}
-
-input[type="radio"]:checked~label {
-    color: orange;
-}
-
-[type="radio"]:not(:checked)+label::after,
-[type="radio"]:not(:checked)+label::before,
-[type="radio"]:checked+label::before,
-[type="radio"]:checked+label::after {
-    border: none;
-    display: none !important;
-}
-
-[type="radio"]:checked+label,
-[type="radio"]:not(:checked)+label {
-    position: relative;
-    padding-left: 2px;
-    font-size: 20px;
-}
+    .clasificacion label {
+        font-size: 20px;
+    }
 
 
-.autocomplete-items {
-    position: absolute;
-    border: 1px solid #d4d4d4;
-    border-bottom: none;
-    border-top: none;
-    z-index: 99;
-    /*position the autocomplete items to be the same width as the container:*/
-    top: 100%;
-    left: 0;
-    right: 0;
-}
 
-.autocomplete-items div {
-    padding: 10px;
-    cursor: pointer;
-    background-color: #fff;
-    border-bottom: 1px solid #d4d4d4;
-}
+    label:hover,
+    label:hover~label {
+        color: orange;
+    }
 
-.autocomplete-items div:hover {
-    /*when hovering an item:*/
-    background-color: #e9e9e9;
-}
+    input[type="radio"]:checked~label {
+        color: orange;
+    }
 
-.autocomplete-active {
-    /*when navigating through the items using the arrow keys:*/
-    background-color: DodgerBlue !important;
-    color: #ffffff;
-}
+    [type="radio"]:not(:checked)+label::after,
+    [type="radio"]:not(:checked)+label::before,
+    [type="radio"]:checked+label::before,
+    [type="radio"]:checked+label::after {
+        border: none;
+        display: none !important;
+    }
+
+    [type="radio"]:checked+label,
+    [type="radio"]:not(:checked)+label {
+        position: relative;
+        padding-left: 2px;
+        font-size: 20px;
+    }
+
+
+    .autocomplete-items {
+        position: absolute;
+        border: 1px solid #d4d4d4;
+        border-bottom: none;
+        border-top: none;
+        z-index: 99;
+        /*position the autocomplete items to be the same width as the container:*/
+        top: 100%;
+        left: 0;
+        right: 0;
+    }
+
+    .autocomplete-items div {
+        padding: 10px;
+        cursor: pointer;
+        background-color: #fff;
+        border-bottom: 1px solid #d4d4d4;
+    }
+
+    .autocomplete-items div:hover {
+        /*when hovering an item:*/
+        background-color: #e9e9e9;
+    }
+
+    .autocomplete-active {
+        /*when navigating through the items using the arrow keys:*/
+        background-color: DodgerBlue !important;
+        color: #ffffff;
+    }
 </style>
 
 
@@ -157,8 +157,7 @@ input[type="radio"]:checked~label {
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label for="pn" class="bmd-label-floating">N.° de job en Xtrf:</label>
-                                    <input type="text" class="form-control" id="pn" name="pn" autocomplete="off"
-                                        required>
+                                    <input type="text" class="form-control" id="pn" name="pn" autocomplete="off" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="nameTEP" class="bmd-label-floating">Editor name</label>
@@ -169,9 +168,7 @@ input[type="radio"]:checked~label {
                         <div class="row">
                             <div class="col-md-12">
                                 <h4 class="card-title"><strong> Indicaciones: </strong>
-                                    Indique en una escala del 1 al 5, siendo 5 la mejor calificación y 1 la más baja,
-                                    para calificar el trabajo del editor en este proyecto en función de los indicadores
-                                    de evaluación a continuación:
+                                    Indique en una escala de 1 a 5 estrellas, siendo 5 la mejor calificación y 1 la más baja, para ponderar el trabajo del editor en este proyecto en función de los indicadores de evaluación a continuación:
                                 </h4>
                                 <h6 class="card-subtitle"></h6>
                                 <table class="table table-bordered table-hover">
@@ -194,55 +191,44 @@ input[type="radio"]:checked~label {
                                         $num_input = $value->num_input;
                                         $created_at = new DateTime($value->created_at);
                                     ?>
-                                    <tr data-background-color-approval="">
-                                        <td>
-                                            <?php echo $display_number; ?>.
-                                            <?php echo $question1; ?>.
-                                            <?php if (!empty($description) || (!empty($linkpdf))) :  ?>
-                                            <a href="" data-toggle="modal"
-                                                data-target="#myModal-<?php echo $surveylistsquestions_id; ?>"
-                                                title="<?php echo $description; ?>"
-                                                class="btn-simple btn btn-danger btn-xs">
-                                                Ver m&aacute;s
-                                                <i class='fas fa-eye'></i>
-                                            </a>
-                                            <!-- Modal -->
-                                            <div class="modal fade" id="myModal-<?php echo $surveylistsquestions_id; ?>"
-                                                tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                                                <div class="modal-dialog modal-lg" role="document">
-                                                    <div class="modal-content">
-                                                        <div class="modal-header">
-                                                            <button type="button" class="close" data-dismiss="modal"
-                                                                aria-label="Close">
-                                                                <span aria-hidden="true">&times;</span>
-                                                            </button>
-                                                            <h4 class="modal-title" id="myModalLabel">Acotaci&oacute;n
-                                                            </h4>
-                                                        </div>
-                                                        <div class="modal-body">
-                                                            <?=$description; ?>
-                                                            <?php if (!empty($linkpdf)) : ?>
-                                                            <object width="100%" height="350px"
-                                                                data="<?=$linkpdf; ?>#zoom=85"
-                                                                type="application/pdf" trusted="yes"
-                                                                application="yes"></object>
-                                                            <?php endif ?>
-                                                        </div>
-                                                        <div class="modal-footer">
-                                                            <button type="button" class="btn btn-default"
-                                                                data-dismiss="modal">Close</button>
+                                        <tr data-background-color-approval="">
+                                            <td>
+                                                <?php echo $display_number; ?>.
+                                                <?php echo $question1; ?>.
+                                                <?php if (!empty($description) || (!empty($linkpdf))) :  ?>
+                                                    <a href="" data-toggle="modal" data-target="#myModal-<?php echo $surveylistsquestions_id; ?>" title="<?php echo $description; ?>" class="btn-simple btn btn-danger btn-xs">
+                                                        Ver m&aacute;s
+                                                        <i class='fas fa-eye'></i>
+                                                    </a>
+                                                    <!-- Modal -->
+                                                    <div class="modal fade" id="myModal-<?php echo $surveylistsquestions_id; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                                        <div class="modal-dialog modal-lg" role="document">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                        <span aria-hidden="true">&times;</span>
+                                                                    </button>
+                                                                    <h4 class="modal-title" id="myModalLabel">Acotaci&oacute;n
+                                                                    </h4>
+                                                                </div>
+                                                                <div class="modal-body">
+                                                                    <?= $description; ?>
+                                                                    <?php if (!empty($linkpdf)) : ?>
+                                                                        <object width="100%" height="350px" data="<?= $linkpdf; ?>#zoom=85" type="application/pdf" trusted="yes" application="yes"></object>
+                                                                    <?php endif ?>
+                                                                </div>
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                            </div>
-                                            <?php endif; ?>
-                                            <input type="hidden" name="qid[]" id="qid[]"
-                                                value='<?=$surveylistsquestions_id; ?>'>
-                                            <input type="hidden" name="<?php echo "q_" . $surveylistsquestions_id; ?>"
-                                                id="<?="q_" . $surveylistsquestions_id; ?>" value='<?=$question1; ?>'>
-                                        </td>
-                                        <td>
-                                            <?php
+                                                <?php endif; ?>
+                                                <input type="hidden" name="qid[]" id="qid[]" value='<?= $surveylistsquestions_id; ?>'>
+                                                <input type="hidden" name="<?php echo "q_" . $surveylistsquestions_id; ?>" id="<?= "q_" . $surveylistsquestions_id; ?>" value='<?= $question1; ?>'>
+                                            </td>
+                                            <td>
+                                                <?php
                                                 if ($q_format == "radio") {
                                                     echo generateRadioButtons("question_" . $surveylistsquestions_id . "_answer", $num_input);
                                                 } else {
@@ -251,8 +237,8 @@ input[type="radio"]:checked~label {
                                                     }
                                                 }
                                                 ?>
-                                        </td>
-                                    </tr>
+                                            </td>
+                                        </tr>
                                     <?php $display_number++;
                                     endforeach; ?>
                                 </table>
@@ -260,8 +246,7 @@ input[type="radio"]:checked~label {
                         </div>
                         <div class="form-group">
                             <div class="col-lg-offset-2 col-lg-10">
-                                <input type="hidden" name="surveylists_id" id="surveylists_id"
-                                    value="<?= $surveylists_id; ?>" />
+                                <input type="hidden" name="surveylists_id" id="surveylists_id" value="<?= $surveylists_id; ?>" />
                                 <input type="hidden" name="pn_anho" id="pn_anho" value="<?= $anho; ?>" />
                                 <button type="submit" class="btn btn-success">Send</button>
                             </div>
@@ -295,8 +280,8 @@ input[type="radio"]:checked~label {
 
 
 <script>
-$(document).ready(function() {
-    //var availableTags = [ < ? php echo $text; ? > ];
-    autocomplete(document.getElementById("nameTEP"), availableTags);
-});
+    $(document).ready(function() {
+        //var availableTags = [ < ? php echo $text; ? > ];
+        autocomplete(document.getElementById("nameTEP"), availableTags);
+    });
 </script>

@@ -19,7 +19,7 @@ $resultIs = SurveylistsanswerData::getPnByPnAnho($_POST['pn'], $_POST['pn_anho']
 
 if (!empty($resultIs)) {
     # code...
-    Core::redir("./?view=thanks&msg=This project was already qualified for this year and type of survey");
+    Core::redir("./?view=thanks&msg=Ya este número de survey fue usado, por favor, intente con otro número y si no, comuníquese con: lidia.escuela@spanishasap.com");
 } else {
 
 
@@ -58,6 +58,7 @@ if (!empty($resultIs)) {
 
             if (is_numeric($qa)) {
                 $sum += $qa;
+                $counter ++;
             } else {
                 // do some error handling...
             }
@@ -66,7 +67,7 @@ if (!empty($resultIs)) {
             # code...
             $body .= "<b>Name:</b> " . $nameTEP . "\n<br/>";
         }
-        $average = $sum / $total;
+        $average = $sum / $counter;
         $body .= "Average : " . $average . "\n<br/>";
 
 
