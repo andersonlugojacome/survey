@@ -31,15 +31,17 @@ if (!empty($resultIs)) {
     $subjectName = "";
     if ($surveyId == "1") {
         # code...
-        $subjectName == "Linguistic ";
+        $subjectName = "Linguistic ";
+        $surveyname = "Linguistic ";
     }
     if ($surveyId == "12") {
         # code...
-        $subjectName == "Editor ";
+        $subjectName = "Editor ";
+        $surveyname = "Editor ";
     }
     if ($count > 0) {
         $_SESSION['body'] = "";
-        $body = "";
+        $bodySession = "";
         $sum = 0;
         $total = count($_POST['qid']) - 1;
         foreach ($_POST['qid'] as $key => $value) {
@@ -54,7 +56,9 @@ if (!empty($resultIs)) {
             $ca->surveylists_id = $_POST['surveylists_id'];
             $ca->a_code_approval = $codeApproval;
             $ca->add();
-            $body .= $_POST['q_' . $value] . ", answer: " . $qa . "\n<br/>";
+            $bodySession .= $_POST['q_' . $value] . ", answer: " . $qa . "\n<br/>";
+         $body .="<tr><td>".$_POST['q_' . $value] ."</td><td>".$qa."</td></tr>";
+            
 
             if (is_numeric($qa)) {
                 $sum += $qa;
@@ -65,13 +69,15 @@ if (!empty($resultIs)) {
         }
         if (!empty($nameTEP)) {
             # code...
-            $body .= "<b>Name:</b> " . $nameTEP . "\n<br/>";
+           $bodySession .= "<b>Name:</b> " . $nameTEP . "\n<br/>";
+            $body .="<tr><td>Name</td><td>".$nameTEP."</td></tr>";
         }
         $average = $sum / $counter;
-        $body .= "Average : " . $average . "\n<br/>";
+        $body .="<tr><td>Average</td><td>".$average."</td></tr>";
+        $bodySession .= "Average : " . $average . "\n<br/>";
 
 
-        $_SESSION['body'] = $body;
+        $_SESSION['body'] = $bodySession;
         //   CHANGE THE BELOW VARIABLES TO YOUR NEEDS
         //  MAKE SURE THE "FROM" EMAIL ADDRESS DOESN'T HAVE ANY NASTY STUFF IN IT
         $form = 'survey@spanishasap.com';
@@ -83,19 +89,51 @@ if (!empty($resultIs)) {
         }
         $to = 'spanishasap@spanishasap.com, info@digitalesweb.tech';
         $subject = $subjectName ."survey of project number: " . $_POST['pn'];
-        $headers = "From: " . $cleanedFrom . "\r\n";
-        $headers .= "Reply-To: " . strip_tags($form) . "\r\n";
-        $headers .= "MIME-Version: 1.0\r\n";
-        $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
-
-        if (mail($to, $subject, $body, $headers)) {
-            // echo 'Your message has been sent.';
-            Core::redir("./?view=thanks&msg=Agregado exitosamente, project number: " . $_POST['pn']);
-        } else {
-            //echo 'There was a problem sending the email.';
-            Core::redir("./?view=thanks&msg=Email no enviado");
-        }
+        // $headers = "From: " . $cleanedFrom . "\r\n";
+        // $headers .= "Reply-To: " . strip_tags($form) . "\r\n";
+        // $headers .= "MIME-Version: 1.0\r\n";
+        // $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+        sendEmailStatus($to,$subject,$surveyname,  $body);
+        // if (mail($to, $subject, $body, $headers)) {
+        //     // echo 'Your message has been sent.';
+        //     Core::redir("./?view=thanks&msg=Agregado exitosamente, project number: " . $_POST['pn']);
+        // } else {
+        //     //echo 'There was a problem sending the email.';
+        //     Core::redir("./?view=thanks&msg=Email no enviado");
+        // }
     } else {
         Core::redir("./?view=thanks&msg=Error");
     }
+}
+
+function sendEmailStatus($to,$subject,$surveyname, $message){
+    //$newpassmd5 = md5($pass);
+    $bool=false;
+    $path = 'admin/template/email-rating.html';
+    //echo file_get_contents($path);
+    if(file_exists($path)){
+        $tpl = file_get_contents($path);
+    }
+    $bodyHtml = str_replace('{{surveyname}}', strtoupper($surveyname), $tpl);
+    $bodyHtml = str_replace('{{contentTR}}', $message, $bodyHtml);
+    //$to = $to;
+    $header = "From: spanishasap <spanishasap@spanishasap.com> \r\n";
+    $header .= "Bcc: info@digitalesweb.com \r\n";
+    //$header .= "X-Mailer: PHP/" . phpversion() . " \r\n";
+    $header .= "Mime-Version: 1.0 \r\n";
+    $header .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+
+    $bool = mail($to,$subject,$bodyHtml,$header);
+    // echo $bool;
+    if($bool){
+        Core::alert("Actualizado exitosamente!, email enviado: ".$bool);
+        Core::redir("./?view=thanks&msg=Agregado exitosamente, project number: " . $_POST['pn']);
+    }else{
+        Core::alert("Actualizado exitosamente!, pero email no enviado, por favor notificar.");
+        Core::redir("./?view=thanks&msg=Email no enviado");
+    }
+
+    //if (mail($email, "Alguien solicit� una nueva contrase�a para tu cuenta de Dolphy", $body, $header)) {
+    //    mysql_query("UPDATE pw_user SET password ='$newpassmd5' WHERE user = '$email'");
+    //}
 }

@@ -98,7 +98,7 @@ class SurveylistsanswerData
     {
         $sql = "select t1.* from surveylistsanswers t1 join (select pn, min(id) as min_fila from surveylistsanswers where surveylists_id=$surveyId group by pn, pn_anho) t2 on t2.pn = t1.pn and t2.min_fila = t1.id and t1.created_at>=\"$start_at\" and t1.created_at<=\"$finish_at\" and t1.surveylists_id=$surveyId order by t1.id ";
         $query = Executor::doit($sql);
-        echo $sql;
+        //echo $sql;
         return Model::many($query[0], new SurveylistsanswerData());
     }
     public static function getByPN($pn, $anho)

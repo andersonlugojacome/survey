@@ -5,13 +5,13 @@ class Database
     public static $con;
     public function __construct()
     {
-        $this->user="u402197955_surveyspanish";
-        $this->pass="DigitalesWeb$$";
+        $this->user="u402197955_spanish";
+        $this->pass="SpanishASAP$$2";
         $this->host="localhost";
         ///$this->user="root";
         ///$this->pass="root";
         ///$this->host="localhost";
-        $this->ddbb="u402197955_surveyspanish";
+        $this->ddbb="u402197955_spanish";
         /// echo $_SESSION['user_id'];
     }
 
