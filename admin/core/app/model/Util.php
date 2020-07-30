@@ -104,12 +104,17 @@ class Util
         $o.= '</div>' . "\n";
         return $o;
     }
-    public static function generateRadioButtonsRate($name, $values = 5, $flag=false, $valueA="")
+    public static function generateRadioButtonsRate($name,  $values = 5, $requiredoption="", $flag=false)
     {
+        
         $o = '<div class="clasificacion">' . "\n";
         for ($v = $values; $v >= 1; $v--) {
-            $o.= '<input required type="radio" id="' . $name . '_'.$v.'" name="' . $name . '" value="' . $v . '">';
-            $o.= '<label for="' . $name .'_'.$v.'">&#9733;</label>';
+            $o.= '<input '.$requiredoption.' type="radio" id="' . $name . '_'.$v.'" name="' . $name . '" value="' . $v . '">';
+            $o.= '<label for="' . $name .'_'.$v.'"> &#9733; </label>';
+        }
+        if (!empty($requiredoption)) {
+            # code...
+            $o.= '<div class="invalid-feedback">Is required</div>';
         }
         $o.= '</div>' . "\n";
         return $o;
@@ -153,6 +158,15 @@ class Util
         return $html;
     }
 
+    public static function ch_title($title){
+        $output = ob_get_contents();
+        if ( ob_get_length() > 0) { ob_end_clean(); }
+        $patterns = array("/<title>(.*?)<\/title>/");
+        $replacements = array("<title>$title</title>");
+        $output = preg_replace($patterns, $replacements,$output);
+        echo $output;
+    }
+
     /*
  * zero_fill
  *
@@ -167,8 +181,5 @@ class Util
     {
         return str_pad($valor, $long, '0', STR_PAD_LEFT);
     }
-    // public static function getApprovalNumber($num =0)
-    // {
-    //     return date('Y').self::zero_fill($num, 4);
-    // }
+    
 }

@@ -23,6 +23,7 @@ class SurveylistsquestionData
         $this->position ="";
         $this->q_format = "";
         $this->user_id ="";
+        $this->required ="";
         $this->created_at = Util::getDatetimeNow();
     }
     public function add()
@@ -52,7 +53,7 @@ class SurveylistsquestionData
 
     public static function getAllQuestionsOn($mode, $id)
     {
-        $sql = "SELECT *, cl.id as cl_id, clq.id as clq_id, clq.question as pregunta  FROM surveylists as cl LEFT JOIN ".self::$tablename." as clq ON cl.id = clq.surveylists_id WHERE cl.surveylist_status = '".$mode."' AND cl.id = '".$id."' AND clq.q_status = 'on' ORDER BY clq.position ASC";
+        $sql = "SELECT *, cl.id as cl_id, clq.id as clq_id, clq.question as pregunta, clq.requiredoption AS requiredoption  FROM surveylists as cl LEFT JOIN ".self::$tablename." as clq ON cl.id = clq.surveylists_id WHERE cl.surveylist_status = '".$mode."' AND cl.id = '".$id."' AND clq.q_status = 'on' ORDER BY clq.position ASC";
         $query = Executor::doit($sql);
         return Model::many($query[0], new SurveylistsquestionData());
     }

@@ -7,6 +7,8 @@
  */
 //$pn = $_GET['pn'];
 //$pn = "1";
+
+Util::ch_title("We want to hear from you!");
 $surveylists_id = "11";
 $anho = date('Y');
 $questions = SurveylistsquestionData::getAllQuestionsOn("open", $surveylists_id);
@@ -140,7 +142,7 @@ if (isset($_GET["c"])) {
                         our QA Department. Your feedback is very important to us, as it helps us to improve the
                         quality of our work. Thank you for your participation!</h6>
 
-                    <form class="" method="post" id="addsurveycustomer" action="./?action=addsurveyanswercustomer" role="form">
+                    <form class="needs-validation" novalidate method="post" id="addsurveycustomer" action="./?action=addsurveyanswercustomer" role="form">
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group">
@@ -169,10 +171,11 @@ if (isset($_GET["c"])) {
                                         $question1 = $value->pregunta;
                                         $description = $value->description;
                                         $surveylistsquestions_id = $value->clq_id;
-                                        $description = $value->description;
                                         $linkpdf = $value->linkpdf;
                                         $q_format = $value->q_format;
                                         $num_input = $value->num_input;
+                                        $requiredoption = $value->requiredoption;
+                                    
                                         $created_at = new DateTime($value->created_at);
                                     ?>
                                         <tr data-background-color-approval="">
@@ -185,12 +188,13 @@ if (isset($_GET["c"])) {
                                             <?php if ($q_format != "tip") : ?>
 
                                                 <td>
+                                            
                                                     <?php
+                                                   
                                                     if ($q_format == "radio") {
-                                                        echo Util::generateRadioButtonsRate(
-                                                            "question_" . $surveylistsquestions_id . "_answer",
-                                                            $num_input
-                                                        );
+                                                       
+                                                        echo Util::generateRadioButtonsRate("question_" . $surveylistsquestions_id . "_answer", $num_input, $requiredoption);
+                                                        
                                                     } else {
                                                         if ($q_format == "textarea") {
                                                             echo Util::generateTextAreaRate("question_" . $surveylistsquestions_id . "_answer", $num_input);
@@ -239,3 +243,26 @@ if (isset($_GET["c"])) {
 <!-- ============================================================== -->
 <!-- End Container fluid  -->
 <!-- ============================================================== -->
+
+<script>
+// Example starter JavaScript for disabling form submissions if there are invalid fields
+(function() {
+  'use strict';
+  window.addEventListener('load', function() {
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.getElementsByClassName('needs-validation');
+    // Loop over them and prevent submission
+    var validation = Array.prototype.filter.call(forms, function(form) {
+      form.addEventListener('submit', function(event) {
+        if (form.checkValidity() === false) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    });
+  }, false);
+
+})();
+
+</script>

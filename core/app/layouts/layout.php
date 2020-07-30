@@ -8,6 +8,7 @@ Este es el layout principal, a partir de este layout o plantilla se muestran el 
     <meta charset="utf-8" />
     <meta name="description" content="" />
     <meta name="author" content="" />
+    <title>spanishasap.com</title>
 
     <link rel="apple-touch-icon" sizes="57x57" href="../themes/TEP/img/apple-icon-57x57.png" />
     <link rel="apple-touch-icon" sizes="60x60" href="../themes/TEP/img/apple-icon-60x60.png" />
