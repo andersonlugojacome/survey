@@ -53,6 +53,12 @@ class SurveylistsanswerData
         $sql = "delete from " . self::$tablename . " where id=$id";
         Executor::doit($sql);
     }
+    public static function delBy($pn,$pnAnho,$surveyId)
+    {
+        $sql = "delete from " . self::$tablename . " where pn=\"$pn\" and pn_anho=\"$pnAnho\" and surveylists_id=\"$surveyId\" ";
+        //echo $sql;
+        Executor::doit($sql);
+    }
     public function del()
     {
         $sql = "delete from " . self::$tablename . " where id=$this->id";
