@@ -1,5 +1,5 @@
 <?php
-
+Util::ch_title("Thank you for your feedback!");
 ?>
 
 
@@ -35,51 +35,64 @@
                     <h6 class="card-subtitle">
                         <!-- Session comments -->
                         <?php if (isset($_GET['msg'])) :    ?>
-                            <div class="alert alert-info alert-dismissible">
-                                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                                <strong>Note:</strong>
-                                <?php echo $_GET['msg'] ?>
-                            </div>
+                        <div class="alert alert-info alert-dismissible">
+                            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                            <strong>Note:</strong>
+                            <?php echo $_GET['msg'] ?>
+                        </div>
                         <?php endif; ?></h6>
 
 
-                    <form method="post" id="addsurveycustomer" action="./?action=sendemailcustomerscontact" role="form" class="needs-validation" novalidate>
-                     <div class="row">
-                            <div class="col-12">
-                                <p>
+                    <form method="post" id="addsurveycustomer" action="./?action=sendemailcustomerscontact" role="form"
+                        class="needs-validation" novalidate>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <p class="text-justify">
                                     This information will be used by our QA Department internally. If you want us to
-                                    contact you on this specific job, please click <a href="mailto:customerfeedback@spanishasap.com">here</a>.</p>
-                                <p> You may also write directly to <a href="mailto:customerfeedback@spanishasap.com">customerfeedback@spanishasap.com</a>
+                                    contact you on this specific job, please click <a
+                                        href="mailto:customerfeedback@spanishasap.com">here</a>.</p>
+                                <p class="text-justify"> You may also write directly to <a
+                                        href="mailto:customerfeedback@spanishasap.com">customerfeedback@spanishasap.com</a>
                                     to let us know your concerns.</p>
                             </div>
                         </div>
-                        <div class="form-row">
-                            <div class="col-md-12">
-                                <p>
+                        <hr />
+                        <div class="row">
+                            <div class="col-12">
+                                <p class="text-justify">
                                     Please choose how you would like us to contact you:
                                 </p>
                             </div>
-                            <div class="col-md-3 mb-3">
-                                <label for="name">Name</label>
-                                <input type="text" class="form-control is-valid" id="name" name="name" placeholder="Name" autocomplete="nope" required />
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label for="email">Email address</label>
-                                <input type="email" class="form-control is-valid" id="email" name="email"  placeholder="Email address" autocomplete="nope" required />
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label for="phone">Phone number</label>
-                                <input type="text" class="form-control is-valid" id="phone" name="phone" placeholder="Phone number" autocomplete="nope" required />
-                            </div>
+                        </div>
 
-
+                        <div class="row">
+                            <div class="col-md-3 mb-3">
+                                <input type="text" class="form-control is-valid" id="name" name="name"
+                                    placeholder="Name" autocomplete="nope" required />
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <input type="email" class="form-control is-valid" id="email" name="email"
+                                    placeholder="Email address" autocomplete="nope" required />
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <input type="text" class="form-control is-valid" id="phone" name="phone"
+                                    placeholder="Phone number" autocomplete="nope" required />
+                            </div>
                             <div class="col-md-3 mb-3">
                                 <button type="submit" class="btn btn-success">Send</button>
                             </div>
                         </div>
 
                     </form>
-                    
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p>
+                                No, thank you. <a href="https://spanishasap.com/?traf=surveycustomer"
+                                    class="btn waves-effect waves-light btn-secondary"> Close <i
+                                        class="ti-arrow-circle-right"></i></a>
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -99,23 +112,23 @@
 <!-- End Container fluid  -->
 <!-- ============================================================== -->
 <script>
-    // Example starter JavaScript for disabling form submissions if there are invalid fields
-    (function() {
-        'use strict';
-        window.addEventListener('load', function() {
-            // Fetch all the forms we want to apply custom Bootstrap validation styles to
-            var forms = document.getElementsByClassName('needs-validation');
-            // Loop over them and prevent submission
-            var validation = Array.prototype.filter.call(forms, function(form) {
-                form.addEventListener('submit', function(event) {
-                    if (form.checkValidity() === false) {
-                        event.preventDefault();
-                        event.stopPropagation();
-                    }
-                    form.classList.add('was-validated');
-                }, false);
-            });
-        }, false);
-       
-    })();
+// Example starter JavaScript for disabling form submissions if there are invalid fields
+(function() {
+    'use strict';
+    window.addEventListener('load', function() {
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.getElementsByClassName('needs-validation');
+        // Loop over them and prevent submission
+        var validation = Array.prototype.filter.call(forms, function(form) {
+            form.addEventListener('submit', function(event) {
+                if (form.checkValidity() === false) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                }
+                form.classList.add('was-validated');
+            }, false);
+        });
+    }, false);
+
+})();
 </script>
