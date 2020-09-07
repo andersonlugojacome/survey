@@ -7,6 +7,7 @@
  */
 //$pn = $_GET['pn'];
 //$pn = "1";
+Util::ch_title("Editor survey!");
 $surveylists_id = "12";
 $anho = date('Y');
 $questions = SurveylistsquestionData::getAllQuestionsOn("open", $surveylists_id);

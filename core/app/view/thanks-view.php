@@ -43,7 +43,7 @@
                     <div class="row">
                         <div class="col-lg-6 mb-4">
                             <?= $_SESSION['body'] ?>
-                            <a type="button" href="/" class="btn btn-primary"><i class="fas fa-check"></i>
+                            <a type="button" href="<?= ($_GET['ids']=="12") ? "/?view=esurvey" : "/"; ?>" class="btn btn-primary"><i class="fas fa-check"></i>
                                 Home</a>
                         </div>
                     </div>

@@ -89,18 +89,7 @@ if (!empty($resultIs)) {
         }
         $to = 'spanishasap@spanishasap.com, info@digitalesweb.tech';
         $subject = $subjectName ."survey of project number: " . $_POST['pn'];
-        // $headers = "From: " . $cleanedFrom . "\r\n";
-        // $headers .= "Reply-To: " . strip_tags($form) . "\r\n";
-        // $headers .= "MIME-Version: 1.0\r\n";
-        // $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
         sendEmailStatus($to,$subject,$surveyname,  $body);
-        // if (mail($to, $subject, $body, $headers)) {
-        //     // echo 'Your message has been sent.';
-        //     Core::redir("./?view=thanks&msg=Agregado exitosamente, project number: " . $_POST['pn']);
-        // } else {
-        //     //echo 'There was a problem sending the email.';
-        //     Core::redir("./?view=thanks&msg=Email no enviado");
-        // }
     } else {
         Core::redir("./?view=thanks&msg=Error");
     }
@@ -127,7 +116,7 @@ function sendEmailStatus($to,$subject,$surveyname, $message){
     // echo $bool;
     if($bool){
         Core::alert("Actualizado exitosamente!, email enviado: ".$bool);
-        Core::redir("./?view=thanks&msg=Agregado exitosamente, project number: " . $_POST['pn']);
+        Core::redir("./?view=thanks&ids=".$_POST['surveylists_id']."&msg=Agregado exitosamente, project number: " . $_POST['pn']);
     }else{
         Core::alert("Actualizado exitosamente!, pero email no enviado, por favor notificar.");
         Core::redir("./?view=thanks&msg=Email no enviado");
